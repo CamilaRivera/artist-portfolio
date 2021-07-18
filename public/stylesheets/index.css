@@ -57,7 +57,8 @@
 .order-your-portrait-band {
   background-color: #30413b;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  padding: 1.5rem 0; }
 
 .commission-section {
   background-color: #30413b;
