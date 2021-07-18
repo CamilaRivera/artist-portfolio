@@ -5,6 +5,7 @@ import { AppModule } from './app.module';
 import * as sassMiddleware from 'node-sass-middleware';
 import hbs = require('hbs');
 import hbsutilsLib = require('hbs-utils');
+import { translate } from './app.internationalization';
 
 const hbsutils = hbsutilsLib(hbs);
 
@@ -28,6 +29,7 @@ async function bootstrap() {
   app.setViewEngine('hbs');
 
   hbs.registerPartials(partialsDirectory);
+  hbs.registerHelper('i18n', translate);
 
   app.use(
     sassMiddleware({
