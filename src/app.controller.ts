@@ -15,6 +15,12 @@ export class AppController {
     return { title: 'About Page' };
   }
 
+  @Get('/FAQ')
+  @Render('FAQ')
+  FAQ() {
+    return { title: 'FAQ Page' };
+  }
+
   @Get('/commissions-portrait')
   @Render('commissions-portrait')
   commissionsPortrait() {
