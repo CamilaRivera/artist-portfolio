@@ -6,6 +6,7 @@ const i18n = new I18n();
 i18n.configure({
   locales: ['en', 'es'],
   directory: join(__dirname, '..', 'locales'),
+  objectNotation: true,
 });
 
 export const translate = (text) => {
