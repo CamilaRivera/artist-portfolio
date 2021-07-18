@@ -18,6 +18,28 @@ export class AppController {
   @Get('/commissions-portrait')
   @Render('commissions-portrait')
   commissionsPortrait() {
-    return { title: 'Commissions Portrait' };
+    const priceBoxes = [
+      {
+        title: translate('1 Subject'),
+        image: '/images/cat-portrait.jpeg',
+        sizes: [
+          { size: { width: 21, height: 14 }, price: 350 },
+          { size: { width: 30, height: 24 }, price: 420 },
+        ],
+      },
+      {
+        title: translate('2 Subject'),
+        image: '/images/dog-portrait.jpeg',
+        sizes: [
+          { size: { width: 21, height: 14 }, price: 350 },
+          { size: { width: 30, height: 24 }, price: 420 },
+          { size: { width: 30, height: 24 }, price: 420 },
+          { size: { width: 30, height: 24 }, price: 420 },
+          { size: { width: 30, height: 24 }, price: 420 },
+        ],
+      },
+    ];
+
+    return { title: 'Commissions Portrait', priceBoxes };
   }
 }

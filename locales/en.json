@@ -1,6 +1,11 @@
 {
 	"Hello world": "Hello world english",
 	"commissions": {
-		"order_your_portrait": "Order your Portrait"
-	}
+		"order_your_portrait": "Order your Portrait",
+		"text": "TAKE A LOOK AT ALL THE OPTIONS AVAILABLE FOR CREATING YOUR PORTRAIT",
+		"currenciesInfo": "Price is in EUROS, to check other currencies please visit http://www.xe.com",
+		"sizesInfo": "sizes are in cm / inches"
+	},
+	"1 Subject": "1 Subject",
+	"2 Subject": "2 Subject"
 }
