@@ -1,0 +1,11 @@
+.image-bar-container {
+  display: flex;
+  min-height: 25rem;
+  align-items: stretch;
+}
+
+.image-bar-container__image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
