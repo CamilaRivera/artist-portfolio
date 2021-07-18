@@ -10,8 +10,14 @@ export class AppController {
   }
 
   @Get('/about')
-  @Render('dos')
+  @Render('about')
   about() {
     return { title: 'About Page' };
+  }
+
+  @Get('/commissions-portrait')
+  @Render('commissions-portrait')
+  commissionsPortrait() {
+    return { title: 'Commissions Portrait' };
   }
 }
