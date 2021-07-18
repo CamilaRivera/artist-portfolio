@@ -1,3 +1,6 @@
 {
-	"Hello world": "Hello world spanish"
+	"Hello world": "Hello world spanish",
+	"commissions": {
+		"order_your_portrait": "Ordena tu retrato"
+	}
 }
