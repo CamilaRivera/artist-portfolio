@@ -48,11 +48,75 @@
   justify-content: center;
   background-color: #D7CFBF;
   min-height: 4rem; }
-  .about-section__title h2 {
-    color: black; }
 
 .about-section__text {
   padding: 4% 10% 6% 10%; }
+
+.FAQ-section__header {
+  background-color: #30413b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1% 25% 2% 25%;
+  text-align: center; }
+  .FAQ-section__header p {
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    font-size: 20px; }
+  .FAQ-section__header h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin: 0;
+    margin-bottom: 0.875rem; }
+
+.FAQ-section__sub-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #D7CFBF;
+  min-height: 4rem; }
+  .FAQ-section__sub-header h3 {
+    color: #17253D;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin: 1rem; }
+
+.FAQ-section__sub-header--dark {
+  background-color: #4D635A; }
+  .FAQ-section__sub-header--dark h3 {
+    color: #fff; }
+
+.FAQ-section__questions-section-container {
+  padding: 6% 14% 6% 14%; }
+
+.FAQ-section__questions-section-container--dark {
+  background-color: #33413B;
+  color: #fff; }
+
+.FAQ-section__question-containter {
+  margin: 0px 0px 20px 0px;
+  padding: 0% 0% 3% 0%; }
+  .FAQ-section__question-containter .fa-question-circle::before {
+    color: #a59578; }
+  .FAQ-section__question-containter h2 {
+    color: #1E1E1E;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.2px;
+    margin: 15px 0px 20px 0px; }
+  .FAQ-section__question-containter p {
+    line-height: 1.4rem;
+    margin: 0; }
+
+.FAQ-section__question-containter--dark h2 {
+  color: #fff; }
 
 html {
   box-sizing: border-box; }
@@ -64,5 +128,6 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300; }
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 300;
+  color: #1E1E1E; }

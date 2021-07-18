@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
+
 @import 'mixins';
 @import 'footer';
 @import 'navbar';
 @import 'about';
+@import 'FAQ';
 
 html {
   box-sizing: border-box;
@@ -17,6 +19,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Font Awesome 5 Free';
   font-weight: 300;
+  color: $font-color;
 }
