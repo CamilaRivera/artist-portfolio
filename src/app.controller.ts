@@ -1,0 +1,17 @@
+import { Controller, Get, Render, Req } from '@nestjs/common';
+import { translate } from './app.internationalization';
+
+@Controller()
+export class AppController {
+  @Get()
+  @Render('index')
+  root() {
+    return { message: translate('Hello world') };
+  }
+
+  @Get('/about')
+  @Render('dos')
+  about() {
+    return { title: 'About Page' };
+  }
+}

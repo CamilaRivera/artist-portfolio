@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $brand-color;
+  color: $brand-font-color;
+  min-height: 3.75rem;
+  padding: 0 3.75rem;
+}
+
+.footer__link {
+  color: $brand-font-color;
+}
