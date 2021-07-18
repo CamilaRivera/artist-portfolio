@@ -34,6 +34,26 @@
   color: #fff;
   text-decoration: none; }
 
+.about-section__picture-container {
+  display: flex; }
+
+.about-section_image {
+  max-width: 25rem;
+  height: 25rem; }
+
+.about-section__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #D7CFBF;
+  min-height: 4rem; }
+  .about-section__title h2 {
+    color: black; }
+
+.about-section__text {
+  padding: 4% 10% 6% 10%; }
+
 html {
   box-sizing: border-box; }
 
