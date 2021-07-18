@@ -1,0 +1,49 @@
+.order-your-portrait-band{
+  background-color: $brand-color;
+  color: $brand-font-color;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.commission-section {
+  background-color: $brand-color;
+  color: $brand-font-color;
+  margin: 4rem auto;
+  min-height: 35rem;
+  max-width: 65rem;
+  display: flex;
+}
+
+.commission-section__left {
+  background-position: center;
+  background-size: cover;
+}
+
+.commission-section__right {
+  padding: 1rem 2rem;
+}
+
+.commission-section__left, .commission-section__right {
+  flex: 1;
+  text-align: center;;
+}
+
+.commission-section-price-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.commission-section-price-box {
+  padding: 1rem;
+}
+
+.commission-section-price-box__size {
+  border-bottom: 1px solid $brand-font-color;
+  padding: 0.5rem 0;
+}
+
+.commission-section-price-box__price {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+}

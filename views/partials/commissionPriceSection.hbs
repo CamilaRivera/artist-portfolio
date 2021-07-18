@@ -1,0 +1,25 @@
+<div class="commission-section">
+  <div class="commission-section__left"
+    style="background-image: url('{{image}}')">
+  </div>
+  <div class="commission-section__right">
+    <h2 class="commission-section__title">{{title}}</h2>
+    <p>{{i18n 'commissions.currenciesInfo'}}</p>
+    <p class="uppercase">{{i18n 'commissions.sizesInfo'}}</p>
+    <div class="commission-section-price-box-container">
+      {{#each sizes}}
+        <div class="commission-section-price-box">
+          <div class="commission-section-price-box__size">
+            {{size.height}}x{{size.width}}cm / {{cmToInches size.height}}” x {{cmToInches size.width}}”
+          </div>
+          <div class="commission-section-price-box__price">
+            $ {{price}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <p>
+      {{i18n 'commissions.footnote'}}
+    </p>
+  </div>
+</div>

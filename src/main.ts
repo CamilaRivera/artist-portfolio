@@ -30,6 +30,9 @@ async function bootstrap() {
 
   hbs.registerPartials(partialsDirectory);
   hbs.registerHelper('i18n', translate);
+  hbs.registerHelper('cmToInches', (value) => {
+    return (0.393701 * value).toFixed(1);
+  });
 
   app.use(
     sassMiddleware({

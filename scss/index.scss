@@ -5,6 +5,7 @@
 @import 'footer';
 @import 'navbar';
 @import 'about';
+@import 'commissions';
 @import 'FAQ';
 
 html {
@@ -22,4 +23,8 @@ body {
   font-family: 'Font Awesome 5 Free';
   font-weight: 300;
   color: $font-color;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
 }

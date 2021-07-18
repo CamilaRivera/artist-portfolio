@@ -1,3 +1,10 @@
-<div>
-  {{i18n 'commissions.order_your_portrait'}}
+<div class="order-your-portrait-band">
+  <h1 class="order-your-portrait-band__header">{{i18n 'commissions.order_your_portrait'}}</h1>
+  <p>{{i18n 'commissions.text'}}</p>
+</div>
+
+<div class="price-boxes-container">
+  {{#each priceBoxes}}
+    {{> commissionPriceSection }}
+  {{/each}}
 </div>
