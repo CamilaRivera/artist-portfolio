@@ -45,12 +45,6 @@
 .about-section__text {
   padding: 4% 10% 6% 10%; }
 
-.order-your-portrait-band {
-  background-color: #30413b;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 0; }
-
 .commission-section {
   background-color: #30413b;
   color: #fff;
@@ -85,27 +79,6 @@
 .commission-section-price-box__price {
   padding: 0.5rem 0;
   font-size: 2rem; }
-
-.FAQ-section__header {
-  background-color: #30413b;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1% 25% 2% 25%;
-  text-align: center; }
-  .FAQ-section__header p {
-    margin: 0;
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 1.4em;
-    font-size: 20px; }
-  .FAQ-section__header h2 {
-    font-size: 4rem;
-    font-weight: 500;
-    line-height: 1.2em;
-    margin: 0;
-    margin-bottom: 0.875rem; }
 
 .FAQ-section__sub-header {
   display: flex;
@@ -162,6 +135,27 @@
   background-size: cover;
   background-position: center; }
 
+.main-section-bar {
+  background-color: #30413b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1% 25% 2% 25%;
+  text-align: center; }
+  .main-section-bar p {
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    font-size: 20px; }
+  .main-section-bar h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin: 0;
+    margin-bottom: 0.875rem; }
+
 html {
   box-sizing: border-box; }
 
@@ -178,3 +172,43 @@ body {
 
 .uppercase {
   text-transform: uppercase !important; }
+
+.index-links-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #d7d9db;
+  padding: 3% 9% 4% 9%; }
+
+.index-links-container__card {
+  display: flex;
+  padding: 2rem 2.5rem;
+  border-radius: 10px 10px 10px 10px;
+  width: 25rem;
+  background-color: white;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.index-links-container__card-image {
+  background-image: url(/images/image-1.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  height: 16rem;
+  width: 16rem;
+  margin: auto; }
+
+.index-links-container__card-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1E1E1E;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #D7CFBF;
+  padding: 16px 24px 16px 24px;
+  margin: 2rem 0;
+  text-decoration: none; }
+  .index-links-container__card-link:focus, .index-links-container__card-link:hover {
+    color: white;
+    background-color: #a59578;
+    border-color: #a59578; }
