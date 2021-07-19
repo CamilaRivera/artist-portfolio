@@ -16,3 +16,13 @@ export const translate = (text) => {
 export const setLanguage = (lang) => {
   i18n.setLocale(lang);
 };
+
+export const getChangeLanguageLink = (protocol, url, lang) => {
+  if (url.startsWith('en') || url.startsWith('es')) {
+    // Language already included
+    url = url.replace(/^(es|en)[.]/i, `${lang}.`);
+  } else {
+    url = `${protocol}://${lang}.${url}`;
+  }
+  return `${protocol}://${url}`;
+};

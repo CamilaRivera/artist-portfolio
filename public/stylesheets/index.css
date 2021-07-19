@@ -37,6 +37,9 @@
   text-decoration: none;
   text-transform: uppercase; }
 
+.navbar__item-divider {
+  border-left: 1px solid #03045e; }
+
 .about-section__title {
   display: flex;
   flex-direction: row;

@@ -1,12 +1,37 @@
 {
 	"Hello world": "Hello world spanish",
 	"commissions": {
-		"order_your_portrait": "Ordena tu retrato"
+		"order_your_portrait": "Ordena tu retrato",
+		"text": "commissions.text",
+		"currenciesInfo": "commissions.currenciesInfo",
+		"sizesInfo": "commissions.sizesInfo",
+		"footnote": "commissions.footnote",
+		"backToPriceList": "commissions.backToPriceList",
+		"bookYourPortraitTitle": "commissions.bookYourPortraitTitle",
+		"bookYourPortraitDetails": "commissions.bookYourPortraitDetails"
 	},
 	"navbar": {
 		"home": "Home",
 		"commissions": "Pedidos",
 		"aboutMe": "Sobre Mi",
 		"faq": "FAQ"
-	}
+	},
+	"faq": {
+		"title": "faq.title",
+		"subtitle": "faq.subtitle"
+	},
+	"index": {
+		"title": "index.title",
+		"subtitle": "index.subtitle",
+		"portrait": {
+			"link": "index.portrait.link",
+			"text": "index.portrait.text"
+		},
+		"faq": {
+			"link": "index.faq.link",
+			"text": "index.faq.text"
+		}
+	},
+	"1 Subject": "1 Subject",
+	"2 Subject": "2 Subject"
 }

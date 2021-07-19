@@ -24,3 +24,7 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.navbar__item-divider {
+  border-left: 1px solid $brand-font-color-secondary;
+}
