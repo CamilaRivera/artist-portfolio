@@ -22,7 +22,7 @@ export const getChangeLanguageLink = (protocol, url, lang) => {
     // Language already included
     url = url.replace(/^(es|en)[.]/i, `${lang}.`);
   } else {
-    url = `${protocol}://${lang}.${url}`;
+    url = `${lang}.${url}`;
   }
   return `${protocol}://${url}`;
 };
