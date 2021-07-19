@@ -9,6 +9,7 @@
 @import 'FAQ';
 @import 'image-bar';
 @import 'brand-section';
+@import 'main-section-bar';
 
 html {
   box-sizing: border-box;
@@ -29,4 +30,50 @@ body {
 
 .uppercase {
   text-transform: uppercase !important;
+}
+
+.index-links-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #d7d9db;
+  padding: 3% 9% 4% 9%;
+}
+
+.index-links-container__card {
+  display: flex;
+  padding: 2rem 2.5rem;
+  border-radius: 0.625rem;
+  width: 25rem;
+  background-color: white;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.index-links-container__card-image {
+  background-image: url(/images/image-1.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  height: 16rem;
+  width: 16rem;
+  margin: auto;
+}
+
+.index-links-container__card-link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: $font-color;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: $brand-color-secondary-light;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  text-decoration: none;
+
+  &:focus, &:hover {
+    color: $brand-font-color;
+    background-color: $brand-color-secondary;
+    border-color: $brand-color-secondary;
+  }
 }

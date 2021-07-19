@@ -17,5 +17,21 @@
 		"commissions": "Commissions",
 		"aboutMe": "About Me",
 		"faq": "FAQ"
+	},
+	"faq": {
+		"title": "FAQ",
+		"subtitle": "MOST FREQUENT ASKED QUESTIONS BY CLIENTS AND ARTISTS"
+	},
+	"index": {
+		"title": "FLAVIA CANEPA",
+		"subtitle": "PASTEL PORTRAITS & FINE ART",
+		"portrait": {
+			"link": "Order a Portrait",
+			"text": "Would you like to order a portrait? I have many years of experience in creating individual pieces of all kinds of subjects, animals, pets, people, horses, etc. Find out more information about my work, waiting time, prices, sizes, shipping etc."
+		},
+		"faq": {
+			"link": "Check my F.A.Q",
+			"text": "I receive daily daily many messages asking various questions regarding my commission process, my techniques, materiales used, etc. I have compiled a F.A.Q. with all the answers and I update it regularly."
+		}
 	}
 }

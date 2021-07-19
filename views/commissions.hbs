@@ -1,9 +1,7 @@
 <div class="commissions-section">
   {{> imagesBar images=imagesBar}}
-  <div class="order-your-portrait-band">
-    <h1 id="price" class="order-your-portrait-band__header">{{i18n 'commissions.order_your_portrait'}}</h1>
-    <p>{{i18n 'commissions.text'}}</p>
-  </div>
+  {{> mainSectionBar barTitle='commissions.order_your_portrait' barSubTitle='commissions.text'}}
+
 
   <div class="commission-section-container">
     {{#each priceBoxes}}
