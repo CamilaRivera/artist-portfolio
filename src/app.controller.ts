@@ -12,7 +12,13 @@ export class AppController {
   @Get('/about')
   @Render('about')
   about() {
-    return { title: 'About Page' };
+    const imagesBar = [
+      { url: '/images/image-1.jpg' },
+      { url: '/images/image-2.jpg' },
+      { url: '/images/image-3.jpg' },
+      { url: '/images/cat-portrait3.jpeg' },
+    ];
+    return { title: 'About Page', imagesBar };
   }
 
   @Get('/FAQ')
@@ -22,7 +28,7 @@ export class AppController {
   }
 
   @Get('/commissions-portrait')
-  @Render('commissions-portrait')
+  @Render('commissions')
   commissionsPortrait() {
     const priceBoxes = [
       {
@@ -46,6 +52,13 @@ export class AppController {
       },
     ];
 
-    return { title: 'Commissions Portrait', priceBoxes };
+    const imagesBar = [
+      { url: '/images/cat-portrait.jpeg' },
+      { url: '/images/cat-portrait2.jpeg' },
+      { url: '/images/dog-portrait.jpeg' },
+      { url: '/images/dog-portrait2.jpeg' },
+    ];
+
+    return { title: 'Commissions Portrait', priceBoxes, imagesBar };
   }
 }

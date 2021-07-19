@@ -2,5 +2,11 @@
 	"Hello world": "Hello world spanish",
 	"commissions": {
 		"order_your_portrait": "Ordena tu retrato"
+	},
+	"navbar": {
+		"home": "Home",
+		"commissions": "Pedidos",
+		"aboutMe": "Sobre Mi",
+		"faq": "FAQ"
 	}
 }

@@ -7,5 +7,6 @@
 .image-bar-container__image {
   flex: 1;
   background-size: cover;
-  background-position: center;
+  background-position-x: center;
+  background-position-y: top;
 }

@@ -5,6 +5,11 @@
   padding: 1.5rem 0;
 }
 
+.commissions-section {
+  background-color: $brand-color-secondary-light;
+  padding-bottom: 5rem;
+}
+
 .commission-section {
   background-color: $brand-color;
   color: $brand-font-color;
@@ -46,4 +51,10 @@
 .commission-section-price-box__price {
   padding: 0.5rem 0;
   font-size: 2rem;
+}
+
+.commission-book-portrait-details {
+  max-width: 50rem;
+  margin: auto;
+  margin-bottom: 1rem;
 }
