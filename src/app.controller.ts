@@ -6,7 +6,13 @@ export class AppController {
   @Get()
   @Render('index')
   root() {
-    return { message: translate('Hello world') };
+    const imagesBar = [
+      { url: '/images/image-1.jpg' },
+      { url: '/images/image-2.jpg' },
+      { url: '/images/image-3.jpg' },
+      { url: '/images/cat-portrait3.jpeg' },
+    ];
+    return { message: translate('Hello world'), imagesBar };
   }
 
   @Get('/about')
@@ -24,7 +30,13 @@ export class AppController {
   @Get('/FAQ')
   @Render('FAQ')
   FAQ() {
-    return { title: 'FAQ Page' };
+    const imagesBar = [
+      { url: '/images/image-1.jpg' },
+      { url: '/images/image-2.jpg' },
+      { url: '/images/image-3.jpg' },
+      { url: '/images/cat-portrait3.jpeg' },
+    ];
+    return { title: 'FAQ Page', imagesBar };
   }
 
   @Get('/commissions-portrait')

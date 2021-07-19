@@ -25,7 +25,7 @@ body {
   margin: 0;
   font-family: 'Font Awesome 5 Free';
   font-weight: 300;
-  color: $font-color;
+  color: $base-font-color;
 }
 
 .uppercase {
@@ -44,7 +44,7 @@ body {
   padding: 2rem 2.5rem;
   border-radius: 0.625rem;
   width: 25rem;
-  background-color: white;
+  background-color: #fff;
   text-align: center;
   flex-direction: column;
   justify-content: space-between;
@@ -63,16 +63,16 @@ body {
 .index-links-container__card-link {
   font-size: 1.125rem;
   font-weight: 500;
-  color: $font-color;
+  color: $brand-color-light;
   border-style: solid;
   border-width: 1px 1px 1px 1px;
-  border-color: $brand-color-secondary-light;
+  border-color: $brand-color-light;
   padding: 1rem 1.5rem;
   margin: 2rem 0;
   text-decoration: none;
 
   &:focus, &:hover {
-    color: $brand-font-color;
+    color: $brand-font-color-secondary;
     background-color: $brand-color-secondary;
     border-color: $brand-color-secondary;
   }

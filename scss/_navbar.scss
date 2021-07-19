@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: $brand-color-secondary;
-  color: $brand-font-color;
+  color: $brand-font-color-secondary;
   min-height: 5rem;
   padding: 0 3.75rem;
 }
@@ -20,7 +20,7 @@
 }
 
 .navbar__link {
-  color: $brand-font-color;
+  color: $brand-font-color-secondary;
   text-decoration: none;
   text-transform: uppercase;
 }
