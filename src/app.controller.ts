@@ -65,7 +65,7 @@ export class AppController {
     ];
 
     const imagesBar = [
-      { url: '/images/image-2.jpeg' },
+      { url: '/images/image-2.jpg' },
       { url: '/images/cat-portrait2.jpeg' },
       { url: '/images/dog-portrait.jpeg' },
       { url: '/images/dog-portrait2.jpeg' },
