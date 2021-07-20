@@ -9,4 +9,20 @@
   background-size: cover;
   background-position-x: center;
   background-position-y: top;
+
+  &:nth-child(n + 2) {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  &:nth-child(n + 3) {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  &:nth-child(n + 4) {
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
 }

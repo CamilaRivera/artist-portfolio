@@ -45,7 +45,7 @@ export class AppController {
     const priceBoxes = [
       {
         title: translate('1 Subject'),
-        image: '/images/cat-portrait.jpeg',
+        image: '/images/cat-portrait2.jpeg',
         sizes: [
           { size: { width: 21, height: 14 }, price: 350 },
           { size: { width: 30, height: 24 }, price: 420 },
@@ -65,7 +65,7 @@ export class AppController {
     ];
 
     const imagesBar = [
-      { url: '/images/cat-portrait.jpeg' },
+      { url: '/images/image-2.jpeg' },
       { url: '/images/cat-portrait2.jpeg' },
       { url: '/images/dog-portrait.jpeg' },
       { url: '/images/dog-portrait2.jpeg' },

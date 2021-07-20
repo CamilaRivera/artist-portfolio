@@ -2,7 +2,10 @@
 
 
 @import 'mixins';
-@import 'bootstrap-mixins';
+@import 'bootstrap4/bootstrap-mixins';
+@import 'bootstrap4/variables';
+@import 'bootstrap4/breakpoints';
+@import 'bootstrap4/display';
 @import 'footer';
 @import 'navbar';
 @import 'about';
@@ -11,6 +14,8 @@
 @import 'image-bar';
 @import 'brand-section';
 @import 'main-section-bar';
+
+$index-link-card-width: 25rem;
 
 html {
   box-sizing: border-box;
@@ -24,9 +29,14 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'Alegreya Sans', sans-serif;
+  // font-family: 'Font Awesome 5 Free';
   font-weight: 300;
   color: $base-font-color;
+}
+
+p {
+  line-height: 1.6rem;
 }
 
 .uppercase {
@@ -34,17 +44,25 @@ body {
 }
 
 .index-links-container {
-  display: flex;
-  justify-content: space-around;
   background-color: #d7d9db;
-  padding: 3% 9% 4% 9%;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.index-links-container__inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: $index-link-card-width * 2.3;
+  margin: auto;
 }
 
 .index-links-container__card {
+  margin-bottom: 2rem;
   display: flex;
   padding: 2rem 2.5rem;
   border-radius: 0.625rem;
-  width: 25rem;
+  width: $index-link-card-width;
   background-color: #fff;
   text-align: center;
   flex-direction: column;
