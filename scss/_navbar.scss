@@ -1,30 +1,72 @@
 .navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   background-color: $brand-color-secondary;
   color: $brand-font-color-secondary;
   min-height: 5rem;
   padding: 0 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.navbar__home {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+.narbar__mobile-section {
+  min-height: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar__links {
   list-style-type: none;
   padding-left: 0;
-  display: flex;
+  text-align: right;
+  @include media-breakpoint-up(md) {
+    display: flex;
+    text-align: left;
+  }
 }
 
 .navbar__item {
-  margin: 0 1rem;
+  @include media-breakpoint-up(md) {
+    margin: 0 1rem;
+  }
 }
 
 .navbar__link {
   color: $brand-font-color-secondary;
   text-decoration: none;
   text-transform: uppercase;
+  padding: 0.75rem 0;
+  display: block;
+  @include media-breakpoint-up(md) {
+    padding: 0.75rem 0.2rem;
+  }
 }
 
 .navbar__item-divider {
   border-left: 1px solid $brand-font-color-secondary;
+}
+
+.navbar__toggle-button {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.navbar:not(.navbar--toggled) .navbar__links {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
