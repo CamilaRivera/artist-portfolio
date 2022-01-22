@@ -1,19 +1,36 @@
 <div class="about-section">
   {{> imagesBar images=imagesBar}}
-  <div class="brand-section__sub-header brand-section__sub-header--light">
-    <h1>
-      {{i18n 'about.title'}}
-    </h1>
+  <div class="section-wrapper">
+    <div class="brand-section__sub-header brand-section__sub-header--light">
+      <h1>
+        {{i18n 'about.title'}}
+      </h1>
+    </div>
+
+    <section class="brand-section__content-container brand-section__content-container--light">
+      <div>
+        <p>
+          {{i18n 'about.section1'}}
+        </p>
+        <p>
+          {{i18n 'about.section2'}}
+        </p>
+      </div>
+    </div>
   </div>
 
-  <section class="brand-section__content-container brand-section__content-container--light">
-    <div>
-      <p>
-        {{i18n 'about.section1'}}
-      </p>
-      <p>
-        {{i18n 'about.section2'}}
-      </p>
+  <div class="section-wrapper">
+    <div class="brand-section__sub-header brand-section__sub-header--light">
+      <h2>{{i18n 'commissions.aboutMyArtTitle'}}</h2>
     </div>
+
+    <section class="brand-section__content-container brand-section__content-container--light">
+      <div>
+        <p>
+          {{i18n 'commissions.aboutMyArtContent'}}
+        </p>
+        <a href="/commissions-portrait#price">{{i18n 'commissions.backToPriceList'}}</a>
+      </div>
+    </section>
   </div>
 </div>

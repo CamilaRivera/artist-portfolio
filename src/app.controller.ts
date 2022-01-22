@@ -1,41 +1,28 @@
 import { Controller, Get, Render, Req } from '@nestjs/common';
 import { translate } from './app.internationalization';
+import { getRandomDrawings } from './db.images';
 
 @Controller()
 export class AppController {
   @Get()
   @Render('index')
   root() {
-    const imagesBar = [
-      { url: '/images/image-1.jpg' },
-      { url: '/images/image-2.jpg' },
-      { url: '/images/image-3.jpg' },
-      { url: '/images/cat-portrait3.jpeg' },
-    ];
+    const imagesBar = getRandomDrawings();
+    console.log('imagesBar', imagesBar);
     return { message: translate('Hello world'), imagesBar };
   }
 
   @Get('/about')
   @Render('about')
   about() {
-    const imagesBar = [
-      { url: '/images/image-1.jpg' },
-      { url: '/images/image-2.jpg' },
-      { url: '/images/image-3.jpg' },
-      { url: '/images/cat-portrait3.jpeg' },
-    ];
+    const imagesBar = getRandomDrawings();
     return { title: 'About Page', imagesBar };
   }
 
   @Get('/faq')
   @Render('FAQ')
   FAQ() {
-    const imagesBar = [
-      { url: '/images/image-1.jpg' },
-      { url: '/images/image-2.jpg' },
-      { url: '/images/image-3.jpg' },
-      { url: '/images/cat-portrait3.jpeg' },
-    ];
+    const imagesBar = getRandomDrawings();
     return { title: 'FAQ Page', imagesBar };
   }
 
@@ -66,13 +53,7 @@ export class AppController {
       },
     ];
 
-    const imagesBar = [
-      { url: '/images/image-2.jpg' },
-      { url: '/images/cat-portrait2.jpeg' },
-      { url: '/images/dog-portrait.jpeg' },
-      { url: '/images/dog-portrait2.jpeg' },
-    ];
-
+    const imagesBar = getRandomDrawings();
     return { title: 'Commissions Portrait', priceBoxes, imagesBar };
   }
 }

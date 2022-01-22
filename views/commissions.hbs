@@ -1,23 +1,17 @@
 <div class="commissions-section">
   {{> imagesBar images=imagesBar}}
-  {{> mainSectionBar barTitle='commissions.orderYourPortrait' barSubTitle='commissions.text'}}
+  {{!-- {{> mainSectionBar barTitle='commissions.orderYourPortrait' barSubTitle='commissions.text'}} --}}
 
-
-  <div class="commission-section-container">
-    {{#each priceBoxes}}
-      {{> commissionPriceSection}}
-    {{/each}}
-  </div>
-
-  <div class="brand-section__sub-header">
-    <h3>{{i18n 'commissions.aboutMyArtTitle'}}</h3>
-  </div>
-  <section class="brand-section__content-container">
-    <div>
-      <p>
-        {{i18n 'commissions.aboutMyArtContent'}}
-      </p>
-      <a href="/commissions-portrait#price">{{i18n 'commissions.backToPriceList'}}</a>
+  <div class="section-wrapper">
+    <div class="brand-section__sub-header brand-section__sub-header--light">
+      <h1>
+        {{i18n 'commissions.orderYourPortrait'}}
+      </h1>
     </div>
-  </section>
+    <div class="commission-section-container">
+      {{#each priceBoxes}}
+        {{> commissionPriceSection}}
+      {{/each}}
+    </div>
+  </div>
 </div>

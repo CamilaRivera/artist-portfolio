@@ -1,14 +1,16 @@
 <div class="FAQ-section">
   {{> imagesBar images=imagesBar}}
-  <div class="brand-section__sub-header brand-section__sub-header--light">
-    <h1>
-      {{i18n 'faq.title'}}
-    </h1>
+  <div class="section-wrapper">
+    <div class="brand-section__sub-header brand-section__sub-header--light">
+      <h1>
+        {{i18n 'faq.title'}}
+      </h1>
+    </div>
+    <section class="brand-section__content-container brand-section__content-container--light">
+      {{> faqQuestionSection questionIndex='1'}}
+      {{> faqQuestionSection questionIndex='2'}}
+      {{> faqQuestionSection questionIndex='3'}}
+      {{> faqQuestionSection questionIndex='4'}}
+    </section>
   </div>
-  <section class="brand-section__content-container brand-section__content-container--light">
-    {{> faqQuestionSection questionIndex='1'}}
-    {{> faqQuestionSection questionIndex='2'}}
-    {{> faqQuestionSection questionIndex='3'}}
-    {{> faqQuestionSection questionIndex='4'}}
-  </section>
 </div>
