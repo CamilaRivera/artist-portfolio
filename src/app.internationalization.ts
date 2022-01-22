@@ -9,8 +9,11 @@ i18n.configure({
   objectNotation: true,
 });
 
-export const translate = (text) => {
-  return i18n.__(text);
+const isString = (value) =>
+  typeof value === 'string' || value instanceof String;
+
+export const translate = (...text) => {
+  return i18n.__(text.filter(isString).join('.'));
 };
 
 export const setLanguage = (lang) => {

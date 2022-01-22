@@ -1,6 +1,6 @@
 <div class="commissions-section">
   {{> imagesBar images=imagesBar}}
-  {{> mainSectionBar barTitle='commissions.order_your_portrait' barSubTitle='commissions.text'}}
+  {{> mainSectionBar barTitle='commissions.orderYourPortrait' barSubTitle='commissions.text'}}
 
 
   <div class="commission-section-container">
@@ -10,41 +10,14 @@
   </div>
 
   <div class="brand-section__sub-header">
-    <h3>About my art</h3>
+    <h3>{{i18n 'commissions.aboutMyArtTitle'}}</h3>
   </div>
   <section class="brand-section__content-container">
-    <ol class="brand-section__list">
-      <li class="brand-section__list-item">
-        <h2>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy?</h2>
-        <p>
-          text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-          specimen
-          book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-          Ipsum
-          passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum.</p>
-      </li>
-      <li class="brand-section__list-item">
-        <h2>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy?</h2>
-        <p>
-          text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-          specimen
-          book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-          Ipsum
-          passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum.</p>
-      </li>
-    </ol>
     <div>
+      <p>
+        {{i18n 'commissions.aboutMyArtContent'}}
+      </p>
       <a href="/commissions-portrait#price">{{i18n 'commissions.backToPriceList'}}</a>
     </div>
   </section>
-  <div class="brand-section__sub-header">
-    <h3>{{i18n 'commissions.bookYourPortraitTitle'}}</h3>
-    <p class="commission-book-portrait-details">{{i18n 'commissions.bookYourPortraitDetails'}}</p>
-  </div>
 </div>

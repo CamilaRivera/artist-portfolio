@@ -1,14 +1,22 @@
 {
 	"Hello world": "Hello world spanish",
 	"commissions": {
-		"order_your_portrait": "Ordena tu retrato",
-		"text": "commissions.text",
-		"currenciesInfo": "commissions.currenciesInfo",
-		"sizesInfo": "commissions.sizesInfo",
-		"footnote": "commissions.footnote",
-		"backToPriceList": "commissions.backToPriceList",
+		"orderYourPortrait": "Ordena tu retrato",
+		"text": "",
+		"currenciesInfo": "",
+		"sizesInfo": "Tamaños y Precios",
+		"footnote": "",
+		"backToPriceList": "< Volver a lista de precios",
 		"bookYourPortraitTitle": "commissions.bookYourPortraitTitle",
-		"bookYourPortraitDetails": "commissions.bookYourPortraitDetails"
+		"bookYourPortraitDetails": "commissions.bookYourPortraitDetails",
+		"singleSubjectBox": {
+			"title": "Retratos y Comisiones 1 sujeto"
+		},
+		"doubleSubjectBox": {
+			"title": "Retrato o Comisión doble (2 sujetos)"
+		},
+		"aboutMyArtTitle": "Sobre mi Arte",
+		"aboutMyArtContent": "Hago todos mis retratos con materiales profesionales que aseguran su durabilidad en el tiempo, ya sea con lapices de colores o con pasteles, sobre papel acuarela o pastelmat, eso se puede elegir al momento de solicitar un retrato, al igual que el fondo, con colores o ausente"
 	},
 	"navbar": {
 		"home": "Home",
@@ -17,8 +25,25 @@
 		"faq": "FAQ"
 	},
 	"faq": {
-		"title": "faq.title",
-		"subtitle": "faq.subtitle"
+		"title": "Preguntas Frecuentes",
+		"questions": {
+			"1": {
+				"question": "¿Debo pagar la comisión completa al hacer el encargo?",
+				"answer": "No, actualmente trabajo con el 50% al momento de la reserva o agendamiento y el 50% restante en la entrega."
+			},
+			"2": {
+				"question": "¿Cuánto puede demorar mi retrato?",
+				"answer": "Es variable entre 10 días a 3 semanas dependiendo del tamaño, desde la fecha del inicio del retrato."
+			},
+			"3": {
+				"question": "¿No tengo buenas fotos, puedo encargar un retrato?",
+				"answer": "Muchas veces no tenemos fotos de buena calidad sobre todo si son antiguas, siempre puedes consultar a mi correo, a veces con varias fotos puedo trabajar en un retrato, normalmente pido las que más le gusten al dueño y otra donde se puedan ver detalles de la cara del sujeto."
+			},
+			"4": {
+				"question": "¿Cómo hago un retrato a pedido?",
+				"answer": "Puedes enviarme un correo a flavia.canepa@gmail.com (sera buena idea? Derrepente es mejor una casilla de contacto), para comenzar, hablar de tamaños, fotos, etc."
+			}
+		}
 	},
 	"index": {
 		"title": "index.title",
@@ -32,6 +57,9 @@
 			"text": "index.faq.text"
 		}
 	},
-	"1 Subject": "1 Subject",
-	"2 Subject": "2 Subject"
+	"about": {
+		"title": "Sobre Mi",
+		"section1": "Dibujante autodidacta, Médico Veterinario, comencé a dibujar desde temprana edad, pero siempre como un pasatiempo, casi siempre animales de todo tipo, hace unos años comencé nuevamente a dibujar mascotas de amigos, lo cual hizo que trabajara en mejorar mis habilidades e invertir en materiales de excelente calidad.",
+		"section2": ""
+	}
 }

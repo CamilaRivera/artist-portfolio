@@ -27,7 +27,7 @@ export class AppController {
     return { title: 'About Page', imagesBar };
   }
 
-  @Get('/FAQ')
+  @Get('/faq')
   @Render('FAQ')
   FAQ() {
     const imagesBar = [
@@ -44,16 +44,18 @@ export class AppController {
   commissionsPortrait() {
     const priceBoxes = [
       {
-        title: translate('1 Subject'),
         image: '/images/cat-portrait2.jpeg',
+        prefix: 'singleSubjectBox',
         sizes: [
-          { size: { width: 21, height: 14 }, price: 350 },
-          { size: { width: 30, height: 24 }, price: 420 },
+          { size: { width: 18, height: 24 }, price: 70000 },
+          { size: { width: 20, height: 34 }, price: 110000 },
+          { size: { width: 30, height: 40 }, price: 150000 },
+          { size: { width: 50, height: 70 }, price: 270000 },
         ],
       },
       {
-        title: translate('2 Subject'),
         image: '/images/dog-portrait.jpeg',
+        prefix: 'doubleSubjectBox',
         sizes: [
           { size: { width: 21, height: 14 }, price: 350 },
           { size: { width: 30, height: 24 }, price: 420 },

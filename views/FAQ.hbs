@@ -1,75 +1,14 @@
 <div class="FAQ-section">
   {{> imagesBar images=imagesBar}}
-  {{> mainSectionBar barTitle='faq.title' barSubTitle='faq.subtitle'}}
   <div class="brand-section__sub-header brand-section__sub-header--light">
-    <h3>About Commissions</h3>
+    <h1>
+      {{i18n 'faq.title'}}
+    </h1>
   </div>
   <section class="brand-section__content-container brand-section__content-container--light">
-    <div class="brand-section__list-item">
-      <div class="brand-section__list-item-custom-bullet">
-        <i class="fas fa-question-circle fa-2x"></i>
-      </div>
-      <h2>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy?</h2>
-      <p>
-        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-        specimen
-        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-        Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-        Ipsum.</p>
-    </div>
-    <div class="brand-section__list-item">
-      <div class="brand-section__list-item-custom-bullet">
-        <i class="fas fa-question-circle fa-2x"></i>
-      </div>
-      <h2>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy?</h2>
-      <p>
-        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-        specimen
-        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-        Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-        Ipsum.</p>
-    </div>
-  </section>
-
-  <div class="brand-section__sub-header">
-    <h3>About my art</h3>
-  </div>
-  <section class="brand-section__content-container">
-    <div class="brand-section__list-item">
-      <div class="brand-section__list-item-custom-bullet">
-        <i class="fas fa-question-circle fa-2x"></i>
-      </div>
-      <h2>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy?</h2>
-      <p>
-        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-        specimen
-        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-        Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-        Ipsum.</p>
-    </div>
-    <div class="brand-section__list-item">
-      <div class="brand-section__list-item-custom-bullet">
-        <i class="fas fa-question-circle fa-2x"></i>
-      </div>
-      <h2>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy?</h2>
-      <p>
-        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-        specimen
-        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-        Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-        Ipsum.</p>
-    </div>
+    {{> faqQuestionSection questionIndex='1'}}
+    {{> faqQuestionSection questionIndex='2'}}
+    {{> faqQuestionSection questionIndex='3'}}
+    {{> faqQuestionSection questionIndex='4'}}
   </section>
 </div>

@@ -8,7 +8,16 @@
 		"footnote": "These prices include a gradient background of your choice of color. Subjects can be any of your choice, dog, cat, pet, person, horse, etc.",
 		"bookYourPortraitTitle": "Book your portrait",
 		"bookYourPortraitDetails": "To reserve your place on the waiting list a deposit of 200€ is required. Please add the portrait reservation deposit to your shopping cart to continue with the portrait order and proceed to checkout. After the payment is confirmed, you will receive an email confirmation with the order number. I will contact you within 24-72 hours to personally discuss your piece, the size you want, see the pictures and generally discuss what you have in mind. If before making your reservation you need to talk to me or need to consult or resolve doubts please contact me first so we can talk.",
-		"backToPriceList": "commissions.backToPriceList"
+		"backToPriceList": "commissions.backToPriceList",
+		"orderYourPortrait": "commissions.orderYourPortrait",
+		"singleSubjectBox": {
+			"title": "commissions.singleSubjectBox.title"
+		},
+		"doubleSubjectBox": {
+			"title": "commissions.doubleSubjectBox.title"
+		},
+		"aboutMyArtTitle": "commissions.aboutMyArtTitle",
+		"aboutMyArtContent": "commissions.aboutMyArtContent"
 	},
 	"1 Subject": "1 Subject",
 	"2 Subject": "2 Subject",
@@ -33,5 +42,10 @@
 			"link": "Check my F.A.Q",
 			"text": "I receive daily daily many messages asking various questions regarding my commission process, my techniques, materiales used, etc. I have compiled a F.A.Q. with all the answers and I update it regularly."
 		}
+	},
+	"about": {
+		"title": "about.title",
+		"section1": "about.section1",
+		"section2": "about.section2"
 	}
 }

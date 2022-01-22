@@ -19,9 +19,14 @@
 
 
 .brand-section__content-container {
-  padding: 6% 14% 6% 14%;
+  padding: 2rem;
   background-color: $brand-color;
   color: $brand-font-color;
+
+  > div {
+    max-width: $narrow-content-max-width;
+    margin: auto;
+  }
 }
 
 .brand-section__content-container--light {
