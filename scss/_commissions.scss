@@ -9,7 +9,7 @@
   color: $brand-font-color;
   margin: 4rem 1rem;
   min-height: 35rem;
-  max-width: $narrow-content-max-width;
+  max-width: 60rem;
   width: 100%;
 
   @include media-breakpoint-up(sm) {
@@ -32,7 +32,12 @@
 .commission-section__left,
 .commission-section__right {
   flex: 1;
+  width: 100%;
   text-align: center;
+  object-fit: cover;
+  @include media-breakpoint-up(sm) {
+    max-width: 50%;
+  }
 }
 
 .commission-section-price-box-container {

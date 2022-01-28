@@ -3,6 +3,10 @@
   min-height: 25rem;
   align-items: stretch;
   margin-bottom: 2rem;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 .image-bar-container__image {

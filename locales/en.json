@@ -8,19 +8,17 @@
 		"footnote": "These prices include a gradient background of your choice of color. Subjects can be any of your choice, dog, cat, pet, person, horse, etc.",
 		"bookYourPortraitTitle": "Book your portrait",
 		"bookYourPortraitDetails": "To reserve your place on the waiting list a deposit of 200€ is required. Please add the portrait reservation deposit to your shopping cart to continue with the portrait order and proceed to checkout. After the payment is confirmed, you will receive an email confirmation with the order number. I will contact you within 24-72 hours to personally discuss your piece, the size you want, see the pictures and generally discuss what you have in mind. If before making your reservation you need to talk to me or need to consult or resolve doubts please contact me first so we can talk.",
-		"backToPriceList": "commissions.backToPriceList",
-		"orderYourPortrait": "commissions.orderYourPortrait",
+		"backToPriceList": "< Back to price list",
+		"orderYourPortrait": "Order Your Portrait",
 		"singleSubjectBox": {
-			"title": "commissions.singleSubjectBox.title"
+			"title": "Portraits and commissions 1 subject"
 		},
 		"doubleSubjectBox": {
-			"title": "commissions.doubleSubjectBox.title"
+			"title": "Double portrait or two subjects commision"
 		},
-		"aboutMyArtTitle": "commissions.aboutMyArtTitle",
-		"aboutMyArtContent": "commissions.aboutMyArtContent"
+		"aboutMyArtTitle": "About my art",
+		"aboutMyArtContent": "I’m a self-taught artist, went to college and got my veterinarian degree, i started drawing at early age but always as a hobby, i like to draw all kind of animals, and a few years ago i started drawing friend's pets, which made me improve my skills and invest in quality materials."
 	},
-	"1 Subject": "1 Subject",
-	"2 Subject": "2 Subject",
 	"navbar": {
 		"home": "Home",
 		"commissions": "Commissions",
@@ -29,7 +27,25 @@
 	},
 	"faq": {
 		"title": "FAQ",
-		"subtitle": "MOST FREQUENT ASKED QUESTIONS BY CLIENTS AND ARTISTS"
+		"subtitle": "MOST FREQUENT ASKED QUESTIONS BY CLIENTS AND ARTISTS",
+		"questions": {
+			"1": {
+				"question": "Do I have to pay the whole portrait at once?",
+				"answer": "No, right now I take 50% at the moment you get assigned to the books, and the other 50% when is shipped or delivered"
+			},
+			"2": {
+				"question": "How long can my portrait take?",
+				"answer": "It’s variable between 10 days up to 3 weeks depending on size and the starting date of the portrait"
+			},
+			"3": {
+				"question": "I don't have good pictures, can i order a portrait?",
+				"answer": "Many times, we don't have the best quality photo, especially if they are old, you can always ask directly to my mail, i can work with more than one photo, usually one that likes the owner and other where you can see more details or colors"
+			},
+			"4": {
+				"question": "How do I order a portrait?",
+				"answer": "You can write me to flavia.canepa@gmail.com, to begin discussing sizes, photos, colors, etc."
+			}
+		}
 	},
 	"index": {
 		"title": "FLAVIA CANEPA",
@@ -44,8 +60,8 @@
 		}
 	},
 	"about": {
-		"title": "about.title",
-		"section1": "about.section1",
-		"section2": "about.section2"
+		"title": "About me",
+		"section1": "I work in all my portraits with professional art supplies, to ensure its archival quality and durability in time, you can choose if you want your portrait with a color gradient background or just flat, it can be made with colored pencils or pastels",
+		"section2": ""
 	}
 }

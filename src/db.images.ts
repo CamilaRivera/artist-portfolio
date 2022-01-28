@@ -1,34 +1,41 @@
 import { sampleSize } from 'lodash';
 
 export const imageFilenames = [
-  { name: 'Atom.jpg', alt: '' },
-  { name: 'Baco.jpg', alt: '' },
-  { name: 'Bowie.jpg', alt: '' },
-  { name: 'Briso.jpg', alt: '' },
-  { name: 'caballo.jpg', alt: '' },
-  { name: 'Cano.jpg', alt: '' },
-  { name: 'Coca.jpg', alt: '' },
-  { name: 'IMG_20210820_090530.jpg', alt: '' },
-  { name: 'img019.jpg', alt: '' },
-  { name: 'img025.jpg', alt: '' },
-  { name: 'img035.jpg', alt: '' },
-  { name: 'img038.jpg', alt: '' },
-  { name: 'img039.jpg', alt: '' },
-  { name: 'img041.jpg', alt: '' },
-  { name: 'img048.jpg', alt: '' },
-  { name: 'img054.jpg', alt: '' },
-  { name: 'img091.jpg', alt: '' },
-  { name: 'img094.jpg', alt: '' },
-  { name: 'img095.jpg', alt: '' },
-  { name: 'jack.jpg', alt: '' },
-  { name: 'Komatsu.jpg', alt: '' },
-  { name: 'lukas2.jpg', alt: '' },
-  { name: 'Malu.jpg', alt: '' },
-  { name: 'Negrita.jpg', alt: '' },
-  { name: 'sammy y benito tiny.jpg', alt: '' },
-  { name: 'Valentin.jpg', alt: '' },
+  { name: 'Atom.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Baco.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Bowie.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Briso.jpg', subjects: 1, alt: { en: '', es: '' } },
+  {
+    name: 'caballo.jpg',
+    subjects: 1,
+    alt: { en: 'Horse drawing', es: 'Dibujo caballo' },
+  },
+  { name: 'Cano.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Coca.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'IMG_20210820_090530.jpg', subjects: 2, alt: { en: '', es: '' } },
+  { name: 'img019.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img025.jpg', subjects: 2, alt: { en: '', es: '' } },
+  { name: 'img035.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img038.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img039.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img041.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img048.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img054.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img091.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img094.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'img095.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'jack.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Komatsu.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'lukas2.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Malu.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'Negrita.jpg', subjects: 1, alt: { en: '', es: '' } },
+  { name: 'sammy y benito tiny.jpg', subjects: 2, alt: { en: '', es: '' } },
+  { name: 'Valentin.jpg', subjects: 1, alt: { en: '', es: '' } },
 ];
 
-export const getRandomDrawings = () => {
-  return sampleSize(imageFilenames, 4);
+export const getRandomDrawings = (count = 4, subjects = undefined) => {
+  const imagesToUse = subjects
+    ? imageFilenames.filter((image) => image.subjects === subjects)
+    : imageFilenames;
+  return sampleSize(imagesToUse, count);
 };

@@ -1,4 +1,4 @@
-import { Controller, Get, Render, Req } from '@nestjs/common';
+import { Controller, Get, Render, Res } from '@nestjs/common';
 import { translate } from './app.internationalization';
 import { getRandomDrawings } from './db.images';
 
@@ -7,8 +7,7 @@ export class AppController {
   @Get()
   @Render('index')
   root() {
-    const imagesBar = getRandomDrawings();
-    console.log('imagesBar', imagesBar);
+    const imagesBar = getRandomDrawings(16);
     return { message: translate('Hello world'), imagesBar };
   }
 
@@ -28,31 +27,50 @@ export class AppController {
 
   @Get('/commissions-portrait')
   @Render('commissions')
-  commissionsPortrait() {
+  commissionsPortrait(@Res() res: Response) {
+    const lang = res.locals.lang.language;
     const priceBoxes = [
       {
-        image: '/images/cat-portrait2.jpeg',
+        image: getRandomDrawings(1, 1)[0],
         prefix: 'singleSubjectBox',
         sizes: [
-          { size: { width: 18, height: 24 }, price: 70000 },
-          { size: { width: 20, height: 34 }, price: 110000 },
-          { size: { width: 30, height: 40 }, price: 150000 },
-          { size: { width: 50, height: 70 }, price: 270000 },
+          {
+            size: { width: 18, height: 24 },
+            price: { es: 70000, en: 110 }[lang],
+          },
+          {
+            size: { width: 20, height: 34 },
+            price: { es: 110000, en: 140 }[lang],
+          },
+          {
+            size: { width: 30, height: 40 },
+            price: { es: 150000, en: 180 }[lang],
+          },
+          {
+            size: { width: 50, height: 70 },
+            price: { es: 270000, en: 350 }[lang],
+          },
         ],
       },
       {
-        image: '/images/dog-portrait.jpeg',
+        image: getRandomDrawings(1, 2)[0],
         prefix: 'doubleSubjectBox',
         sizes: [
-          { size: { width: 21, height: 14 }, price: 350 },
-          { size: { width: 30, height: 24 }, price: 420 },
-          { size: { width: 30, height: 24 }, price: 420 },
-          { size: { width: 30, height: 24 }, price: 420 },
-          { size: { width: 30, height: 24 }, price: 420 },
+          {
+            size: { width: 20, height: 34 },
+            price: { es: 150000, en: 180 }[lang],
+          },
+          {
+            size: { width: 30, height: 40 },
+            price: { es: 200000, en: 250 }[lang],
+          },
+          {
+            size: { width: 50, height: 70 },
+            price: { es: 330000, en: 300 }[lang],
+          },
         ],
       },
     ];
-
     const imagesBar = getRandomDrawings();
     return { title: 'Commissions Portrait', priceBoxes, imagesBar };
   }

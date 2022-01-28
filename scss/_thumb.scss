@@ -1,0 +1,108 @@
+.thumbs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: stretch;
+  max-width: 60rem;
+  margin: 10px auto;
+  resize: both;
+}
+/* last row overstretch fix */
+.thumbs:after {
+  content: "";
+  flex: 100 0 auto;
+}
+
+.thumb {
+  position: relative;
+  display: inline-block;
+  flex: 1 0 auto;
+  width: auto;
+  height: 20rem;
+  margin: 2px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  transition: box-shadow 300ms, transform 400ms, z-index 400ms, background-position 400ms;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.thumb:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+  transform: scale(1.2, 1.2);
+  z-index: 100;
+}
+
+// .thumb-img {
+//   background-size: cover;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+// .thumb-img:hover {
+//   animation-name: thumb-scroll;
+//   animation-delay: 400ms;
+//   animation-duration: 2.5s;
+//   animation-iteration-count: infinite;
+//   animation-direction: normal;
+//   animation-timing-function: linear;
+//   animation-fill-mode: forwards;
+// }
+// .thumb-img > img {
+//   display: block;
+//   height: 100%;
+//   opacity: 0;
+// }
+@keyframes thumb-scroll {
+  15%,
+  35% {
+    background-position: 0% 0%;
+  }
+  65%,
+  85% {
+    background-position: 100% 100%;
+  }
+}
+
+.thumb > div {
+  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  padding: 0px 2px;
+  overflow: hidden;
+}
+.thumb > div > span {
+  display: block;
+}
+.thumb > div > span:first-child {
+  font-weight: bold;
+}
+.thumb > div > span:last-child {
+  font-size: 0.8em;
+}
+
+.thumb-img > div {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.thumb-img > div > span {
+  font-size: 0.8em;
+}
+.thumb-img:hover > div {
+  opacity: 1;
+}
+
+.thumb-txt > div {
+  display: block;
+  width: auto;
+  height: 100%;
+}

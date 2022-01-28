@@ -1,7 +1,5 @@
 <div class="commission-section">
-  <div class="commission-section__left"
-    style="background-image: url('{{image}}')">
-  </div>
+  {{> responsiveImage image=image class='commission-section__left'}}
   <div class="commission-section__right">
     <h2 class="commission-section__title">{{i18n 'commissions' prefix 'title'}}</h2>
     <p>{{i18n 'commissions.currenciesInfo'}}</p>
