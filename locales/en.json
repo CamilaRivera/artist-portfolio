@@ -3,12 +3,12 @@
 	"commissions": {
 		"order_your_portrait": "Order your Portrait",
 		"text": "TAKE A LOOK AT ALL THE OPTIONS AVAILABLE FOR CREATING YOUR PORTRAIT",
-		"currenciesInfo": "Price is in PETRODOLARES, to check other currencies please visit http://www.xe.com",
+		"currenciesInfo": "Price is in USD",
 		"sizesInfo": "sizes are in cm / inches",
 		"footnote": "These prices include a gradient background of your choice of color. Subjects can be any of your choice, dog, cat, pet, person, horse, etc.",
 		"bookYourPortraitTitle": "Book your portrait",
 		"bookYourPortraitDetails": "To reserve your place on the waiting list a deposit of 200€ is required. Please add the portrait reservation deposit to your shopping cart to continue with the portrait order and proceed to checkout. After the payment is confirmed, you will receive an email confirmation with the order number. I will contact you within 24-72 hours to personally discuss your piece, the size you want, see the pictures and generally discuss what you have in mind. If before making your reservation you need to talk to me or need to consult or resolve doubts please contact me first so we can talk.",
-		"backToPriceList": "< Back to price list",
+		"backToPriceList": "< Go to price list",
 		"orderYourPortrait": "Order Your Portrait",
 		"singleSubjectBox": {
 			"title": "Portraits and commissions 1 subject"

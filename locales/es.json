@@ -3,10 +3,10 @@
 	"commissions": {
 		"orderYourPortrait": "Ordena tu retrato",
 		"text": "",
-		"currenciesInfo": "",
+		"currenciesInfo": "El precio esta en pesos chilenos (CLP)",
 		"sizesInfo": "Tamaños y Precios",
-		"footnote": "",
-		"backToPriceList": "< Volver a lista de precios",
+		"footnote": "El precio incluye un fondo de gradiente de color a su elección. Los sujetos pueden ser cualquiera a su elección, perro, gato, mascota, caballo, etc.",
+		"backToPriceList": "< Ir a lista de precios",
 		"bookYourPortraitTitle": "commissions.bookYourPortraitTitle",
 		"bookYourPortraitDetails": "commissions.bookYourPortraitDetails",
 		"singleSubjectBox": {
