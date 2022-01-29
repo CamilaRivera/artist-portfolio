@@ -4,10 +4,10 @@ $base-color: #fff;
 $brand-color: #03045e;
 $brand-color-light: lighten($brand-color, 10%);
 $brand-color-dark: darken($brand-color, 7%);
-$brand-color-secondary: #ade8f4;
-$brand-font-color-secondary: #03045e;
+$brand-color-secondary: #46549e;
+$brand-font-color-secondary: #fff;
 $brand-color-secondary-light: lighten($brand-color-secondary, 10%);
-$brand-font-color-secondary-light: #17253D;
+$brand-font-color-secondary-light: lighten($brand-font-color-secondary, 10%);;
 $brand-font-color: #fff;
 
 $narrow-content-max-width: 50rem;
