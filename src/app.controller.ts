@@ -25,7 +25,7 @@ export class AppController {
     return { title: 'FAQ Page', imagesBar };
   }
 
-  @Get('/commissions-portrait')
+  @Get('/commission-portrait')
   @Render('commissions')
   commissionsPortrait() {
     const priceBoxes = [

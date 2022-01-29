@@ -24,6 +24,7 @@ export class LanguageMiddleware implements NestMiddleware {
         enUrl: getChangeLanguageLink(req.protocol, url, 'en'),
         originalUrl: url,
       },
+      queryPath: req.originalUrl,
     };
     next();
   }

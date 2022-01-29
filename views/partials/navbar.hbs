@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="narbar__mobile-section">
-    <a class="navbar__home">
+    <a class="navbar__home" href="/">
       FLAVIA CANEPA
     </a>
     <a href="javascript: void(0)" class="navbar__toggle-button" onclick="toggleMenu()">
@@ -9,34 +9,34 @@
   </div>
   <ol class="navbar__links">
     <li class="navbar__item">
-      <a class="navbar__link" href="/">
+      <a class="navbar__link {{#if (equals queryPath '/')}}navbar__link--active{{/if}}" href="/">
         {{i18n 'navbar.home'}}
       </a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" href="/commissions-portrait">
+      <a class="navbar__link {{#if (equals queryPath '/commission-portrait')}}navbar__link--active{{/if}}" href="/commission-portrait">
         {{i18n 'navbar.commissions'}}
       </a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" href="/about">
+      <a class="navbar__link {{#if (equals queryPath '/about')}}navbar__link--active{{/if}}" href="/about">
         {{i18n 'navbar.aboutMe'}}
       </a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" href="/faq">
+      <a class="navbar__link {{#if (equals queryPath '/faq')}}navbar__link--active{{/if}}" href="/faq">
         {{i18n 'navbar.faq'}}
       </a>
     </li>
     <li class="navbar__item-divider">
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" href="{{lang.enUrl}}">
+      <a class="navbar__link {{#if (equals lang.language 'en')}}navbar__link--active{{/if}}" href="{{lang.enUrl}}">
         EN
       </a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" href="{{lang.esUrl}}">
+      <a class="navbar__link {{#if (equals lang.language 'es')}}navbar__link--active{{/if}}" href="{{lang.esUrl}}">
         ES
       </a>
     </li>
