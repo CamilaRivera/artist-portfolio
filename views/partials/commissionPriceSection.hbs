@@ -1,5 +1,5 @@
 <div class="commission-section">
-  {{> responsiveImage image=image class='commission-section__left'}}
+  {{> responsiveImage image=image class='commission-section__left' lang=lang}}
   <div class="commission-section__right">
     <h2 class="commission-section__title">{{i18n 'commissions' prefix 'title'}}</h2>
     <p>{{i18n 'commissions.currenciesInfo'}}</p>
@@ -11,7 +11,7 @@
             {{size.height}}x{{size.width}}cm / {{cmToInches size.height}}” x {{cmToInches size.width}}”
           </div>
           <div class="commission-section-price-box__price">
-            $ {{price}}
+            $ {{lookup price ../lang.language}}
           </div>
         </div>
       {{/each}}
