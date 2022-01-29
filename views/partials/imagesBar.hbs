@@ -1,5 +1,6 @@
 <div class="image-bar-container">
   {{#each images}}
-    <div class="image-bar-container__image" style="background-image: url('/images/drawings/1x/{{name}}')"></div>
+    {{!-- <div class="image-bar-container__image" style="background-image: url('/images/drawings/1x/{{name}}')"></div> --}}
+    {{> responsiveImage image=this class='image-bar-container__image' lang=../lang}}
   {{/each}}
 </div>

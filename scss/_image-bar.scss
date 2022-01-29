@@ -1,8 +1,10 @@
 .image-bar-container {
   display: flex;
-  min-height: 25rem;
+  height: 20rem;
   align-items: stretch;
   margin-bottom: 2rem;
+  overflow: hidden;
+  justify-content: center;
 
   @include media-breakpoint-down(sm) {
     display: none;
@@ -11,9 +13,7 @@
 
 .image-bar-container__image {
   flex: 1;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: top;
+  object-fit: cover;
 
   &:nth-child(n + 2) {
     @include media-breakpoint-down(sm) {
