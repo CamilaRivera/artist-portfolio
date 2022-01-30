@@ -1,4 +1,8 @@
 <img
   src="/images/drawings/1x/{{image.name}}"
   alt="{{lookup image.alt lang.language}}"
-  class="{{class}}">
+  class="{{class}}"
+  srcset="/images/drawings/1x/{{image.name}} {{image.dimension.w}}w,
+          /images/drawings/2x/{{image.name}} {{multiply image.dimension.w 2}}w,
+          /images/drawings/3x/{{image.name}} {{multiply image.dimension.w 3}}w,
+          /images/drawings/4x/{{image.name}} {{multiply image.dimension.w 4}}w">
