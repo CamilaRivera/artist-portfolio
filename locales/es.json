@@ -16,7 +16,12 @@
 			"title": "Retrato o Comisión doble (2 sujetos)"
 		},
 		"aboutMyArtTitle": "Sobre mi Arte",
-		"aboutMyArtContent": "Hago todos mis retratos con materiales profesionales que aseguran su durabilidad en el tiempo, ya sea con lapices de colores o con pasteles, sobre papel acuarela o pastelmat, eso se puede elegir al momento de solicitar un retrato, al igual que el fondo, con colores o ausente"
+		"aboutMyArtContent": "Hago todos mis retratos con materiales profesionales que aseguran su durabilidad en el tiempo, ya sea con lapices de colores o con pasteles, sobre papel acuarela o pastelmat, eso se puede elegir al momento de solicitar un retrato, al igual que el fondo, con colores o ausente",
+		"head": {
+			"title": "Ordena tu retrato",
+			"description": "commissions.head.description",
+			"keywords": "commissions.head.keywords"
+		}
 	},
 	"navbar": {
 		"home": "Home",
@@ -41,8 +46,13 @@
 			},
 			"4": {
 				"question": "¿Cómo hago un retrato a pedido?",
-				"answer": "Puedes enviarme un correo a flavia.canepa@gmail.com (sera buena idea? Derrepente es mejor una casilla de contacto), para comenzar, hablar de tamaños, fotos, etc."
+				"answer": "Puedes enviarme un correo a flavia.canepa+commissions@gmail.com, para comenzar, hablar de tamaños, fotos, etc."
 			}
+		},
+		"head": {
+			"title": "Preguntas Frecuentes",
+			"description": "faq.head.description",
+			"keywords": "faq.head.keywords"
 		}
 	},
 	"index": {
@@ -55,11 +65,21 @@
 		"faq": {
 			"link": "index.faq.link",
 			"text": "index.faq.text"
+		},
+		"head": {
+			"title": "Flavia Canepa - Artista de Retratos",
+			"description": "index.head.description",
+			"keywords": "index.head.keywords"
 		}
 	},
 	"about": {
 		"title": "Sobre Mi",
 		"section1": "Dibujante autodidacta, Médico Veterinario, comencé a dibujar desde temprana edad, pero siempre como un pasatiempo, casi siempre animales de todo tipo, hace unos años comencé nuevamente a dibujar mascotas de amigos, lo cual hizo que trabajara en mejorar mis habilidades e invertir en materiales de excelente calidad.",
-		"section2": ""
+		"section2": "",
+		"head": {
+			"title": "Sobre Mi y mi Arte",
+			"description": "about.head.description",
+			"keywords": "about.head.keywords"
+		}
 	}
 }

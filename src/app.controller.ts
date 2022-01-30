@@ -1,5 +1,4 @@
 import { Controller, Get, Render } from '@nestjs/common';
-import { translate } from './app.internationalization';
 import { getRandomDrawings } from './db.images';
 
 @Controller()
@@ -7,27 +6,47 @@ export class AppController {
   @Get()
   @Render('index')
   root() {
+    const headSlug = {
+      title: 'index.head.title',
+      description: 'index.head.description',
+      keywords: 'index.head.keywords',
+    };
     const imagesBar = getRandomDrawings(16);
-    return { message: translate('Hello world'), imagesBar };
+    return { headSlug, imagesBar };
   }
 
   @Get('/about')
   @Render('about')
   about() {
+    const headSlug = {
+      title: 'about.head.title',
+      description: 'about.head.description',
+      keywords: 'about.head.keywords',
+    };
     const imagesBar = getRandomDrawings();
-    return { title: 'About Page', imagesBar };
+    return { headSlug, imagesBar };
   }
 
   @Get('/faq')
   @Render('FAQ')
   FAQ() {
+    const headSlug = {
+      title: 'faq.head.title',
+      description: 'faq.head.description',
+      keywords: 'faq.head.keywords',
+    };
     const imagesBar = getRandomDrawings();
-    return { title: 'FAQ Page', imagesBar };
+    return { headSlug, imagesBar };
   }
 
   @Get('/commission-portrait')
   @Render('commissions')
   commissionsPortrait() {
+    const headSlug = {
+      title: 'commissions.head.title',
+      description: 'commissions.head.description',
+      keywords: 'commissions.head.keywords',
+    };
     const priceBoxes = [
       {
         image: getRandomDrawings(1, 1)[0],
@@ -71,6 +90,6 @@ export class AppController {
       },
     ];
     const imagesBar = getRandomDrawings();
-    return { title: 'Commissions Portrait', priceBoxes, imagesBar };
+    return { headSlug, priceBoxes, imagesBar };
   }
 }
