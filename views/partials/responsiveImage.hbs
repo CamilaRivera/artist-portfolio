@@ -2,6 +2,9 @@
   src="/images/drawings/1x/{{image.name}}"
   alt="{{lookup image.alt lang.language}}"
   class="{{class}}"
+  sizes="(min-width: 1000px) 25vw,
+         (min-width: 600px) 50vw,
+         100vw"
   srcset="/images/drawings/1x/{{image.name}} {{image.dimension.w}}w,
           /images/drawings/2x/{{image.name}} {{multiply image.dimension.w 2}}w,
           /images/drawings/3x/{{image.name}} {{multiply image.dimension.w 3}}w,
