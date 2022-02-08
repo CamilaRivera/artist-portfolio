@@ -83,6 +83,9 @@ body {
   font-weight: 300;
   color: $base-font-color;
   line-height: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $base-color;
 }
 
 .uppercase {
