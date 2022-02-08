@@ -152,6 +152,7 @@ body {
   left: 0;
   bottom: 0;
   background-color: #000000b0;
+  overflow: auto;
 }
 
 .maximized-image-container img {
@@ -162,14 +163,22 @@ body {
 
 .maximized-image-container__close-button {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  padding: 1rem;
   z-index: 20;
   background: none;
   border: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
+  top: 0;
+  right: 0;
+  background-color: $brand-color;
+
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 .maximized-image-container:after {
@@ -177,9 +186,13 @@ body {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 18rem 10rem 0;
+  border-width: 0 10rem 5rem 0;
   border-color: transparent $brand-color transparent transparent;
   right: 0;
   top: 0;
-  position: absolute;
+  position: fixed;
+
+  @include media-breakpoint-up(md) {
+    border-width: 0 18rem 10rem 0;
+  }
 }
