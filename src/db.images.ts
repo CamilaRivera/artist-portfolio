@@ -152,7 +152,7 @@ export const imageFilenames = [
     alt: { en: 'Dog drawing, one subject', es: 'Dibujo perro, un sujeto' },
   },
   {
-    name: 'sammy y benito tiny.jpg',
+    name: 'sammy_y_benito_tiny.jpg',
     subjects: 2,
     dimension: { w: 500, h: 511 },
     alt: {
