@@ -2,9 +2,11 @@
   src="/images/drawings/1x/{{image.name}}"
   alt="{{lookup image.alt lang.language}}"
   class="{{class}}"
-  sizes="(min-width: 1000px) 25vw,
-         (min-width: 600px) 50vw,
-         100vw"
+  {{#if sizes}}
+  sizes="{{sizes}}"
+  {{else}}
+  sizes="(min-width: 1000px) 25vw, (min-width: 600px) 50vw, 100vw"
+  {{/if}}
   srcset="/images/drawings/1x/{{image.name}} {{image.dimension.w}}w,
           /images/drawings/2x/{{image.name}} {{multiply image.dimension.w 2}}w,
           /images/drawings/3x/{{image.name}} {{multiply image.dimension.w 3}}w,
@@ -12,5 +14,5 @@
   data-image-width="{{multiply image.dimension.w 4}}"
   data-image-height="{{multiply image.dimension.h 4}}"
   {{#if onclick}}
-    onclick="{{onclick}}"
+  onclick="{{onclick}}"
   {{/if}}>

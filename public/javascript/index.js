@@ -41,6 +41,7 @@ function closeMaximizedImage() {
 }
 
 function resetZoom(maximizedImageTag) {
+  maximizedImageTag.setAttribute('sizes', '100vw');
   maximizedImageTag.style.maxWidth = '100%';
   maximizedImageTag.style.maxHeight = '100%';
   maximizedImageTag.style.width = null;
@@ -54,6 +55,11 @@ function toggleZoom(maximizedImageTag) {
   ) {
     maximizedImageTag.style.maxWidth = 'none';
     maximizedImageTag.style.maxHeight = 'none';
+    maximizedImageTag.style.maxHeight = 'none';
+    maximizedImageTag.setAttribute(
+      'sizes',
+      `${maximizedImageTag.getAttribute('data-image-width')}px`,
+    );
     maximizedImageTag.style.width = `${maximizedImageTag.getAttribute(
       'data-image-width',
     )}px`;
