@@ -42,6 +42,11 @@ async function bootstrap() {
   hbs.registerHelper('cmToInches', (value) => (0.393701 * value).toFixed(1));
   hbs.registerHelper('equals', (value1, value2) => value1 === value2);
   hbs.registerHelper('multiply', (value1, value2) => value1 * value2);
+  hbs.registerHelper(
+    'createFunctionCall',
+    (functionName, ...value) =>
+      `${functionName}(${value.slice(0, -1).join(', ')})`,
+  );
 
   app.use(
     sassMiddleware({

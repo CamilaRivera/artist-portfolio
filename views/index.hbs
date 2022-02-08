@@ -1,6 +1,21 @@
 {{> mainSectionBar barTitle='index.title' barSubTitle='index.subtitle'}}
 <div class="thumbs">
-  {{#each imagesBar}}
-    {{> responsiveImage image=this class='thumb' lang=../lang}}
-  {{/each}}
+  
+</div>
+<div class="image-carousel" id="index-carousel">
+  {{> responsiveImage image=imagesBar.[0] class='image-carousel__main-image' lang=lang onclick='maximizeImage(this)'}}
+  <div class="image-carousel__image-thumb-container">
+    {{#each imagesBar}}
+      {{> responsiveImage image=this class='thumb' lang=../lang onclick=(createFunctionCall 'selectCorouselImage' 'this' @index '"index-carousel"')}}
+    {{/each}}
+  </div>
+</div>
+<div class="maximized-image-container">
+  <button
+    class="maximized-image-container__close-button"
+    onclick="closeMaximizedImage()"
+    aria-label="{{i18n 'close'}}">
+    <span aria-hidden="true">&times; {{i18n 'close'}}</span>
+  </button>
+  {{> responsiveImage image=imagesBar.[0] lang=lang}}
 </div>

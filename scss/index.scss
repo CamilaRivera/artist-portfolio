@@ -12,6 +12,7 @@
 @import 'commissions';
 @import 'FAQ';
 @import 'image-bar';
+@import 'carousel';
 @import 'brand-section';
 @import 'main-section-bar';
 
@@ -140,4 +141,39 @@ body {
     background-color: $brand-color-secondary;
     border-color: $brand-color-secondary;
   }
+}
+
+.maximized-image-container {
+  position: fixed;
+  z-index: 10;
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000000b0;
+}
+
+.maximized-image-container__close-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 20;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.maximized-image-container:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 18rem 10rem 0;
+  border-color: transparent $brand-color transparent transparent;
+  right: 0;
+  top: 0;
+  position: absolute;
 }

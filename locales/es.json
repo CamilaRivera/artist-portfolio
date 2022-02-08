@@ -81,5 +81,6 @@
 			"description": "about.head.description",
 			"keywords": "about.head.keywords"
 		}
-	}
+	},
+	"close": "Cerrar"
 }
