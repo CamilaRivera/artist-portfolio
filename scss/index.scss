@@ -83,9 +83,14 @@ body {
   font-weight: 300;
   color: $base-font-color;
   line-height: 1.6rem;
+  background-color: $base-color;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
-  background-color: $base-color;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .uppercase {

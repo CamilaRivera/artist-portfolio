@@ -106,6 +106,10 @@ ol > .brand-section__list-item {
 .brand-section__list-item-custom-bullet {
   position: absolute;
   left: -3rem;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 .section-wrapper {

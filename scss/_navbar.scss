@@ -1,7 +1,6 @@
 .navbar {
   background-color: $brand-color-secondary;
   color: $brand-font-color-secondary;
-  min-height: 5rem;
   padding: 0 3.75rem;
   display: flex;
   flex-direction: column;
@@ -64,6 +63,12 @@
 
 .navbar__link--active {
   border-bottom: 2px solid $brand-font-color-secondary;
+
+  @include media-breakpoint-down(sm) {
+    background-color: #ffffff17;
+    padding-right: 2rem;
+    border-color: transparent;
+  }
 }
 
 .navbar__item-divider {
@@ -71,6 +76,7 @@
 }
 
 .navbar__toggle-button {
+  color: $brand-font-color-secondary;
   @include media-breakpoint-up(md) {
     display: none;
   }

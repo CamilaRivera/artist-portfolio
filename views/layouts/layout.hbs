@@ -23,9 +23,13 @@
 </head>
 
 <body>
-  {{> navbar}}
-  {{{body}}}
-  {{> footer}}
+  <div class="main-container">
+    <div>
+      {{> navbar}}
+      {{{body}}}
+    </div>
+    {{> footer}}
+  </div>
   <script type="text/javascript" src="/javascript/index.js"></script>
 </body>
 
