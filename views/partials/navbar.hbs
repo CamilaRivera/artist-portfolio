@@ -24,6 +24,11 @@
       </a>
     </li>
     <li class="navbar__item">
+      <a class="navbar__link {{#if (equals queryPath '/contact')}}navbar__link--active{{/if}}" href="/contact">
+        {{i18n 'navbar.contact'}}
+      </a>
+    </li>
+    <li class="navbar__item">
       <a class="navbar__link {{#if (equals queryPath '/faq')}}navbar__link--active{{/if}}" href="/faq">
         {{i18n 'navbar.faq'}}
       </a>

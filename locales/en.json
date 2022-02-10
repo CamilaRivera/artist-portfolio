@@ -28,7 +28,8 @@
 		"home": "Home",
 		"commissions": "Commissions",
 		"aboutMe": "About Me",
-		"faq": "FAQ"
+		"faq": "FAQ",
+		"contact": "Contact"
 	},
 	"faq": {
 		"title": "FAQ",
@@ -84,5 +85,18 @@
 			"keywords": "portrait, art, pastel, colored pencils, drawing, pets"
 		}
 	},
-	"close": "Close"
+	"close": "Close",
+	"contactForm": {
+		"inputs": {
+			"name": "Name",
+			"type": "Commission type",
+			"body": "Additional information"
+		}
+	},
+	"contact": {
+		"head": {
+			"title": "Contact - Commission portrait"
+		}
+	},
+	"": ""
 }

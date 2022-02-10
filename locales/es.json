@@ -27,7 +27,8 @@
 		"home": "Home",
 		"commissions": "Pedidos",
 		"aboutMe": "Sobre Mi",
-		"faq": "FAQ"
+		"faq": "FAQ",
+		"contact": "Contacto"
 	},
 	"faq": {
 		"title": "Preguntas Frecuentes",
@@ -82,5 +83,21 @@
 			"keywords": "about.head.keywords"
 		}
 	},
-	"close": "Cerrar"
+	"close": "Cerrar",
+	"contact": {
+		"head": {
+			"title": "Contacto - Ordernar retrato"
+		}
+	},
+	"contactForm": {
+		"inputs": {
+			"name": "Nombre",
+			"type": "Tipo de retrato",
+			"body": "Información adicional"
+		},
+		"errors": {
+			"name": "contactForm.errors.name"
+		}
+	},
+	"": ""
 }

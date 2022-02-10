@@ -1,8 +1,14 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render } from '@nestjs/common';
 import { getRandomDrawings } from './db.images';
+import { AppService } from './app.service';
+import { getCommisionsPriceOptions } from './utils/utils.commisions';
+import { ContactForm } from './types/ContactForm';
+import { getContactFormContext, validateFormData } from './utils/utils.contactForm';
 
 @Controller()
 export class AppController {
+  constructor(private readonly appService: AppService) {}
+
   @Get()
   @Render('index')
   root() {
@@ -47,49 +53,26 @@ export class AppController {
       description: 'commissions.head.description',
       keywords: 'commissions.head.keywords',
     };
-    const priceBoxes = [
-      {
-        image: getRandomDrawings(1, 1)[0],
-        prefix: 'singleSubjectBox',
-        sizes: [
-          {
-            size: { width: 18, height: 24 },
-            price: { es: 70000, en: 110 },
-          },
-          {
-            size: { width: 20, height: 34 },
-            price: { es: 110000, en: 140 },
-          },
-          {
-            size: { width: 30, height: 40 },
-            price: { es: 150000, en: 180 },
-          },
-          {
-            size: { width: 50, height: 70 },
-            price: { es: 270000, en: 350 },
-          },
-        ],
-      },
-      {
-        image: getRandomDrawings(1, 2)[0],
-        prefix: 'doubleSubjectBox',
-        sizes: [
-          {
-            size: { width: 20, height: 34 },
-            price: { es: 150000, en: 180 },
-          },
-          {
-            size: { width: 30, height: 40 },
-            price: { es: 200000, en: 250 },
-          },
-          {
-            size: { width: 50, height: 70 },
-            price: { es: 330000, en: 300 },
-          },
-        ],
-      },
-    ];
+    const priceBoxes = getCommisionsPriceOptions();
     const imagesBar = getRandomDrawings();
     return { headSlug, priceBoxes, imagesBar };
+  }
+
+  @Get('/contact')
+  @Render('contact')
+  contact() {
+    return getContactFormContext();
+  }
+
+  @Post('/contact')
+  @Render('contact')
+  contactProcess(@Body() formData: ContactForm) {
+    console.log('formData', formData);
+    const errors = validateFormData(formData);
+    if (Object.keys(errors).length === 0) {
+      this.appService.sendContactEmail(formData);
+      return { success: true };
+    }
+    return { errors, ...getContactFormContext() };
   }
 }
