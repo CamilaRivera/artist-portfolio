@@ -87,7 +87,9 @@
 	"contact": {
 		"head": {
 			"title": "Contacto - Ordernar retrato"
-		}
+		},
+		"header": "Contacto - Ordernar retrato",
+		"successMessage": "contact.successMessage"
 	},
 	"contactForm": {
 		"inputs": {
@@ -96,8 +98,12 @@
 			"body": "Información adicional"
 		},
 		"errors": {
-			"name": "contactForm.errors.name"
-		}
-	},
-	"": ""
+			"name": "Ingrese su nombre",
+			"type": "Seleccione un tipo de retrato",
+			"email": "Ingrese un correo"
+		},
+		"singleSubjectBox": "1 Sujeto",
+		"doubleSubjectBox": "2 Sujetos",
+		"submit": "Cotizar retrato"
+	}
 }

@@ -22,5 +22,5 @@ export const getContactFormContext = () => {
     keywords: 'contact.head.keywords',
   };
   const priceBoxes = getCommisionsPriceOptions();
-  return { headSlug, priceBoxes };
+  return { headSlug, priceBoxes, data: {} };
 };

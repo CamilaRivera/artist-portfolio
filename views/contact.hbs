@@ -1,5 +1,37 @@
-{{#if success}}
-  <h1>SUBMITTED FORM</h1>
-{{else}}
-  {{> contactForm priceBoxes=priceBoxes}}
-{{/if}}
+<div class="section-wrapper mt-2">
+  <div class="brand-section__sub-header brand-section__sub-header--light">
+    <h1>
+      {{i18n 'contact.header'}}
+    </h1>
+  </div>
+  {{#if success}}
+    <h2>{{i18n 'contact.successMessage'}}</h2>
+    {{> contactForm priceBoxes=priceBoxes data=data disabled=true lang=lang}}
+    <h2>{{i18n 'contact.successMessage'}}</h2>
+  {{else}}
+    {{> contactForm priceBoxes=priceBoxes data=data disabled=false lang=lang}}
+  {{/if}}
+</div>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeaJXAeAAAAAJ5hItX8L1EnrfTjjgfU5c_LDood"></script>
+<script>
+  const form = document.querySelector('.contact-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LeaJXAeAAAAAJ5hItX8L1EnrfTjjgfU5c_LDood', {action: 'contact'}).then(function(token) {
+        const tokenInput = document.createElement('input');
+        tokenInput.setAttribute('value', token);
+        tokenInput.setAttribute('type', 'hidden');
+        tokenInput.setAttribute('name', 'token');
+
+        // Remove listener
+        const formClone = form.cloneNode(true);
+        formClone.appendChild(tokenInput);
+        form.parentNode.replaceChild(formClone, form);
+
+        formClone.submit();
+      });
+    });
+  });
+  </script>

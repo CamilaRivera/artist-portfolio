@@ -14,7 +14,7 @@ import { AppModule } from './app.module';
 import * as sassMiddleware from 'node-sass-middleware';
 import hbs = require('hbs');
 import hbsutilsLib = require('hbs-utils');
-import { translate } from './app.internationalization';
+import { getLanguage, translate } from './app.internationalization';
 
 const hbsutils = hbsutilsLib(hbs);
 
@@ -41,6 +41,14 @@ async function bootstrap() {
   hbs.registerHelper('i18n', translate);
   hbs.registerHelper('cmToInches', (value) => (0.393701 * value).toFixed(1));
   hbs.registerHelper('equals', (value1, value2) => value1 === value2);
+  hbs.registerHelper('pluralize', (word, quantity) =>
+    quantity <= 1 ? word : `${word}s`,
+  );
+  hbs.registerHelper('formatCurrency', (value) =>
+    value
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, getLanguage() === 'es' ? '.' : ','),
+  );
   hbs.registerHelper('multiply', (value1, value2) => value1 * value2);
   hbs.registerHelper(
     'createFunctionCall',

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-
 @import 'mixins';
 @import 'bootstrap4/bootstrap-mixins';
 @import 'bootstrap4/variables';
@@ -15,6 +14,7 @@
 @import 'carousel';
 @import 'brand-section';
 @import 'main-section-bar';
+@import 'contactForm';
 
 $index-link-card-width: 25rem;
 
@@ -203,4 +203,8 @@ body {
   @include media-breakpoint-up(md) {
     border-width: 0 18rem 10rem 0;
   }
+}
+
+.mt-2 {
+  margin-top: 2rem;
 }

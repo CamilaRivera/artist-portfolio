@@ -1,9 +1,13 @@
-import { Body, Controller, Get, Post, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render, UseGuards } from '@nestjs/common';
 import { getRandomDrawings } from './db.images';
 import { AppService } from './app.service';
 import { getCommisionsPriceOptions } from './utils/utils.commisions';
 import { ContactForm } from './types/ContactForm';
-import { getContactFormContext, validateFormData } from './utils/utils.contactForm';
+import {
+  getContactFormContext,
+  validateFormData,
+} from './utils/utils.contactForm';
+import { RecaptchaGuard } from './guard.recaptcha';
 
 @Controller()
 export class AppController {
@@ -66,6 +70,7 @@ export class AppController {
 
   @Post('/contact')
   @Render('contact')
+  @UseGuards(RecaptchaGuard)
   contactProcess(@Body() formData: ContactForm) {
     console.log('formData', formData);
     const errors = validateFormData(formData);
@@ -73,6 +78,6 @@ export class AppController {
       this.appService.sendContactEmail(formData);
       return { success: true };
     }
-    return { errors, ...getContactFormContext() };
+    return { ...getContactFormContext(), errors, data: formData };
   }
 }

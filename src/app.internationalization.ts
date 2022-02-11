@@ -20,6 +20,8 @@ export const setLanguage = (lang) => {
   i18n.setLocale(lang);
 };
 
+export const getLanguage = () => i18n.getLocale();
+
 export const getChangeLanguageLink = (protocol, url, lang) => {
   if (url.startsWith('en') || url.startsWith('es')) {
     // Language already included

@@ -11,7 +11,7 @@
             {{size.height}} x {{size.width}}cm / {{cmToInches size.height}}” x {{cmToInches size.width}}”
           </div>
           <div class="commission-section-price-box__price">
-            $ {{lookup price ../lang.language}}
+            $ {{formatCurrency (lookup price ../lang.language)}}
           </div>
         </div>
       {{/each}}

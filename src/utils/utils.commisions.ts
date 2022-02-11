@@ -3,6 +3,7 @@ import { getRandomDrawings } from 'src/db.images';
 export const getCommisionsPriceOptions = () => {
   return [
     {
+      subjects: 1,
       image: getRandomDrawings(1, 1)[0],
       prefix: 'singleSubjectBox',
       sizes: [
@@ -25,6 +26,7 @@ export const getCommisionsPriceOptions = () => {
       ],
     },
     {
+      subjects: 2,
       image: getRandomDrawings(1, 2)[0],
       prefix: 'doubleSubjectBox',
       sizes: [

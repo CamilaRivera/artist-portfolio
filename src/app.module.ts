@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, HttpModule } from '@nestjs/common';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -7,6 +7,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 
 @Module({
   imports: [
+    HttpModule,
     MailerModule.forRootAsync({
       useFactory: () => ({
         transport: {
@@ -14,7 +15,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
           port: 587,
           secure: false, // upgrade later with STARTTLS
           auth: {
-            user: 'xxx@gmail.com',
+            user: 'xxx@xxx.xxx',
             pass: 'xxx',
           },
         },

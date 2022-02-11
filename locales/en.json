@@ -91,12 +91,20 @@
 			"name": "Name",
 			"type": "Commission type",
 			"body": "Additional information"
-		}
+		},
+		"singleSubjectBox": "1 Subject",
+		"doubleSubjectBox": "2 Subjects",
+		"errors": {
+			"name": "Enter your name",
+			"email": "Enter an email address",
+			"type": "Select a portrait type"
+		},
+		"submit": "Contact"
 	},
 	"contact": {
 		"head": {
 			"title": "Contact - Commission portrait"
-		}
-	},
-	"": ""
+		},
+		"header": "Contact - Commission portrait"
+	}
 }
