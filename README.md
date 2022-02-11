@@ -34,6 +34,8 @@ $ npm install
 
 ## Running the app
 
+Prepare `config.env` copying `config/development.env`
+
 ```bash
 # development
 $ npm run start
@@ -59,6 +61,8 @@ $ npm run test:cov
 ```
 
 ## Production
+
+Prepare `config.env` copying `config/production.env` and add keys
 
 ```bash
 # install dependencies

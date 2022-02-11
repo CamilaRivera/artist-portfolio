@@ -15,12 +15,12 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
           port: 587,
           secure: false, // upgrade later with STARTTLS
           auth: {
-            user: 'xxx@xxx.xxx',
-            pass: 'xxx',
+            user: process.env.SMTP_EMAIL,
+            pass: process.env.SMTP_PASS,
           },
         },
         defaults: {
-          from: 'xxx@gmail.com',
+          from: process.env.SMTP_EMAIL,
         },
         template: {
           dir: process.cwd() + '/views/',

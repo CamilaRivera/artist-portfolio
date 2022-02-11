@@ -15,7 +15,7 @@ export class RecaptchaGuard implements CanActivate {
     console.log('RecaptchaGuard body', body.token);
     const { data } = await this.httpService
       .post(
-        `https://www.google.com/recaptcha/api/siteverify?response=${body.token}&secret=<SECRET>`,
+        `https://www.google.com/recaptcha/api/siteverify?response=${body.token}&secret=${process.env.RECAPTCH_V3_SECRET}`,
       )
       .toPromise();
 
