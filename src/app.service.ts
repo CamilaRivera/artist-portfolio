@@ -13,7 +13,7 @@ export class AppService {
   public sendContactEmail(formData: ContactForm): void {
     this.mailerService
       .sendMail({
-        to: 'aldocanepag@gmail.com', // List of receivers email address
+        to: process.env.TARGET_EMAIL, // List of receivers email address
         // from: 'user@outlook.com', // Senders email address
         subject: `[Contacto retrato] - ${formData.name} - ${formData.type}`,
         template: __dirname + '/contactEmail', // The `.pug` or `.hbs` extension is appended automatically.
