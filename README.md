@@ -75,7 +75,7 @@ $ npm run build
 $ screen -R
 
 # run production server
-$ npm run start:prod
+$ NODE_ENV=production npm run start:prod
 ```
 
 ## Support
