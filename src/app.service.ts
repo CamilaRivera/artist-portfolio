@@ -18,6 +18,7 @@ export class AppService {
         subject: `[Contacto retrato] - ${formData.name} - ${formData.type}`,
         template: __dirname + '/contactEmail', // The `.pug` or `.hbs` extension is appended automatically.
         context: formData,
+        replyTo: formData.email,
       })
       .then((success) => {
         console.log('Success sending contact email', success);
