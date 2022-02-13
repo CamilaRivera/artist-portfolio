@@ -92,7 +92,8 @@
 		"inputs": {
 			"name": "Name",
 			"type": "Commission type",
-			"body": "Additional information"
+			"body": "Additional information",
+			"otherOption": "3 Subjects / Other"
 		},
 		"singleSubjectBox": "1 Subject",
 		"doubleSubjectBox": "2 Subjects",

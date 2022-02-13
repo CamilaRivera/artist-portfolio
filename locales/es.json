@@ -97,7 +97,8 @@
 		"inputs": {
 			"name": "Nombre",
 			"type": "Tipo de retrato",
-			"body": "Información adicional"
+			"body": "Información adicional",
+			"otherOption": "3 Sujetos / Otro"
 		},
 		"errors": {
 			"name": "Ingrese su nombre",

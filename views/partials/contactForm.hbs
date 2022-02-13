@@ -33,6 +33,9 @@
             </option>
           {{/each}}
         {{/each}}
+        <option>
+          {{i18n 'contactForm.inputs.otherOption'}}
+        </option>
         {{#if errors.type}}
           <div class="error-message">{{i18n errors.type}}</div>
         {{/if}}
