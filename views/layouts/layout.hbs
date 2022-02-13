@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang.language}}">
 <head>
   <title>{{i18n headSlug.title}}</title>
   {{!-- <meta name="description" content="{{i18n headSlug.description}}">
   <meta name="keywords" content="{{i18n headSlug.keywords}}"> --}}
+  <link rel="alternate" hreflang="es" href="{{lang.esUrl}}" />
+  <link rel="alternate" hreflang="en" href="{{lang.enUrl}}" />
+  <meta property="og:locale" content="{{lang.language}}" />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{!-- used favicon generator: https://favicon.io/favicon-generator/ --}}
@@ -31,6 +34,15 @@
     {{> footer}}
   </div>
   <script type="text/javascript" src="/javascript/index.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXMWQ1GY5T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KXMWQ1GY5T');
+  </script>
 </body>
 
 </html>
