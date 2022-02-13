@@ -2,7 +2,7 @@
   <div class="form-row">
     <label required="required" for="name">{{i18n 'contactForm.inputs.name'}}</label>
     <div class="input-container">
-      <input type="text" id="name" name="name">
+      <input type="text" id="name" name="name" value={{data.name}} {{#if disabled}}readonly="readonly"{{/if}}>
       {{#if errors.name}}
         <div class="error-message">{{i18n errors.name}}</div>
       {{/if}}
@@ -11,7 +11,7 @@
   <div class="form-row">
     <label required="required" for="email">Email</label>
     <div class="input-container">
-      <input type="email" id="email" name="email">
+      <input type="email" id="email" name="email" value={{data.email}} {{#if disabled}}readonly="readonly"{{/if}}>
       {{#if errors.email}}
         <div class="error-message">{{i18n errors.email}}</div>
       {{/if}}
@@ -20,7 +20,12 @@
   <div class="form-row">
     <label required="required" for="type">{{i18n 'contactForm.inputs.type'}}</label>
     <div class="input-container">
-      <select id="type" name="type">
+      <select id="type" name="type" {{#if disabled}}readonly="readonly"{{/if}}>
+        {{#if data.type}}
+          <option value="{{data.type}}">
+            {{data.type}}
+          </option>
+        {{/if}}
         {{#each priceBoxes}}
           {{#each sizes}}
             <option>
@@ -37,7 +42,7 @@
   <div class="form-row">
     <label for="body">{{i18n 'contactForm.inputs.body'}}</label>
     <div class="input-container">
-      <textarea id="body" name="body"></textarea>
+      <textarea id="body" name="body" {{#if disabled}}readonly="readonly"{{/if}}>{{data.body}}</textarea>
       {{#if errors.body}}
         <div class="error-message">{{i18n errors.body}}</div>
       {{/if}}
@@ -45,6 +50,6 @@
   </div>
   <div class="form-row">
     <label></label>
-    <input type="submit" value="{{i18n 'contactForm.submit'}}">
+    <input type="submit" value="{{i18n 'contactForm.submit'}}" {{#if disabled}}disabled="disabled"{{/if}}>
   </div>
 </form>

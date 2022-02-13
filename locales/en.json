@@ -22,7 +22,9 @@
 			"title": "Commission a Portrait",
 			"description": "commissions.head.description",
 			"keywords": "commissions.head.keywords"
-		}
+		},
+		"footnote2": "18x24 and 20x34 can be easily framed for an additional $15, I always recommend using professional framers who will protect the portrait",
+		"threeOrMore": "3 o más escribir en contacto"
 	},
 	"navbar": {
 		"home": "Home",
@@ -105,6 +107,7 @@
 		"head": {
 			"title": "Contact - Commission portrait"
 		},
-		"header": "Contact - Commission portrait"
+		"header": "Contact - Commission portrait",
+		"successMessage": "Contact message sent!"
 	}
 }

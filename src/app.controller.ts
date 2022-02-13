@@ -76,7 +76,7 @@ export class AppController {
     const errors = validateFormData(formData);
     if (Object.keys(errors).length === 0) {
       this.appService.sendContactEmail(formData);
-      return { success: true };
+      return { ...getContactFormContext(), success: true, data: formData };
     }
     return { ...getContactFormContext(), errors, data: formData };
   }

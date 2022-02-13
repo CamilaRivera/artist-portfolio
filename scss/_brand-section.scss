@@ -30,7 +30,7 @@
 }
 
 .brand-section__content-container--light {
-  background-color: $base-color;
+  background-color: lighten($base-color, 20%);
   color: $base-font-color;
 
   .brand-section__list-item-custom-bullet {
@@ -114,5 +114,5 @@ ol > .brand-section__list-item {
 
 .section-wrapper {
   max-width: 60rem;
-  margin: auto;
+  margin: 0 auto 2rem auto;
 }

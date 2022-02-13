@@ -21,7 +21,9 @@
 			"title": "Ordena tu retrato",
 			"description": "commissions.head.description",
 			"keywords": "commissions.head.keywords"
-		}
+		},
+		"footnote2": "18x24 y 20x34 pueden ser enmarcados de manera sencilla por $10.000 adicional, recomiendo siempre utilizar enmarcadores profesionales que harán que el retrato quede protegido",
+		"threeOrMore": "3 o más escribir en contacto"
 	},
 	"navbar": {
 		"home": "Home",
@@ -89,7 +91,7 @@
 			"title": "Contacto - Ordernar retrato"
 		},
 		"header": "Contacto - Ordernar retrato",
-		"successMessage": "contact.successMessage"
+		"successMessage": "Mensaje de contacto enviado!"
 	},
 	"contactForm": {
 		"inputs": {
