@@ -56,6 +56,8 @@ async function bootstrap() {
       `${functionName}(${value.slice(0, -1).join(', ')})`,
   );
 
+  hbs.registerHelper('env', (key) => process.env[key]);
+
   app.use(
     sassMiddleware({
       src: scssDirectory,

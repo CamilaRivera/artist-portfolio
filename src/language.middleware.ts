@@ -4,7 +4,8 @@ import { getChangeLanguageLink, setLanguage } from './app.internationalization';
 
 function findLanguage(req: Request) {
   // return req.query.lang || 'en';
-  if (req.headers.host.startsWith('en.')) {
+  const host = req.headers.host;
+  if (host === process.env.EN_HOST || host.startsWith('en.')) {
     return 'en';
   }
   return 'es'; // default language
@@ -20,9 +21,10 @@ export class LanguageMiddleware implements NestMiddleware {
     res.locals = {
       lang: {
         language,
-        esUrl: getChangeLanguageLink(req.protocol, url, 'es'),
-        enUrl: getChangeLanguageLink(req.protocol, url, 'en'),
+        esUrl: getChangeLanguageLink(req.protocol, req.originalUrl, 'es'),
+        enUrl: getChangeLanguageLink(req.protocol, req.originalUrl, 'en'),
         originalUrl: url,
+        analyticsApiKey: language === 'es' ? 'G-KXMWQ1GY5T' : 'G-DTD3L7R127',
       },
       queryPath: req.originalUrl,
     };

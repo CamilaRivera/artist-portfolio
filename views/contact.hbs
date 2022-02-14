@@ -16,7 +16,7 @@
   </section>
 </div>
 <script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LeaJXAeAAAAAJ5hItX8L1EnrfTjjgfU5c_LDood"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{env 'RECAPTCH_V3_KEY'}}"></script>
 <script>
   const form = document.querySelector('.contact-form');
   const submitButton = document.querySelector('input[type=submit]');
@@ -24,7 +24,7 @@
     event.preventDefault();
     submitButton.setAttribute('disabled', 'disabled');
     grecaptcha.ready(function() {
-      grecaptcha.execute('6LeaJXAeAAAAAJ5hItX8L1EnrfTjjgfU5c_LDood', {action: 'contact'}).then(function(token) {
+      grecaptcha.execute('{{env 'RECAPTCH_V3_KEY'}}', {action: 'contact'}).then(function(token) {
         const tokenInput = document.createElement('input');
         tokenInput.setAttribute('value', token);
         tokenInput.setAttribute('type', 'hidden');

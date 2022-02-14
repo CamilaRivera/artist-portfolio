@@ -22,12 +22,7 @@ export const setLanguage = (lang) => {
 
 export const getLanguage = () => i18n.getLocale();
 
-export const getChangeLanguageLink = (protocol, url, lang) => {
-  if (url.startsWith('en') || url.startsWith('es')) {
-    // Language already included
-    url = url.replace(/^(es|en)[.]/i, `${lang}.`);
-  } else {
-    url = `${lang}.${url}`;
-  }
-  return `${protocol}://${url}`;
+export const getChangeLanguageLink = (protocol, relativeURL, lang) => {
+  const host = lang === 'es' ? process.env.ES_HOST : process.env.EN_HOST;
+  return `${protocol}://${host}${relativeURL}`;
 };
