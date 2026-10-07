@@ -19,8 +19,8 @@
 		"aboutMyArtTitle": "About my art",
 		"aboutMyArtContent": "I’m a self-taught artist, went to college and got my veterinarian degree, I started drawing at early age but always as a hobby, I like to draw all kind of animals, and a few years ago I started drawing friend's pets, which made me improve my skills and invest in quality materials.",
 		"head": {
-			"title": "Commission a Portrait",
-			"description": "commissions.head.description",
+			"title": "Pet Portrait Sizes and Prices | Flavia Canepa",
+			"description": "Explore sizes, prices and framing options for a custom pet portrait by Flavia Canepa. Choose a personalized portrait of one or more animals.",
 			"keywords": "commissions.head.keywords"
 		},
 		"footnote2": "18x24 and 20x34 can be easily framed for an additional $15, I always recommend using professional framers who will protect the portrait",
@@ -55,16 +55,16 @@
 			}
 		},
 		"head": {
-			"title": "Frequently Asked Questions",
-			"description": "faq.head.description",
+			"title": "Pet Portrait Commissions: FAQ | Flavia Canepa",
+			"description": "Find answers about commissioning a pet portrait from Flavia Canepa, including payments, timing, reference photos and how to start your order.",
 			"keywords": "faq.head.keywords"
 		}
 	},
 	"index": {
-		"title": "Custom pet portraits in Chile",
+		"title": "Custom pet portraits",
 		"subtitle": "Personalized portraits of dogs, cats and horses, drawn by hand in colored pencils or pastels.",
 		"introduction": "I'm Flavia Canepa, and I create portraits of your pet from photographs using professional materials on watercolor paper or Pastelmat. Choose the size, medium and background to create a keepsake of your companion.",
-		"delivery": "Looking to commission a portrait in Chile? Ask about delivery options and costs for your city before confirming your order.",
+		"delivery": "I work from Chile and accept commissions from customers in Chile and other countries. Ask about shipping options and costs to your destination before confirming your order.",
 		"pricesLink": "View sizes and prices",
 		"contactLink": "Commission my portrait",
 		"ordering": {
@@ -83,8 +83,8 @@
 			"text": "I receive daily daily many messages asking various questions regarding my commission process, my techniques, materiales used, etc. I have compiled a F.A.Q. with all the answers and I update it regularly."
 		},
 		"head": {
-			"title": "Flavia Canepa - Portrait artist",
-			"description": "index.head.description",
+			"title": "Custom Pet Portraits | Flavia Canepa",
+			"description": "Hand-drawn portraits of dogs, cats and horses in colored pencils or pastels. Chile-based artist Flavia Canepa welcomes international commissions.",
 			"keywords": "index.head.keywords"
 		}
 	},
@@ -93,8 +93,8 @@
 		"section1": "I work in all my portraits with professional art supplies, to ensure its archival quality and durability in time, you can choose if you want your portrait with a color gradient background or just flat, it can be made with colored pencils or pastels",
 		"section2": "",
 		"head": {
-			"title": "About my Art and Me",
-			"description": "",
+			"title": "About the Pet Portrait Artist | Flavia Canepa",
+			"description": "Meet Flavia Canepa, a self-taught artist and veterinarian creating pet portraits with colored pencils or pastels and professional art materials.",
 			"keywords": "portrait, art, pastel, colored pencils, drawing, pets"
 		}
 	},
@@ -117,7 +117,8 @@
 	},
 	"contact": {
 		"head": {
-			"title": "Contact - Commission portrait"
+			"title": "Contact: Commission a Pet Portrait | Flavia Canepa",
+			"description": "Contact Flavia Canepa to commission your pet portrait. Tell me about your photos, preferred size and the animals you would like drawn, and request a quote."
 		},
 		"header": "Contact - Commission portrait",
 		"successMessage": "Contact message sent!"

@@ -18,8 +18,8 @@
 		"aboutMyArtTitle": "Sobre mi Arte",
 		"aboutMyArtContent": "Hago todos mis retratos con materiales profesionales que aseguran su durabilidad en el tiempo, ya sea con lapices de colores o con pasteles, sobre papel acuarela o pastelmat, eso se puede elegir al momento de solicitar un retrato, al igual que el fondo, con colores o ausente",
 		"head": {
-			"title": "Ordena tu retrato",
-			"description": "commissions.head.description",
+			"title": "Retratos de mascotas: tamaños y precios | Flavia Canepa",
+			"description": "Conoce tamaños, precios y opciones de enmarcado para tu retrato de mascota con Flavia Canepa. Elige un retrato personalizado de uno o más animales.",
 			"keywords": "commissions.head.keywords"
 		},
 		"footnote2": "18x24 y 20x34 pueden ser enmarcados de manera sencilla por $10.000 adicional, recomiendo siempre utilizar enmarcadores profesionales que harán que el retrato quede protegido",
@@ -53,16 +53,16 @@
 			}
 		},
 		"head": {
-			"title": "Preguntas Frecuentes",
-			"description": "faq.head.description",
+			"title": "Retratos de mascotas: preguntas frecuentes | Flavia Canepa",
+			"description": "Resuelve tus dudas sobre retratos de mascotas a pedido con Flavia Canepa: pagos, plazos, fotos de referencia y cómo comenzar tu encargo.",
 			"keywords": "faq.head.keywords"
 		}
 	},
 	"index": {
-		"title": "Retratos de mascotas a pedido en Chile",
+		"title": "Retratos de mascotas a pedido",
 		"subtitle": "Retratos personalizados de perros, gatos y caballos, dibujados a mano con lápices de colores o pasteles.",
 		"introduction": "Soy Flavia Canepa y creo retratos de tu mascota a partir de fotografías, con materiales profesionales sobre papel acuarela o Pastelmat. Elige el tamaño, la técnica y el fondo para crear un recuerdo de tu compañero.",
-		"delivery": "¿Quieres encargar un retrato en Chile? Consulta las opciones y los costos de entrega para tu ciudad antes de confirmar tu pedido.",
+		"delivery": "Trabajo desde Chile y recibo encargos de clientes en Chile y otros países. Consulta las opciones y los costos de envío a tu destino antes de confirmar tu pedido.",
 		"pricesLink": "Ver tamaños y precios",
 		"contactLink": "Encargar mi retrato",
 		"ordering": {
@@ -81,8 +81,8 @@
 			"text": "index.faq.text"
 		},
 		"head": {
-			"title": "Flavia Canepa - Artista de Retratos",
-			"description": "index.head.description",
+			"title": "Retratos de mascotas a pedido | Flavia Canepa",
+			"description": "Retratos personalizados de perros, gatos y caballos en lápices de colores o pastel. Flavia Canepa recibe encargos desde Chile y otros países.",
 			"keywords": "index.head.keywords"
 		}
 	},
@@ -91,17 +91,18 @@
 		"section1": "Dibujante autodidacta, Médico Veterinario, comencé a dibujar desde temprana edad, pero siempre como un pasatiempo, casi siempre animales de todo tipo, hace unos años comencé nuevamente a dibujar mascotas de amigos, lo cual hizo que trabajara en mejorar mis habilidades e invertir en materiales de excelente calidad.",
 		"section2": "",
 		"head": {
-			"title": "Sobre Mi y mi Arte",
-			"description": "about.head.description",
+			"title": "Sobre la artista de retratos de mascotas | Flavia Canepa",
+			"description": "Conoce a Flavia Canepa, artista autodidacta y médica veterinaria que dibuja retratos de mascotas con lápices de colores o pasteles y materiales profesionales.",
 			"keywords": "about.head.keywords"
 		}
 	},
 	"close": "Cerrar",
 	"contact": {
 		"head": {
-			"title": "Contacto - Ordernar retrato"
+			"title": "Contacto: encarga tu retrato de mascota | Flavia Canepa",
+			"description": "Contacta a Flavia Canepa para encargar tu retrato de mascota. Cuéntame sobre tus fotos, el tamaño y los animales que quieres retratar y solicita una cotización."
 		},
-		"header": "Contacto - Ordernar retrato",
+		"header": "Contacto - Ordenar retrato",
 		"successMessage": "Mensaje de contacto enviado!"
 	},
 	"contactForm": {

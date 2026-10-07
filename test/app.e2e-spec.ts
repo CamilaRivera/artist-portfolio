@@ -29,18 +29,18 @@ describe('language URLs and canonical pages (e2e)', () => {
   const hosts = { es: 'flaviacanepa.cl', en: 'flaviacanepa.com' };
   const titles = {
     es: [
-      'Flavia Canepa - Artista de Retratos',
-      'Sobre Mi y mi Arte',
-      'Preguntas Frecuentes',
-      'Ordena tu retrato',
-      'Contacto - Ordernar retrato',
+      'Retratos de mascotas a pedido | Flavia Canepa',
+      'Sobre la artista de retratos de mascotas | Flavia Canepa',
+      'Retratos de mascotas: preguntas frecuentes | Flavia Canepa',
+      'Retratos de mascotas: tamaños y precios | Flavia Canepa',
+      'Contacto: encarga tu retrato de mascota | Flavia Canepa',
     ],
     en: [
-      'Flavia Canepa - Portrait artist',
-      'About my Art and Me',
-      'Frequently Asked Questions',
-      'Commission a Portrait',
-      'Contact - Commission portrait',
+      'Custom Pet Portraits | Flavia Canepa',
+      'About the Pet Portrait Artist | Flavia Canepa',
+      'Pet Portrait Commissions: FAQ | Flavia Canepa',
+      'Pet Portrait Sizes and Prices | Flavia Canepa',
+      'Contact: Commission a Pet Portrait | Flavia Canepa',
     ],
   };
   const cases: [Language, string][] = [];
