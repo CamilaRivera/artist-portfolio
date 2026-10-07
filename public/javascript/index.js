@@ -2,6 +2,53 @@
   'use strict';
   document.documentElement.classList.add('js');
 
+  const themeControl = document.querySelector('#color-theme');
+  if (themeControl) {
+    const root = document.documentElement;
+    const themeKey = 'flavia-canepa-theme';
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const themeMeta = document.querySelector('meta[name="color-scheme"]');
+    const systemOption = themeControl.querySelector('[value="system"]');
+    const validTheme = (value) =>
+      value === 'light' || value === 'dark' ? value : 'system';
+    let preference = validTheme(root.dataset.theme);
+    const applyTheme = () => {
+      if (preference === 'system') delete root.dataset.theme;
+      else root.dataset.theme = preference;
+      themeMeta.content = preference === 'system' ? 'light dark' : preference;
+      themeControl.value = preference;
+      const deviceTheme = systemTheme.matches ? 'dark' : 'light';
+      const currentTheme = preference === 'system' ? deviceTheme : preference;
+      document
+        .querySelector('.theme-control__light')
+        .toggleAttribute('hidden', currentTheme === 'dark');
+      document
+        .querySelector('.theme-control__dark')
+        .toggleAttribute('hidden', currentTheme === 'light');
+      const deviceLabel = themeControl.querySelector(
+        `[value="${deviceTheme}"]`,
+      ).textContent;
+      systemOption.textContent = `${systemOption.dataset.label} (${deviceLabel})`;
+    };
+    applyTheme();
+    themeControl.addEventListener('change', () => {
+      preference = validTheme(themeControl.value);
+      applyTheme();
+      try {
+        if (preference === 'system') localStorage.removeItem(themeKey);
+        else localStorage.setItem(themeKey, preference);
+      } catch {
+        // The control still works when browser storage is unavailable.
+      }
+    });
+    systemTheme.addEventListener('change', applyTheme);
+    window.addEventListener('storage', (event) => {
+      if (event.key !== themeKey && event.key !== null) return;
+      preference = validTheme(event.newValue);
+      applyTheme();
+    });
+  }
+
   const navigation = document.querySelector('.navbar');
   const menuButton = document.querySelector('.navbar__toggle');
   const setMenu = (open) => {

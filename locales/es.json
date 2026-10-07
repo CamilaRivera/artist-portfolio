@@ -176,7 +176,11 @@
 		"ctaTitle": "Su carita. Un recuerdo para siempre.",
 		"ctaDescription": "Cuéntame sobre tu compañero. Juntos crearemos un retrato que capture lo que lo hace especial.",
 		"instagram": "Encuentra a Flavia en Instagram",
-		"footerNote": "Retratos de mascotas dibujados con cariño desde Chile."
+		"footerNote": "Retratos de mascotas dibujados con cariño desde Chile.",
+		"theme": "Tema de color",
+		"themeSystem": "Según el dispositivo",
+		"themeLight": "Claro",
+		"themeDark": "Oscuro"
 	},
 	"home": {
 		"eyebrow": "Arte original, a partir de tus fotos",

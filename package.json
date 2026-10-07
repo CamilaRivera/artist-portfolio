@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "icons:generate": "node scripts/generate-icons.mjs",
     "images:optimize": "node scripts/optimize-images.mjs",
     "images:check": "node scripts/optimize-images.mjs --check",
     "prebuild": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",

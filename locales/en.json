@@ -178,7 +178,11 @@
 		"ctaTitle": "Their little face. Your forever keepsake.",
 		"ctaDescription": "Tell me about your companion. Together, we'll create a portrait that feels like them.",
 		"instagram": "Find Flavia on Instagram",
-		"footerNote": "Hand-drawn pet portraits. Made with care in Chile."
+		"footerNote": "Hand-drawn pet portraits. Made with care in Chile.",
+		"theme": "Color theme",
+		"themeSystem": "Device setting",
+		"themeLight": "Light",
+		"themeDark": "Dark"
 	},
 	"home": {
 		"eyebrow": "Original art, from your photographs",

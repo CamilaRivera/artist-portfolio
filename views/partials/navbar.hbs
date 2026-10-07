@@ -5,6 +5,16 @@
       <span>FLAVIA CANEPA<span class="navbar__tagline">{{i18n 'ui.artist'}}</span></span>
     </a>
     <div class="navbar__controls">
+      <div class="theme-control" title="{{i18n 'ui.theme'}}">
+        <label class="visually-hidden" for="color-theme">{{i18n 'ui.theme'}}</label>
+        <svg class="theme-control__light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg class="theme-control__dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" hidden><path d="M20.5 14.4A9 9 0 0 1 9.6 3.5a9 9 0 1 0 10.9 10.9Z"/></svg>
+        <select id="color-theme">
+          <option value="system" data-label="{{i18n 'ui.themeSystem'}}">{{i18n 'ui.themeSystem'}}</option>
+          <option value="light">{{i18n 'ui.themeLight'}}</option>
+          <option value="dark">{{i18n 'ui.themeDark'}}</option>
+        </select>
+      </div>
       <div class="language-switch" aria-label="{{i18n 'ui.language'}}">
         <a href="{{lang.esUrl}}" lang="es" hreflang="es" {{#if (equals lang.language 'es')}}aria-current="true"{{/if}}>ES</a>
         <span aria-hidden="true">/</span>

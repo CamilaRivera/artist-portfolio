@@ -10,6 +10,15 @@
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem('flavia-canepa-theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="color-scheme"]').content = theme;
+        }
+      } catch {}
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Flavia Canepa" />
     <meta
@@ -29,9 +38,10 @@
       content="{{previewImageUrl lang.canonicalUrl}}"
     />
     <meta name="twitter:image:alt" content="{{i18n 'gallery.previewAlt'}}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/stylesheets/index.css" />
     <script defer src="/javascript/index.js"></script>
