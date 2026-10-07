@@ -10,6 +10,7 @@ import { RecaptchaGuard } from '../src/guard.recaptcha';
 import { getLanguage, translate } from '../src/app.internationalization';
 import { pagePaths } from '../src/site.config';
 import type { Language } from '../src/site.config';
+import { imageFilenames } from '../src/db.images';
 
 @Controller()
 class LocaleProbeController {
@@ -251,6 +252,93 @@ describe('language URLs and canonical pages (e2e)', () => {
       .set('Host', hosts.es)
       .set('X-Forwarded-Proto', 'https')
       .expect(404);
+  });
+
+  it.each(['es', 'en'] as Language[])(
+    '%s renders WebP/JPEG alternatives with dimensions and a deferred enlargement',
+    async (language) => {
+      const { text: html } = await request(app.getHttpServer())
+        .get('/')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200);
+      const pictures = html.match(/<picture\b[^>]*>[\s\S]*?<\/picture>/g)!;
+      expect(pictures).toHaveLength(18);
+      for (const picture of pictures.slice(0, -1)) {
+        expect(picture).toMatch(
+          /<source type="image\/webp" srcset="[^"]+\.webp \d+w/,
+        );
+        expect(picture).toMatch(/src="\/images\/optimized\/[^"]+\.jpg"/);
+        expect(picture).toMatch(/width="\d+"/);
+        expect(picture).toMatch(/height="\d+"/);
+        expect(picture).toContain(language === 'es' ? 'Dibujo' : 'drawing');
+      }
+      expect(pictures[0]).toContain('loading="eager"');
+      expect(pictures[0]).toContain('fetchpriority="high"');
+      for (const thumbnail of pictures.slice(1, -1)) {
+        expect(thumbnail).toContain('loading="lazy"');
+        expect(thumbnail).toMatch(/src="[^"]+-thumbnail-/);
+      }
+      expect(pictures.at(-1)).not.toMatch(/\b(?:src|srcset)=/);
+    },
+  );
+
+  it.each(['jpg', 'webp'] as const)(
+    'caches content-versioned %s images for one year in production',
+    async (format) => {
+      const url = imageFilenames[0].assets.thumbnail[format][0].url;
+      const response = await request(app.getHttpServer())
+        .get(url)
+        .expect(200)
+        .expect(
+          'Content-Type',
+          format === 'jpg' ? /image\/jpeg/ : /image\/webp/,
+        )
+        .expect('Cache-Control', 'public, max-age=31536000, immutable');
+      await request(app.getHttpServer())
+        .head(url)
+        .expect(200)
+        .expect('Cache-Control', 'public, max-age=31536000, immutable');
+      await request(app.getHttpServer())
+        .get(url)
+        .set('If-None-Match', response.headers.etag)
+        .expect(304);
+    },
+  );
+
+  it.each(['es', 'en'] as Language[])(
+    '%s commission artwork sizes are not overwritten by the price-option arrays',
+    async (language) => {
+      const response = await request(app.getHttpServer())
+        .get('/commission-portrait')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200);
+      const pictures = response.text.match(
+        /<picture[^>]*commission-section__left[^>]*>[\s\S]*?<\/picture>/g,
+      )!;
+      expect(pictures).toHaveLength(2);
+      for (const picture of pictures) {
+        expect(picture).toContain('sizes="(min-width: 960px) max(30rem,');
+        expect(picture).not.toContain('[object Object]');
+      }
+    },
+  );
+
+  it('keeps development and unversioned assets on ordinary caching', async () => {
+    await request(app.getHttpServer())
+      .get(`/images/drawings/1x/${imageFilenames[0].name}`)
+      .expect(200)
+      .expect('Cache-Control', 'public, max-age=0');
+    process.env.NODE_ENV = 'development';
+    try {
+      await request(app.getHttpServer())
+        .get(imageFilenames[0].assets.thumbnail.webp[0].url)
+        .expect(200)
+        .expect('Cache-Control', 'public, max-age=0');
+    } finally {
+      process.env.NODE_ENV = 'production';
+    }
   });
 
   it('keeps concurrent HTTP requests in their own languages', async () => {

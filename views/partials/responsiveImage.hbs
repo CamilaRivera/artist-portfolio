@@ -1,18 +1,25 @@
-<img
-  src="/images/drawings/1x/{{image.name}}"
-  alt="{{lookup image.alt lang.language}}"
-  class="{{class}}"
-  {{#if sizes}}
-  sizes="{{sizes}}"
-  {{else}}
-  sizes="(min-width: 1000px) 25vw, (min-width: 600px) 50vw, 100vw"
-  {{/if}}
-  srcset="/images/drawings/1x/{{image.name}} {{image.dimension.w}}w,
-          /images/drawings/2x/{{image.name}} {{multiply image.dimension.w 2}}w,
-          /images/drawings/3x/{{image.name}} {{multiply image.dimension.w 3}}w,
-          /images/drawings/4x/{{image.name}} {{multiply image.dimension.w 4}}w"
-  data-image-width="{{multiply image.dimension.w 4}}"
-  data-image-height="{{multiply image.dimension.h 4}}"
-  {{#if onclick}}
-  onclick="{{onclick}}"
-  {{/if}}>
+{{#with (drawingSources image thumbnail role)}}
+<picture class="responsive-image {{../class}}" style="--image-ratio: {{ratio}}">
+  <source type="image/webp" srcset="{{webpSrcset}}" sizes="{{sizes}}">
+  <img
+    src="{{src}}"
+    srcset="{{jpegSrcset}}"
+    sizes="{{sizes}}"
+    width="{{width}}"
+    height="{{height}}"
+    alt="{{lookup ../image.alt ../lang.language}}"
+    loading="{{#if ../eager}}eager{{else}}lazy{{/if}}"
+    {{#if ../priority}}fetchpriority="{{../priority}}"{{/if}}
+    {{#if ../onclick}}
+    data-image-width="{{width}}"
+    data-image-height="{{height}}"
+    data-image-ratio="{{ratio}}"
+    data-display-src="{{displaySrc}}"
+    data-display-jpeg-srcset="{{displayJpegSrcset}}"
+    data-display-webp-srcset="{{displayWebpSrcset}}"
+    data-display-sizes="{{displaySizes}}"
+    data-overlay-sizes="{{overlaySizes}}"
+    onclick="{{../onclick}}"
+    {{/if}}>
+</picture>
+{{/with}}

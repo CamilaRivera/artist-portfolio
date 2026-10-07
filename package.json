@@ -6,6 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "images:check": "node scripts/optimize-images.mjs --check",
     "prebuild": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -55,6 +57,7 @@
     "globals": "^17.13.0",
     "jest": "^30.5.2",
     "prettier": "^3.9.9",
+    "sharp": "^0.35.5",
     "supertest": "^7.3.1",
     "ts-jest": "^29.4.14",
     "typescript": "~6.0.3",

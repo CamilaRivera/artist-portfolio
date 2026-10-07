@@ -4,9 +4,15 @@
   margin: auto;
 }
 
-.image-carousel__image-thumb-container > img {
+.image-carousel__image-thumb-container > picture {
   height: 6rem;
+  width: calc(6rem * var(--image-ratio));
   cursor: pointer;
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
 
   &.thumb:hover {
     transform: scale(1.5, 1.5);
@@ -14,7 +20,14 @@
 }
 
 .image-carousel__main-image {
+  width: min(100%, 60rem, calc(30rem * var(--image-ratio)));
   max-height: 30rem;
   margin: auto;
   cursor: zoom-in;
+
+  > img {
+    width: 100%;
+    height: auto;
+    max-height: 30rem;
+  }
 }

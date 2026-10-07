@@ -1,0 +1,2364 @@
+{
+  "settings": {
+    "thumbnailHeights": [
+      96,
+      192,
+      288
+    ],
+    "displayWidths": [
+      384,
+      768,
+      1152,
+      1536,
+      2304,
+      3072
+    ],
+    "webpQuality": 82,
+    "jpegQuality": 85,
+    "enlargementQuality": 90
+  },
+  "images": {
+    "Atom.jpg": {
+      "sourceHash": "9bd8f232a5c056e2163070a54d5fa4c57bd4eb86999ddab34f96fb2c923af28d",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Atom-thumbnail-70w-1f677d91c89a44a9.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Atom-thumbnail-140w-1726e11bb24ef525.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Atom-thumbnail-210w-01bfb90a964ac018.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Atom-thumbnail-70w-0878b41e692e8669.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Atom-thumbnail-140w-9e35b0d44ee97530.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Atom-thumbnail-210w-aab4fa253e23f60a.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Atom-display-384w-5ff125ec64099d76.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Atom-display-768w-c6e6dde8d526838f.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Atom-display-1152w-4ff79596cf76db07.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Atom-display-1488w-cd8e3e2fdee60c1f.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Atom-display-384w-e8beddeffea297f4.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Atom-display-768w-51dc323b477cb592.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Atom-display-1152w-286b8ba0103d0b58.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Atom-display-1488w-990187b26d737f10.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Baco.jpg": {
+      "sourceHash": "21ca58c5948f52fd2b404a01ca023898c3e872c270759abb1aa597fef510ea76",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Baco-thumbnail-70w-372644ada2039f0a.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Baco-thumbnail-140w-a433ea6b2670cfab.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Baco-thumbnail-210w-f402d1738575fa7a.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Baco-thumbnail-70w-37a9ce7fa162aee3.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Baco-thumbnail-140w-e1daba929763069a.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Baco-thumbnail-210w-1232d97c27d9eb09.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Baco-display-384w-fbe471189295c347.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Baco-display-768w-08c835a3d98aa33f.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Baco-display-1152w-2cbbe633a9ff0771.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Baco-display-1488w-48aedd97f212f914.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Baco-display-384w-8e6f0a545dbb9be4.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Baco-display-768w-ce5ba5aac21911f7.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Baco-display-1152w-8c18116a04c695a9.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Baco-display-1488w-47dd40842340d2f6.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Bowie.jpg": {
+      "sourceHash": "c812c0eebdc169aec6ad59083e59a64e0c8efdc506f4bfea1140771c7e3eb5db",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Bowie-thumbnail-70w-d261a78ec528aae8.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Bowie-thumbnail-140w-dafb20b57210fe54.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Bowie-thumbnail-210w-d2ddc1a43040cfc0.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Bowie-thumbnail-70w-9f4140e1619d8315.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Bowie-thumbnail-140w-cc0161689d6c7519.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Bowie-thumbnail-210w-e6c5115555256897.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Bowie-display-384w-cd2e644ef200ebf9.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Bowie-display-768w-a12771d925bf9d69.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Bowie-display-1152w-5735dbca61ed4b75.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Bowie-display-1488w-6acea397b728929e.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Bowie-display-384w-dc84ffb950cbbc8b.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Bowie-display-768w-ed04d50157e167ec.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Bowie-display-1152w-404e37876f7f4e85.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Bowie-display-1488w-2cd0c16cf825b03d.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Briso.jpg": {
+      "sourceHash": "23ff0d454f8e87441e79079e145f2e4242f38a105af1abc359cdb4c90c14821e",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Briso-thumbnail-70w-fcd21fb155996213.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Briso-thumbnail-140w-a884870882455b97.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Briso-thumbnail-210w-8e6a03a609d3b3e9.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Briso-thumbnail-70w-f8ff83030c7ad478.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Briso-thumbnail-140w-9aea727f79637a7d.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Briso-thumbnail-210w-72cd8a64d97832a2.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Briso-display-384w-5d45386562eb6bfe.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Briso-display-768w-8a757b1d7f52c46a.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Briso-display-1152w-91cd7633db06aa46.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Briso-display-1488w-33b6989e1f21cc4f.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Briso-display-384w-f95c9013b3bdc49f.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Briso-display-768w-8d90b16e88dddd43.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Briso-display-1152w-4da17761dad05367.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Briso-display-1488w-5e5c175bf59c2551.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Cano.jpg": {
+      "sourceHash": "aa5b9c64b91b06b3915abe178f3adc7183896de62add9968fd08f7e7018d234f",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Cano-thumbnail-70w-83ab4395814ddcbb.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Cano-thumbnail-140w-c1357f429f1e86eb.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Cano-thumbnail-210w-f65002910f662734.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Cano-thumbnail-70w-60d1e22667d16a90.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Cano-thumbnail-140w-0b5db3edc4e8084a.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Cano-thumbnail-210w-309f7e7a1afd255d.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Cano-display-384w-443c9d6a5860532d.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Cano-display-768w-7f129c0413bf81c5.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Cano-display-1152w-1c3d35215248e3b1.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Cano-display-1488w-c8d8f1cb87e6e8c4.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Cano-display-384w-d5e2f3a3daefbb03.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Cano-display-768w-5c93c427dbf49913.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Cano-display-1152w-12951aa99d9b034e.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Cano-display-1488w-26a9ff0d65fe85f1.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Coca.jpg": {
+      "sourceHash": "848da5a4aa34aa8c3508658cba58d67e35122f7cb21cb1ec9e7a584d16702356",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Coca-thumbnail-70w-d68d9ed2f9c98222.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Coca-thumbnail-140w-8009dca1a41ac2b3.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Coca-thumbnail-210w-b8a4130614851b6e.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Coca-thumbnail-70w-b2cc47efb68c62f0.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Coca-thumbnail-140w-3cbe66912eaf3823.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Coca-thumbnail-210w-0317446a59edefc4.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Coca-display-384w-586b60f5db18b9d5.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Coca-display-768w-d96add590b84f682.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Coca-display-1152w-9a9ffc994d67d769.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Coca-display-1488w-544d3f5ee6740548.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Coca-display-384w-13741faacf3e26ca.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Coca-display-768w-8415fda1a6061519.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Coca-display-1152w-620331e61c893c59.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Coca-display-1488w-9ee2f9f1182a72de.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "IMG_20210820_090530.jpg": {
+      "sourceHash": "18bc8fbdc344e84f098080ad75e84af4b6139662cd9290c827b49bcfad0acf45",
+      "width": 4551,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/IMG_20210820_090530-thumbnail-214w-c1e89076282c63fa.webp",
+            "width": 214,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-thumbnail-428w-56e5becb2824678c.webp",
+            "width": 428,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-thumbnail-641w-313dcf6a1a8160d3.webp",
+            "width": 641,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/IMG_20210820_090530-thumbnail-214w-d5ef59296b30cf89.jpg",
+            "width": 214,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-thumbnail-428w-5f7e4a7e196d7ff0.jpg",
+            "width": 428,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-thumbnail-641w-a0e799280828b4db.jpg",
+            "width": 641,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-384w-ae3a3f35aa8b2008.webp",
+            "width": 384,
+            "height": 172
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-768w-23b8d0e48cb0f752.webp",
+            "width": 768,
+            "height": 345
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-1152w-a27efe6da26b95e9.webp",
+            "width": 1152,
+            "height": 518
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-1536w-b54158866084b7a1.webp",
+            "width": 1536,
+            "height": 691
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-2304w-0fddda9fa7b0679c.webp",
+            "width": 2304,
+            "height": 1036
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-3072w-88e5952fd61aa0af.webp",
+            "width": 3072,
+            "height": 1382
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-4551w-e8ae99a62293a5c2.webp",
+            "width": 4551,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-384w-2f1e72c56e2a1e64.jpg",
+            "width": 384,
+            "height": 172
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-768w-e98e52e71b3d2ed0.jpg",
+            "width": 768,
+            "height": 345
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-1152w-cb10e79193e8f679.jpg",
+            "width": 1152,
+            "height": 518
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-1536w-5a282d2b4e69a2db.jpg",
+            "width": 1536,
+            "height": 691
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-2304w-ca8c709cc1a9501d.jpg",
+            "width": 2304,
+            "height": 1036
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-3072w-fe78e9bafeae5c94.jpg",
+            "width": 3072,
+            "height": 1382
+          },
+          {
+            "url": "/images/optimized/IMG_20210820_090530-display-4551w-f756323cdec21365.jpg",
+            "width": 4551,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Komatsu.jpg": {
+      "sourceHash": "2057da065d264a0afab09e0cd0226ad4d3eae8f2f3f124fc6aa0efa3f9be3de9",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Komatsu-thumbnail-70w-d816555018a28797.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Komatsu-thumbnail-140w-f43053d4ff03f6b2.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Komatsu-thumbnail-210w-500d87e7181ed21b.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Komatsu-thumbnail-70w-2495f2076459ded9.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Komatsu-thumbnail-140w-93fbf53c5227845e.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Komatsu-thumbnail-210w-994e5fdbbfa0e95d.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Komatsu-display-384w-2a7c24ddd7e89b88.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Komatsu-display-768w-75f6d4f405fa123d.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Komatsu-display-1152w-cac92c1e94decd73.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Komatsu-display-1488w-bb49b8a254f67675.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Komatsu-display-384w-b10e268030f7ba38.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Komatsu-display-768w-41057925f6d5d6f9.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Komatsu-display-1152w-4b20b2ebdc41e3ad.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Komatsu-display-1488w-7db93464448f8475.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Malu.jpg": {
+      "sourceHash": "03589c919923b9de0abdf34e72748ab09598e736fd4e2a0e1759ed6f46cfe14c",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Malu-thumbnail-70w-c1f8a6cefd9c1cc0.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Malu-thumbnail-140w-f908ad3e6d3e6b0f.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Malu-thumbnail-210w-caea39fae30eb458.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Malu-thumbnail-70w-9d70c945bfcbddae.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Malu-thumbnail-140w-63f9894396c286f5.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Malu-thumbnail-210w-50fd85b785831290.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Malu-display-384w-9f72b4d0ecb177c7.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Malu-display-768w-1eca00aa3c679aaf.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Malu-display-1152w-6905f1149a1caa25.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Malu-display-1488w-c3fa2ddd978cb92b.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Malu-display-384w-04762e1539d07abd.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Malu-display-768w-04b62362fbb32afa.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Malu-display-1152w-7fecbd6c0fc1e9d3.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Malu-display-1488w-bb078aec896c5e91.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Negrita.jpg": {
+      "sourceHash": "75f4034bbfdec97ce89b6918e7f3f23d516aeec954740b9812178f8975afd97b",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Negrita-thumbnail-70w-562428503701d835.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Negrita-thumbnail-140w-d84774ff930214c9.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Negrita-thumbnail-210w-e73ce77b3a8b9ae4.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Negrita-thumbnail-70w-2f430c34a2c20f84.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Negrita-thumbnail-140w-2d9fa4d6126a18b3.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Negrita-thumbnail-210w-e91894f4f279790a.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Negrita-display-384w-9be67358d7e260cd.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Negrita-display-768w-3e04e55e2af2b4ed.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Negrita-display-1152w-d1d38ae0bf756611.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Negrita-display-1488w-f144904c52885476.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Negrita-display-384w-0d4b36eeeda1094f.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Negrita-display-768w-05ed762965ed8bca.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Negrita-display-1152w-a7d928c3649e3a14.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Negrita-display-1488w-5d3d1ed8f13b050c.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "Valentin.jpg": {
+      "sourceHash": "d634c8cc2c68518aa7a13dd2fa32ba6d7385d11f80e7583164d358eb6c7e8566",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/Valentin-thumbnail-70w-8d5e9a46fec88ff6.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Valentin-thumbnail-140w-407edcc8703e5c5b.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Valentin-thumbnail-210w-81ba77b4d00c9f30.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Valentin-thumbnail-70w-de0d2346fe41fa15.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/Valentin-thumbnail-140w-7e861c82dc11a579.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/Valentin-thumbnail-210w-9f126b55ba3a1eb6.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/Valentin-display-384w-42228fed9b0d7483.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Valentin-display-768w-18267b5f38592f47.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Valentin-display-1152w-4f24908941151bf5.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Valentin-display-1488w-57af4bf6b6ce234d.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/Valentin-display-384w-32e6ff66a21d73e6.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/Valentin-display-768w-46db5891411fdc08.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/Valentin-display-1152w-7b3a77251f5efbd8.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/Valentin-display-1488w-eef0b9a96f5b2a3f.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "caballo.jpg": {
+      "sourceHash": "ba58bef82112117d27abfc07ee8c20e259a78ec4f6afc1fc5d03a6a2ca49797e",
+      "width": 2577,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/caballo-thumbnail-121w-f6c58077b2002980.webp",
+            "width": 121,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/caballo-thumbnail-242w-27ac29fabdf94961.webp",
+            "width": 242,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/caballo-thumbnail-363w-502533e241d14205.webp",
+            "width": 363,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/caballo-thumbnail-121w-9aad386596cf65a4.jpg",
+            "width": 121,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/caballo-thumbnail-242w-7c8dcb7808fdb4da.jpg",
+            "width": 242,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/caballo-thumbnail-363w-11dbeb157a105584.jpg",
+            "width": 363,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/caballo-display-384w-70647df26b07a9be.webp",
+            "width": 384,
+            "height": 305
+          },
+          {
+            "url": "/images/optimized/caballo-display-768w-f9a9b1ffaee053a5.webp",
+            "width": 768,
+            "height": 610
+          },
+          {
+            "url": "/images/optimized/caballo-display-1152w-c54343431e6bb1ab.webp",
+            "width": 1152,
+            "height": 915
+          },
+          {
+            "url": "/images/optimized/caballo-display-1536w-3f3f11d92aab4284.webp",
+            "width": 1536,
+            "height": 1220
+          },
+          {
+            "url": "/images/optimized/caballo-display-2304w-33147cb882828a7d.webp",
+            "width": 2304,
+            "height": 1830
+          },
+          {
+            "url": "/images/optimized/caballo-display-2577w-71a0136dc700c63c.webp",
+            "width": 2577,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/caballo-display-384w-9caf41ebe1e32de1.jpg",
+            "width": 384,
+            "height": 305
+          },
+          {
+            "url": "/images/optimized/caballo-display-768w-d2c73cff8f093749.jpg",
+            "width": 768,
+            "height": 610
+          },
+          {
+            "url": "/images/optimized/caballo-display-1152w-67f2d5146667d328.jpg",
+            "width": 1152,
+            "height": 915
+          },
+          {
+            "url": "/images/optimized/caballo-display-1536w-5cd7be832bb110e2.jpg",
+            "width": 1536,
+            "height": 1220
+          },
+          {
+            "url": "/images/optimized/caballo-display-2304w-48f068f6965445be.jpg",
+            "width": 2304,
+            "height": 1830
+          },
+          {
+            "url": "/images/optimized/caballo-display-2577w-93aeddea67a83c4d.jpg",
+            "width": 2577,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img019.jpg": {
+      "sourceHash": "0e58b206a07e66c9b442d14db78507cd158b80c36c745e6a784efbfec1e313fe",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img019-thumbnail-70w-ae27bfe43b773127.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img019-thumbnail-140w-b41fce742777b77a.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img019-thumbnail-210w-7b397a04f72f5348.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img019-thumbnail-70w-1d2bcac26fbf73b0.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img019-thumbnail-140w-fe7f074c5aeadcd7.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img019-thumbnail-210w-ae471f4c7d7555e1.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img019-display-384w-6f9b95d1c1b9a908.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img019-display-768w-892f0f6247e0aaf2.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img019-display-1152w-9906e0d452aa912c.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img019-display-1488w-8d5d03eb5a975b11.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img019-display-384w-726b4813079481ea.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img019-display-768w-06fc29f367e48944.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img019-display-1152w-deab918b1a66e744.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img019-display-1488w-8f26b667ebfcebce.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img025.jpg": {
+      "sourceHash": "c64a3982f083377ed8e2cdaab579fafe46849b24ff4ccf4a73c5ccd05d1fae44",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img025-thumbnail-70w-4e439d1cdadc3f06.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img025-thumbnail-140w-702a25788982ad60.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img025-thumbnail-210w-934e34dd3d2e98ce.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img025-thumbnail-70w-ea202157f9af56b8.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img025-thumbnail-140w-132bc127006317a9.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img025-thumbnail-210w-b0704138fb4fdb98.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img025-display-384w-367d545d5a541958.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img025-display-768w-6351f59828fe5621.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img025-display-1152w-397c30a916c779bf.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img025-display-1488w-aafbffa55716f387.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img025-display-384w-b827eee7d56eba70.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img025-display-768w-f65d1e85ab1034ee.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img025-display-1152w-b57a63f173cd73bd.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img025-display-1488w-62e055f828162b65.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img035.jpg": {
+      "sourceHash": "d9dae54ee8eff146c919e88f5a3f2f46608c1318c9999a7f4ea8065585905060",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img035-thumbnail-70w-35375d304e7c3477.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img035-thumbnail-140w-9d73930c31c38bd2.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img035-thumbnail-210w-ed932e964af6aa28.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img035-thumbnail-70w-8cc5ff7c03694e7b.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img035-thumbnail-140w-e1ca2298b5414e49.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img035-thumbnail-210w-92a64d7585fa04e3.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img035-display-384w-5f2a222f26a60d45.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img035-display-768w-b84f5fc795665124.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img035-display-1152w-49dc08ca8a44f157.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img035-display-1488w-b74a51d64c238b86.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img035-display-384w-804833eca94ac76a.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img035-display-768w-371eb4c97ecde661.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img035-display-1152w-37180491a164b692.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img035-display-1488w-373d3873cb98134a.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img038.jpg": {
+      "sourceHash": "397863146c60902a3c218d32984757eb21036ce7c34b89f5c2d59e870ac503cb",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img038-thumbnail-70w-abff1d83661337ef.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img038-thumbnail-140w-e952a6a4d78b8468.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img038-thumbnail-210w-e9eef2cdab526177.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img038-thumbnail-70w-be090a0a6c27dbb9.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img038-thumbnail-140w-ebe493957167858e.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img038-thumbnail-210w-7e1f0cde077eb927.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img038-display-384w-c77fedb2a65b0410.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img038-display-768w-94e210ea6d9bcd59.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img038-display-1152w-3d969ce49a969b47.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img038-display-1488w-04f1d31b82a61334.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img038-display-384w-37df6e473785f0e1.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img038-display-768w-1280980ba729196b.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img038-display-1152w-6b5cf84a29250479.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img038-display-1488w-bf2ebe1c030517f3.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img039.jpg": {
+      "sourceHash": "c7f8d204760c2df89ddf8e7de05a0258eac8f70a483db72c8fc5db00a9cb4848",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img039-thumbnail-70w-6d4dfd54d38b09a6.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img039-thumbnail-140w-b1c72d35dbf10de6.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img039-thumbnail-210w-0d20d4dbc0a2eb19.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img039-thumbnail-70w-be83fdb6b0ffff43.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img039-thumbnail-140w-11b2d064ca3c650f.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img039-thumbnail-210w-416e331f3939ff83.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img039-display-384w-0b04b7b984053f8a.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img039-display-768w-1562f56f4b036b46.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img039-display-1152w-42ce9dfadba583ea.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img039-display-1488w-f8341a7fa8c94bed.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img039-display-384w-637836b7c3fc6556.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img039-display-768w-76a2e63281bd67dc.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img039-display-1152w-34c9ea3dcebdf91b.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img039-display-1488w-558a84b102aa7bb8.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img041.jpg": {
+      "sourceHash": "f6f59421c5c2451588fc34b23dccbe6b29e718ccfcbc59a237df6401ba9c44e9",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img041-thumbnail-70w-e5fd0eae507bb662.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img041-thumbnail-140w-a1300ebffe60ab66.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img041-thumbnail-210w-f1f5f15a2a74acc6.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img041-thumbnail-70w-a080f494e4417842.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img041-thumbnail-140w-72df9ecf3f915011.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img041-thumbnail-210w-217be185fd497da5.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img041-display-384w-23a8d7af57b2abcc.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img041-display-768w-dd27bf7a1db76189.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img041-display-1152w-32082ba148d54147.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img041-display-1488w-b00b4ababf5e4f3d.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img041-display-384w-921e38993761d5df.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img041-display-768w-3c6ac06df21a5bfb.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img041-display-1152w-cea1b9ca0977020a.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img041-display-1488w-cac9a3fab11548ee.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img048.jpg": {
+      "sourceHash": "f8261f59492ea00d10349b57b2a51292a26f27ef4f16ca307c5b26b7bb4a8525",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img048-thumbnail-70w-4f76e07ca90a2344.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img048-thumbnail-140w-cdc5d6e056ead66b.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img048-thumbnail-210w-4b4779be9021e530.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img048-thumbnail-70w-f281ee222f7b5422.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img048-thumbnail-140w-da9e9d3b2c8893f3.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img048-thumbnail-210w-86d5c2ef7bd93d36.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img048-display-384w-357b0f3a367de0a6.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img048-display-768w-6c6d047153a8e9a8.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img048-display-1152w-f79474d48e94900b.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img048-display-1488w-ad1477d4d2e0816d.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img048-display-384w-7322c86361107196.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img048-display-768w-0b3f550fa1ab686b.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img048-display-1152w-52545975f2f8ef1e.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img048-display-1488w-b997b81bc8bb44ca.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img054.jpg": {
+      "sourceHash": "9de5f7eddcd062051ab135f2b87f81659d1f8c9f30ebd49481a681c09e9b23e2",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img054-thumbnail-70w-36b1d2d9d5fe24d0.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img054-thumbnail-140w-bfbff12baf9e6c8f.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img054-thumbnail-210w-d7481995725e4a87.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img054-thumbnail-70w-78f8143aac686727.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img054-thumbnail-140w-02c16a1854e200e7.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img054-thumbnail-210w-d63375a0e2f802f8.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img054-display-384w-b14804253b50289e.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img054-display-768w-117ad64ba9f5d903.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img054-display-1152w-b2e5a3820bd2bf96.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img054-display-1488w-6f9ff9240c1223ac.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img054-display-384w-890fa664d67c5b58.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img054-display-768w-cd9c538b43d5286c.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img054-display-1152w-193efce7aeb42050.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img054-display-1488w-27fb52cfa41f4d95.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img091.jpg": {
+      "sourceHash": "66233a60a25ce704de4844a7c48d58345ab5a140bd80ff0650dd84334f498c50",
+      "width": 1487,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img091-thumbnail-70w-e30f80c0b9c8d701.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img091-thumbnail-139w-914cda0477bc314a.webp",
+            "width": 139,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img091-thumbnail-209w-ee81394805c73b3d.webp",
+            "width": 209,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img091-thumbnail-70w-ddf6b217dd8ba5aa.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img091-thumbnail-139w-c1ffb856e3566603.jpg",
+            "width": 139,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img091-thumbnail-209w-7dd6a4b6f55f7c1f.jpg",
+            "width": 209,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img091-display-384w-d21cf88c2c844f6e.webp",
+            "width": 384,
+            "height": 529
+          },
+          {
+            "url": "/images/optimized/img091-display-768w-53376fb54bccb03c.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img091-display-1152w-0c23f9fba3d864d8.webp",
+            "width": 1152,
+            "height": 1586
+          },
+          {
+            "url": "/images/optimized/img091-display-1487w-95e9143776b6d6f7.webp",
+            "width": 1487,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img091-display-384w-30aa41280be21966.jpg",
+            "width": 384,
+            "height": 529
+          },
+          {
+            "url": "/images/optimized/img091-display-768w-9c6c08f8589b9264.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img091-display-1152w-1d726caeaa6a08ef.jpg",
+            "width": 1152,
+            "height": 1586
+          },
+          {
+            "url": "/images/optimized/img091-display-1487w-54ebcfa62bf2aec4.jpg",
+            "width": 1487,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img094.jpg": {
+      "sourceHash": "0973ae9bb38f7b9209f6463600a117f2a5d2f6ce468ad50bbe30259cf51687be",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img094-thumbnail-70w-a62e1d9e6b56cc23.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img094-thumbnail-140w-1151d9eeada5d612.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img094-thumbnail-210w-e695b82c62990ccf.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img094-thumbnail-70w-ae542f9e24800ad0.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img094-thumbnail-140w-e507566e6d532eef.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img094-thumbnail-210w-c3158f5d04893273.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img094-display-384w-7631c3dff52cccc4.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img094-display-768w-d62980ff023dcbb5.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img094-display-1152w-aa107961afc7ef5e.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img094-display-1488w-acb1b0c96aebd44a.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img094-display-384w-1551efe1ebabe849.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img094-display-768w-7f71477cb76621cb.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img094-display-1152w-06592b2680e63e5c.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img094-display-1488w-99ac96d3c0e0dd18.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "img095.jpg": {
+      "sourceHash": "7f0e6f5bb01e67dc4b1e8c50ca60efe678bde0c041702173e0b5020820a0e1e6",
+      "width": 1488,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/img095-thumbnail-70w-fe4603d6ce41f06a.webp",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img095-thumbnail-140w-997b17b947c77d02.webp",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img095-thumbnail-210w-d8c0fde0cb5e359c.webp",
+            "width": 210,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img095-thumbnail-70w-545bee6dd6733e91.jpg",
+            "width": 70,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/img095-thumbnail-140w-ab3aeb97957deba2.jpg",
+            "width": 140,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/img095-thumbnail-210w-607da1c70a9962ec.jpg",
+            "width": 210,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/img095-display-384w-f2948a51ec56e09b.webp",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img095-display-768w-af54790ffea1e879.webp",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img095-display-1152w-d64f4d0a77c81223.webp",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img095-display-1488w-7ab8c79f0550e3d2.webp",
+            "width": 1488,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/img095-display-384w-a35024d30d1789c0.jpg",
+            "width": 384,
+            "height": 528
+          },
+          {
+            "url": "/images/optimized/img095-display-768w-3f19806bc807055e.jpg",
+            "width": 768,
+            "height": 1057
+          },
+          {
+            "url": "/images/optimized/img095-display-1152w-21042ea017babc2e.jpg",
+            "width": 1152,
+            "height": 1585
+          },
+          {
+            "url": "/images/optimized/img095-display-1488w-01916cd10ffe2605.jpg",
+            "width": 1488,
+            "height": 2047
+          }
+        ]
+      }
+    },
+    "jack.jpg": {
+      "sourceHash": "60c7f3897ec54be4be97f73507681570d46a9f99d5558feba3154b58c52a5b4e",
+      "width": 1615,
+      "height": 2046,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/jack-thumbnail-76w-f4084e8e9b4ac26b.webp",
+            "width": 76,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/jack-thumbnail-151w-552f718d119d44d3.webp",
+            "width": 151,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/jack-thumbnail-227w-b1c3cfe46598e512.webp",
+            "width": 227,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/jack-thumbnail-76w-479f7a49155b2d3f.jpg",
+            "width": 76,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/jack-thumbnail-151w-3e98b811918e9ed4.jpg",
+            "width": 151,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/jack-thumbnail-227w-32247ac624faf4f2.jpg",
+            "width": 227,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/jack-display-384w-08bffff0a7770da0.webp",
+            "width": 384,
+            "height": 487
+          },
+          {
+            "url": "/images/optimized/jack-display-768w-059663ee747d1425.webp",
+            "width": 768,
+            "height": 973
+          },
+          {
+            "url": "/images/optimized/jack-display-1152w-0a5b14f6d2aeb59d.webp",
+            "width": 1152,
+            "height": 1459
+          },
+          {
+            "url": "/images/optimized/jack-display-1536w-28fac6ba7f3e8f13.webp",
+            "width": 1536,
+            "height": 1946
+          },
+          {
+            "url": "/images/optimized/jack-display-1615w-5e99e7899248f2d3.webp",
+            "width": 1615,
+            "height": 2046
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/jack-display-384w-9a1b049992ce9065.jpg",
+            "width": 384,
+            "height": 487
+          },
+          {
+            "url": "/images/optimized/jack-display-768w-ed32ce724020d51d.jpg",
+            "width": 768,
+            "height": 973
+          },
+          {
+            "url": "/images/optimized/jack-display-1152w-48b50fcc9a97fe3d.jpg",
+            "width": 1152,
+            "height": 1459
+          },
+          {
+            "url": "/images/optimized/jack-display-1536w-5b7b5c864f42676c.jpg",
+            "width": 1536,
+            "height": 1946
+          },
+          {
+            "url": "/images/optimized/jack-display-1615w-32cb6e1e49f235d0.jpg",
+            "width": 1615,
+            "height": 2046
+          }
+        ]
+      }
+    },
+    "lukas2.jpg": {
+      "sourceHash": "27b181bfc36754d4594f00de5d3cc06b81b8411d23536193686700eaa875a269",
+      "width": 1565,
+      "height": 2046,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/lukas2-thumbnail-73w-d2a3ae0054bb86cd.webp",
+            "width": 73,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/lukas2-thumbnail-147w-9a13b30b387cea61.webp",
+            "width": 147,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/lukas2-thumbnail-220w-66dd2fe976cb147f.webp",
+            "width": 220,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/lukas2-thumbnail-73w-5a21ef5d69307d76.jpg",
+            "width": 73,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/lukas2-thumbnail-147w-389667e076a5384f.jpg",
+            "width": 147,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/lukas2-thumbnail-220w-70e575371c389572.jpg",
+            "width": 220,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/lukas2-display-384w-b41d930848788164.webp",
+            "width": 384,
+            "height": 502
+          },
+          {
+            "url": "/images/optimized/lukas2-display-768w-4221d6daa8efe101.webp",
+            "width": 768,
+            "height": 1004
+          },
+          {
+            "url": "/images/optimized/lukas2-display-1152w-e60a11a4de62152f.webp",
+            "width": 1152,
+            "height": 1506
+          },
+          {
+            "url": "/images/optimized/lukas2-display-1536w-2c5b26e4de057be4.webp",
+            "width": 1536,
+            "height": 2008
+          },
+          {
+            "url": "/images/optimized/lukas2-display-1565w-4b76c51e4c1b852e.webp",
+            "width": 1565,
+            "height": 2046
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/lukas2-display-384w-c48272f0f53a707b.jpg",
+            "width": 384,
+            "height": 502
+          },
+          {
+            "url": "/images/optimized/lukas2-display-768w-4ed4538e4efe67b1.jpg",
+            "width": 768,
+            "height": 1004
+          },
+          {
+            "url": "/images/optimized/lukas2-display-1152w-98f438369c7ad794.jpg",
+            "width": 1152,
+            "height": 1506
+          },
+          {
+            "url": "/images/optimized/lukas2-display-1536w-52129db4d9f75040.jpg",
+            "width": 1536,
+            "height": 2008
+          },
+          {
+            "url": "/images/optimized/lukas2-display-1565w-e7361f66df98bf27.jpg",
+            "width": 1565,
+            "height": 2046
+          }
+        ]
+      }
+    },
+    "sammy_y_benito_tiny.jpg": {
+      "sourceHash": "6efe5ab7839edf9c85b51afe06fd2b6d714055ecfa48f7fb7839be8787a4a383",
+      "width": 2000,
+      "height": 2047,
+      "thumbnail": {
+        "webp": [
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-thumbnail-94w-c5c86122274d7b18.webp",
+            "width": 94,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-thumbnail-188w-e134febbeeffc5b7.webp",
+            "width": 188,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-thumbnail-282w-934cd271f62d41b2.webp",
+            "width": 282,
+            "height": 288
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-thumbnail-94w-e31ffb8ded13b8cf.jpg",
+            "width": 94,
+            "height": 96
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-thumbnail-188w-e571de9085e2f93b.jpg",
+            "width": 188,
+            "height": 192
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-thumbnail-282w-5890476898fbe524.jpg",
+            "width": 282,
+            "height": 288
+          }
+        ]
+      },
+      "display": {
+        "webp": [
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-384w-f329cdbfc6a640be.webp",
+            "width": 384,
+            "height": 392
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-768w-c266b1056368751b.webp",
+            "width": 768,
+            "height": 786
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-1152w-491d823cd6243b03.webp",
+            "width": 1152,
+            "height": 1179
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-1536w-0b8f585fddd3de73.webp",
+            "width": 1536,
+            "height": 1572
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-2000w-8fedb30feb3a29fa.webp",
+            "width": 2000,
+            "height": 2047
+          }
+        ],
+        "jpg": [
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-384w-4a21fae449591a4a.jpg",
+            "width": 384,
+            "height": 392
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-768w-2681ea79af667794.jpg",
+            "width": 768,
+            "height": 786
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-1152w-0da250fcf060119b.jpg",
+            "width": 1152,
+            "height": 1179
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-1536w-e156ff5c70035e22.jpg",
+            "width": 1536,
+            "height": 1572
+          },
+          {
+            "url": "/images/optimized/sammy_y_benito_tiny-display-2000w-3259b8419f36918e.jpg",
+            "width": 2000,
+            "height": 2047
+          }
+        ]
+      }
+    }
+  }
+}

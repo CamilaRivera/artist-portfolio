@@ -90,6 +90,21 @@ GitHub Actions monthly, grouping related Nest, test, and lint packages.
 
 ## Production
 
+Artwork display images and thumbnails use WebP with equivalent progressive JPEG
+fallbacks. The original files in `public/images/drawings` are preserved. Generated
+assets and their manifest are committed, so production needs no image processing.
+
+After adding or replacing a largest-resolution JPEG in `public/images/drawings/4x`,
+run `npm run images:optimize` and commit `public/images/optimized` together with
+`src/generated/image-assets.json`. Update the artwork list in `src/db.images.ts`
+when adding a new portrait. `npm run images:check` verifies that the committed
+files and manifest match the sources and encoding settings; CI runs this check.
+
+Generated filenames include a hash of the encoded bytes. Production serves them
+with one year of immutable caching; changed artwork receives new URLs.
+Development and unversioned assets keep ordinary caching. Retain old generated
+files when regenerating so cached pages can still resolve their image URLs.
+
 `npm run start:prod` sets `NODE_ENV=production` and loads `config/production.env`.
 Set production keys there or supply environment variables. The application does
 not read `config.env`. Run commands from the repository root.

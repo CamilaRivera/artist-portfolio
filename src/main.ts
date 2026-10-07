@@ -18,14 +18,12 @@ import { configureApplication } from './app.views';
 import { getSiteConfig } from './site.config';
 
 const partialsDirectory = join(__dirname, '..', 'views', 'partials');
-const publicDirectory = join(__dirname, '..', 'public');
 
 async function bootstrap() {
   getSiteConfig();
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   await configureApplication(app);
 
-  app.useStaticAssets(publicDirectory);
   if (process.env.NODE_ENV !== 'production') {
     watch(partialsDirectory, { persistent: false }, (_event, filename) => {
       if (filename?.endsWith('.hbs')) {

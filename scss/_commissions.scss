@@ -21,8 +21,16 @@
 }
 
 .commission-section__left {
+  position: relative;
   background-position: center;
   background-size: cover;
+  > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   @include breakpoints.media-breakpoint-down(xs) {
     height: 20rem;
   }

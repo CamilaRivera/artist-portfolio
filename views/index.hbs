@@ -9,10 +9,10 @@
     </div>
   </div>
   <div class="image-carousel" id="index-carousel">
-    {{> responsiveImage image=imagesBar.[0] class='image-carousel__main-image' lang=lang onclick='maximizeImage(this)'}}
+    {{> responsiveImage image=imagesBar.[0] class='image-carousel__main-image' lang=lang eager=true priority='high' onclick='maximizeImage(this)'}}
     <div class="image-carousel__image-thumb-container">
       {{#each imagesBar}}
-        {{> responsiveImage image=this class='thumb' lang=../lang sizes='100px' onclick=(createFunctionCall 'selectCorouselImage' 'this' @index '"index-carousel"' this.dimension.w this.dimension.h)}}
+        {{> responsiveImage image=this class='thumb' lang=../lang thumbnail=true onclick='selectCarouselImage(this)'}}
       {{/each}}
     </div>
   </div>
@@ -33,5 +33,9 @@
     aria-label="{{i18n 'close'}}">
     <span aria-hidden="true">&times; {{i18n 'close'}}</span>
   </button>
-  {{> responsiveImage image=imagesBar.[0] lang=lang sizes='100vw' onclick='toggleZoom(this)'}}
+  {{!-- No active URLs until the visitor opens an enlargement. --}}
+  <picture class="responsive-image">
+    <source type="image/webp">
+    <img alt="" onclick="toggleZoom(this)">
+  </picture>
 </div>

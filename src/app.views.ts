@@ -3,6 +3,7 @@ import { join } from 'path';
 import hbs from 'hbs';
 import { getLanguage, translate } from './app.internationalization';
 import { configureStylesheet } from './app.styles';
+import { drawingSources } from './image.assets';
 
 export async function configureApplication(app: NestExpressApplication) {
   // The default supports a local reverse proxy. Set exact proxy IPs/subnets for
@@ -12,6 +13,21 @@ export async function configureApplication(app: NestExpressApplication) {
   app.set('view options', { layout: 'layouts/layout' });
   app.setViewEngine('hbs');
   configureStylesheet(app);
+  app.useStaticAssets(join(__dirname, '..', 'public'), {
+    setHeaders: (response, path) => {
+      if (
+        process.env.NODE_ENV === 'production' &&
+        /[/\\]images[/\\]optimized[/\\][^/\\]+-[a-f0-9]{16}\.(?:webp|jpg)$/.test(
+          path,
+        )
+      ) {
+        response.setHeader(
+          'Cache-Control',
+          'public, max-age=31536000, immutable',
+        );
+      }
+    },
+  });
   await new Promise<void>((resolve, reject) =>
     hbs.registerPartials(
       join(__dirname, '..', 'views', 'partials'),
@@ -19,6 +35,7 @@ export async function configureApplication(app: NestExpressApplication) {
     ),
   );
   hbs.registerHelper('i18n', translate);
+  hbs.registerHelper('drawingSources', drawingSources);
   hbs.registerHelper('cmToInches', (value) => (0.393701 * value).toFixed(1));
   hbs.registerHelper('equals', (value1, value2) => value1 === value2);
   hbs.registerHelper('pluralize', (word, quantity) =>

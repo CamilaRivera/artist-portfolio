@@ -4,69 +4,84 @@ function toggleMenu() {
   document.querySelector('.navbar').classList.toggle('navbar--toggled');
 }
 
-function selectCorouselImage(imageTag, imageIndex, containerID, width, height) {
-  const mainImage = document.querySelector(`#${containerID} > img`);
-  mainImage.srcset = imageTag.srcset;
-  mainImage.img = imageTag.img;
-  mainImage.alt = imageTag.alt;
-  mainImage.setAttribute('data-image-width', Number.parseInt(width, 10) * 4);
-  mainImage.setAttribute('data-image-height', Number.parseInt(height, 10) * 4);
+function setPictureSizes(image, sizes) {
+  image.sizes = sizes;
+  const source = image.closest('picture').querySelector('source');
+  if (source) source.sizes = sizes;
+}
+
+function showArtwork(target, selected, enlarged = false) {
+  const picture = target.closest('picture');
+  Object.assign(target.dataset, selected.dataset);
+  target.alt = selected.alt;
+  target.width = Number(selected.dataset.imageWidth);
+  target.height = Number(selected.dataset.imageHeight);
+  picture.style.setProperty('--image-ratio', selected.dataset.imageRatio);
+  setPictureSizes(
+    target,
+    enlarged ? target.dataset.overlaySizes : target.dataset.displaySizes,
+  );
+  const source = picture.querySelector('source');
+  if (source) source.srcset = target.dataset.displayWebpSrcset;
+  target.srcset = target.dataset.displayJpegSrcset;
+  target.src = target.dataset.displaySrc;
+}
+
+function selectCarouselImage(imageTag) {
+  const mainImage = document.querySelector('#index-carousel > picture > img');
+  showArtwork(mainImage, imageTag);
 }
 
 function maximizeImage(imageTag) {
-  const maximizedImageContainer = document.querySelector(
-    '.maximized-image-container',
-  );
-  const image = maximizedImageContainer.querySelector('img');
-  image.srcset = imageTag.srcset;
-  image.img = imageTag.img;
-  image.alt = imageTag.alt;
-  image.setAttribute(
-    'data-image-width',
-    imageTag.getAttribute('data-image-width'),
-  );
-  image.setAttribute(
-    'data-image-height',
-    imageTag.getAttribute('data-image-height'),
-  );
-  maximizedImageContainer.style.display = 'flex';
+  const container = document.querySelector('.maximized-image-container');
+  const image = container.querySelector('img');
+  // Reset before replacing sources so reopening cannot request the previous
+  // artwork at a different resolution.
+  image.style.cssText = '';
+  image.closest('picture').style.width = '';
+  showArtwork(image, imageTag, true);
+  container.style.display = 'flex';
 }
 
 function closeMaximizedImage() {
-  const maximizedImageContainer = document.querySelector(
-    '.maximized-image-container',
-  );
-  maximizedImageContainer.style.display = 'none';
-  resetZoom(maximizedImageContainer.querySelector('img'));
+  const container = document.querySelector('.maximized-image-container');
+  container.style.display = 'none';
 }
 
-function resetZoom(maximizedImageTag) {
-  maximizedImageTag.setAttribute('sizes', '100vw');
-  maximizedImageTag.style.maxWidth = '100%';
-  maximizedImageTag.style.maxHeight = '100%';
-  maximizedImageTag.style.width = null;
-  maximizedImageTag.style.height = null;
+function resetZoom(image) {
+  image.style.cssText = '';
+  image.closest('picture').style.width = '';
+  setPictureSizes(image, image.dataset.overlaySizes);
 }
 
-function toggleZoom(maximizedImageTag) {
-  if (
-    maximizedImageTag.style.maxWidth === '100%' ||
-    !maximizedImageTag.style.maxWidth
-  ) {
-    maximizedImageTag.style.maxWidth = 'none';
-    maximizedImageTag.style.maxHeight = 'none';
-    maximizedImageTag.style.maxHeight = 'none';
-    maximizedImageTag.setAttribute(
-      'sizes',
-      `${maximizedImageTag.getAttribute('data-image-width')}px`,
-    );
-    maximizedImageTag.style.width = `${maximizedImageTag.getAttribute(
-      'data-image-width',
-    )}px`;
-    maximizedImageTag.style.height = `${maximizedImageTag.getAttribute(
-      'data-image-height',
-    )}px`;
-  } else {
-    resetZoom(maximizedImageTag);
+function toggleZoom(image) {
+  if (image.style.width) {
+    resetZoom(image);
+    return;
   }
+  const width = `${image.dataset.imageWidth}px`;
+  image.closest('picture').style.width = width;
+  image.style.maxWidth = 'none';
+  image.style.maxHeight = 'none';
+  image.style.width = width;
+  image.style.height = `${image.dataset.imageHeight}px`;
+  setPictureSizes(image, width);
+}
+
+// Price copy can make commission cards taller than their CSS minimum. Match
+// the source resolution to the real crop, including after font/viewport changes.
+if (typeof ResizeObserver !== 'undefined') {
+  const observer = new ResizeObserver((entries) => {
+    for (const { target, contentRect } of entries) {
+      const image = target.querySelector('img');
+      const ratio =
+        Number(image.getAttribute('width')) /
+        Number(image.getAttribute('height'));
+      const width = Math.max(contentRect.width, contentRect.height * ratio);
+      setPictureSizes(image, `${Math.ceil(width)}px`);
+    }
+  });
+  document.querySelectorAll('.commission-section__left').forEach((picture) => {
+    observer.observe(picture);
+  });
 }
