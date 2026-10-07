@@ -129,6 +129,20 @@ HTTP, `www` aliases, uppercase paths, and trailing slashes to the preferred URL,
 preserving query strings. SEO metadata and language links omit query strings.
 POST requests are not redirected. Route `www` aliases through DNS/TLS/proxy if used.
 
+Each language domain serves `/robots.txt` and `/sitemap.xml`. Robots allows
+crawling and references that domain's sitemap. Each sitemap lists the five main
+pages using the same preferred URLs as the page canonical tags; the existing
+HTML language annotations link translations. Both files are generated from the
+language host configuration and shared page list, so no static files need updating.
+A sitemap index is unnecessary for these small sitemaps. Modification dates are
+omitted because the application does not track significant page updates.
+
+After deploying, submit `https://flaviacanepa.cl/sitemap.xml` in the Spanish
+domain's Google Search Console property and `https://flaviacanepa.com/sitemap.xml`
+in the English domain's property. Use the Sitemaps report to check fetch and
+processing status. The robots references also let crawlers discover the sitemaps
+without a manual submission.
+
 ```bash
 # install dependencies
 $ nvm install

@@ -78,6 +78,73 @@ describe('language URLs and canonical pages (e2e)', () => {
 
   beforeEach(() => sendContactEmail.mockClear());
 
+  it.each(['es', 'en'] as Language[])(
+    '%s robots.txt allows crawling and advertises its own sitemap',
+    async (language) => {
+      const response = await request(app.getHttpServer())
+        .get('/robots.txt')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200)
+        .expect('Content-Type', /text\/plain; charset=utf-8/);
+      expect(response.text).toBe(
+        `User-agent: *\nAllow: /\n\nSitemap: https://${hosts[language]}/sitemap.xml\n`,
+      );
+      const head = await request(app.getHttpServer())
+        .head('/robots.txt')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200)
+        .expect('Content-Type', /text\/plain; charset=utf-8/);
+      expect(head.text).toBeUndefined();
+    },
+  );
+
+  it.each(['es', 'en'] as Language[])(
+    '%s sitemap contains only its five canonical page URLs',
+    async (language) => {
+      const response = await request(app.getHttpServer())
+        .get('/sitemap.xml?utm_source=test')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200)
+        .expect('Content-Type', /application\/xml; charset=utf-8/);
+      const xml = response.text;
+      expect(xml).toMatch(/^<\?xml version="1.0" encoding="UTF-8"\?>\n/);
+      expect(xml).toContain(
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+      );
+      const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+        (match) => match[1],
+      );
+      expect(urls).toEqual(
+        ['/', '/about', '/faq', '/commission-portrait', '/contact'].map(
+          (path) => `https://${hosts[language]}${path}`,
+        ),
+      );
+      expect(xml).toMatch(/<\/urlset>\n$/);
+      expect(xml).not.toContain('localhost');
+      expect(xml).not.toContain('utm_source');
+      const head = await request(app.getHttpServer())
+        .head('/sitemap.xml')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200)
+        .expect('Content-Type', /application\/xml; charset=utf-8/);
+      expect(head.text).toBeUndefined();
+    },
+  );
+
+  it.each(['/robots.txt', '/sitemap.xml'])(
+    '%s rejects unknown production hosts',
+    async (path) => {
+      await request(app.getHttpServer())
+        .get(path)
+        .set('Host', 'unrelated.example')
+        .expect(400);
+    },
+  );
+
   it.each(cases)(
     '%s %s serves translated HTML with reciprocal SEO URLs',
     async (language: Language, path: string) => {

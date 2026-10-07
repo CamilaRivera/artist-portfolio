@@ -4,6 +4,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LanguageMiddleware } from './language.middleware';
+import { SiteDiscoveryController } from './site.discovery.controller';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
 @Module({
@@ -32,7 +33,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
       }),
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, SiteDiscoveryController],
   providers: [AppService],
 })
 export class AppModule {
