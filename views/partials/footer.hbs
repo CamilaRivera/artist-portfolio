@@ -1,13 +1,35 @@
-<footer class="footer">
-  <div class="footer__copyright">
-    © 2021 Flavia Canepa
-  </div>
-  <div class="footer__social-buttons">
-    <a class="footer__link" href="https://www.instagram.com/flavia_canepa/">
-      <i class="fab fa-instagram fa-2x"></i>
+<footer class='footer container'>
+  <div><a class='footer__name' href='/'>Flavia Canepa</a><p>{{i18n
+        'ui.footerNote'
+      }}</p><small>© {{year}} Flavia Canepa</small></div>
+  <div class='footer__links'>
+    <a href='/commission-portrait'>{{i18n 'ui.prices'}}</a>
+    <a href='/contact'>{{i18n 'navbar.contact'}}</a>
+    <a
+      href='https://www.instagram.com/flavia_canepa/'
+      aria-label='{{i18n "ui.instagram"}}'
+    >
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        aria-hidden='true'
+      ><rect x='3' y='3' width='18' height='18' rx='5' /><circle
+          cx='12'
+          cy='12'
+          r='4'
+        /><circle
+          cx='17.5'
+          cy='6.5'
+          r='0.75'
+          fill='currentColor'
+          stroke='none'
+        /></svg>
+      Instagram
+      <span aria-hidden='true'>↗</span>
     </a>
-    {{!-- <a class="footer__link" href="https://facebook.com">
-      <i class="fab fa-facebook fa-2x"></i>
-    </a> --}}
   </div>
 </footer>

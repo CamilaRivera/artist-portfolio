@@ -1,10 +1,11 @@
-import { getRandomDrawings } from '../db.images';
+import { featuredDrawings } from '../db.images';
+import { getLanguage, translate } from '../app.internationalization';
 
 export const getCommisionsPriceOptions = () => {
   return [
     {
       subjects: 1,
-      image: getRandomDrawings(1, 1)[0],
+      image: featuredDrawings[0],
       prefix: 'singleSubjectBox',
       sizes: [
         {
@@ -27,7 +28,7 @@ export const getCommisionsPriceOptions = () => {
     },
     {
       subjects: 2,
-      image: getRandomDrawings(1, 2)[0],
+      image: featuredDrawings[3],
       prefix: 'doubleSubjectBox',
       sizes: [
         {
@@ -44,5 +45,12 @@ export const getCommisionsPriceOptions = () => {
         },
       ],
     },
-  ];
+  ].map((group) => ({
+    ...group,
+    sizes: group.sizes.map((option) => ({
+      ...option,
+      id: `${group.subjects}-${option.size.width}x${option.size.height}`,
+      label: `${translate('contactForm', group.prefix)} · ${option.size.width} × ${option.size.height} cm · $${new Intl.NumberFormat(getLanguage() === 'es' ? 'es-CL' : 'en-US').format(option.price[getLanguage()])} ${getLanguage() === 'es' ? 'CLP' : 'USD'}`,
+    })),
+  }));
 };

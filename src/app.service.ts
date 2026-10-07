@@ -10,21 +10,14 @@ export class AppService {
     return 'Hello World!';
   }
 
-  public sendContactEmail(formData: ContactForm): void {
-    this.mailerService
-      .sendMail({
-        to: process.env.TARGET_EMAIL, // List of receivers email address
-        // from: 'user@outlook.com', // Senders email address
-        subject: `[Contacto retrato] - ${formData.name} - ${formData.type}`,
-        template: 'contactEmail',
-        context: formData,
-        replyTo: formData.email,
-      })
-      .then((success) => {
-        console.log('Success sending contact email', success);
-      })
-      .catch((err) => {
-        console.error('Error sending contact email', err);
-      });
+  public async sendContactEmail(formData: ContactForm): Promise<void> {
+    await this.mailerService.sendMail({
+      to: process.env.TARGET_EMAIL, // List of receivers email address
+      // from: 'user@outlook.com', // Senders email address
+      subject: `[Contacto retrato] - ${formData.name} - ${formData.type}`,
+      template: 'contactEmail',
+      context: formData,
+      replyTo: formData.email,
+    });
   }
 }

@@ -1,25 +1,14 @@
 {{#with (drawingSources image thumbnail role)}}
 <picture class="responsive-image {{../class}}" style="--image-ratio: {{ratio}}">
   <source type="image/webp" srcset="{{webpSrcset}}" sizes="{{sizes}}">
-  <img
-    src="{{src}}"
-    srcset="{{jpegSrcset}}"
-    sizes="{{sizes}}"
-    width="{{width}}"
-    height="{{height}}"
+  <img src="{{src}}" srcset="{{jpegSrcset}}" sizes="{{sizes}}" width="{{width}}" height="{{height}}"
     alt="{{lookup ../image.alt ../lang.language}}"
-    loading="{{#if ../eager}}eager{{else}}lazy{{/if}}"
+    loading="{{#if ../eager}}eager{{else}}lazy{{/if}}" decoding="async"
     {{#if ../priority}}fetchpriority="{{../priority}}"{{/if}}
-    {{#if ../onclick}}
-    data-image-width="{{width}}"
-    data-image-height="{{height}}"
-    data-image-ratio="{{ratio}}"
-    data-display-src="{{displaySrc}}"
-    data-display-jpeg-srcset="{{displayJpegSrcset}}"
-    data-display-webp-srcset="{{displayWebpSrcset}}"
-    data-display-sizes="{{displaySizes}}"
-    data-overlay-sizes="{{overlaySizes}}"
-    onclick="{{../onclick}}"
+    {{#if ../interactive}}
+      data-image-width="{{width}}" data-image-height="{{height}}" data-image-ratio="{{ratio}}"
+      data-display-src="{{displaySrc}}" data-display-jpeg-srcset="{{displayJpegSrcset}}"
+      data-display-webp-srcset="{{displayWebpSrcset}}" data-overlay-sizes="{{overlaySizes}}"
     {{/if}}>
 </picture>
 {{/with}}

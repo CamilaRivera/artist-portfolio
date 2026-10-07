@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html lang="{{lang.language}}">
-<head>
-  <title>{{i18n headSlug.title}}</title>
-  <meta name="description" content="{{i18n headSlug.description}}">
-  <link rel="canonical" href="{{lang.canonicalUrl}}" />
-  <link rel="alternate" hreflang="es" href="{{lang.esUrl}}" />
-  <link rel="alternate" hreflang="en" href="{{lang.enUrl}}" />
-  <meta property="og:locale" content="{{lang.language}}" />
-  <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{!-- used favicon generator: https://favicon.io/favicon-generator/ --}}
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/stylesheets/index.css">
-</head>
-
-<body>
-  <div class="main-container">
-    <div>
-      {{> navbar}}
-      {{{body}}}
-    </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{i18n headSlug.title}}</title>
+    <meta name="description" content="{{i18n headSlug.description}}" />
+    <link rel="canonical" href="{{lang.canonicalUrl}}" />
+    <link rel="alternate" hreflang="es" href="{{lang.esUrl}}" />
+    <link rel="alternate" hreflang="en" href="{{lang.enUrl}}" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Flavia Canepa" />
+    <meta
+      property="og:locale"
+      content="{{#if (equals lang.language 'es')}}es_CL{{else}}en_US{{/if}}"
+    />
+    <meta property="og:title" content="{{i18n headSlug.title}}" />
+    <meta property="og:description" content="{{i18n headSlug.description}}" />
+    <meta property="og:url" content="{{lang.canonicalUrl}}" />
+    <meta property="og:image" content="{{previewImageUrl lang.canonicalUrl}}" />
+    <meta property="og:image:alt" content="{{i18n 'gallery.previewAlt'}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{i18n headSlug.title}}" />
+    <meta name="twitter:description" content="{{i18n headSlug.description}}" />
+    <meta
+      name="twitter:image"
+      content="{{previewImageUrl lang.canonicalUrl}}"
+    />
+    <meta name="twitter:image:alt" content="{{i18n 'gallery.previewAlt'}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <script defer src="/javascript/index.js"></script>
+  </head>
+  <body
+    class="{{#unless (equals queryPath '/contact')}}has-mobile-actions{{/unless}}"
+  >
+    <a class="skip-link" href="#main-content">{{i18n 'ui.skipContent'}}</a>
+    {{> navbar}}
+    {{{body}}}
     {{> footer}}
-  </div>
-  <script type="text/javascript" src="/javascript/index.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{lang.analyticsApiKey}}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{lang.analyticsApiKey}}');
-  </script>
-</body>
-
+    {{#unless (equals queryPath '/contact')}}
+    <nav class="mobile-actions" aria-label="{{i18n 'ui.commissionNavigation'}}">
+      <a class="button button--secondary" href="/commission-portrait"
+        >{{i18n 'ui.prices'}}</a
+      >
+      <a class="button" href="/contact">{{i18n 'ui.commission'}}</a>
+    </nav>
+    {{/unless}}
+    <dialog class="artwork-dialog" aria-label="{{i18n 'gallery.enlargement'}}">
+      <button class="artwork-dialog__close" type="button" autofocus>
+        {{i18n 'close'}} <span aria-hidden="true">×</span>
+      </button>
+      {{!-- Sources are assigned only when an artwork is opened. --}}
+      <picture>
+        <source type="image/webp" />
+        <img alt="" />
+      </picture>
+      <p class="artwork-dialog__caption"></p>
+    </dialog>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{lang.analyticsApiKey}}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', '{{lang.analyticsApiKey}}');
+    </script>
+  </body>
 </html>

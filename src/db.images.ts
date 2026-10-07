@@ -15,12 +15,18 @@ export const imageFilenames = [
   {
     name: 'Bowie.jpg',
     subjects: 1,
-    alt: { en: 'Dog drawing, one subject', es: 'Dibujo perro, un sujeto' },
+    alt: {
+      en: 'Portrait drawing of Bowie, a dog wearing a blue bandana',
+      es: 'Dibujo de Bowie, un perro con un pañuelo azul',
+    },
   },
   {
     name: 'Briso.jpg',
     subjects: 1,
-    alt: { en: 'Cat drawing, one subject', es: 'Dibujo gato, un sujeto' },
+    alt: {
+      en: 'Portrait drawing of Briso, a tabby cat',
+      es: 'Dibujo de Briso, un gato atigrado',
+    },
   },
   {
     name: 'caballo.jpg',
@@ -121,7 +127,7 @@ export const imageFilenames = [
   {
     name: 'Malu.jpg',
     subjects: 1,
-    alt: { en: 'Dog drawing, one subject', es: 'Dibujo perro, un sujeto' },
+    alt: { en: 'Dog portrait drawing of Malu', es: 'Dibujo de Malu, un perro' },
   },
   {
     name: 'Negrita.jpg',
@@ -132,8 +138,8 @@ export const imageFilenames = [
     name: 'sammy_y_benito_tiny.jpg',
     subjects: 2,
     alt: {
-      en: 'Two dogs drawing, two subjects',
-      es: 'Dibujo de dos perros, dos sujetos',
+      en: 'Portrait drawing of Sammy and Benito, two white dogs',
+      es: 'Dibujo de Sammy y Benito, dos perros blancos',
     },
   },
   {
@@ -152,3 +158,16 @@ export const getRandomDrawings = (count = 7, subjects?: number) => {
     : imageFilenames;
   return sampleSize(imagesToUse, count);
 };
+
+export const featuredDrawings = [
+  'Bowie.jpg',
+  'Briso.jpg',
+  'caballo.jpg',
+  'sammy_y_benito_tiny.jpg',
+  'Malu.jpg',
+  'Baco.jpg',
+].map((name) => imageFilenames.find((image) => image.name === name)!);
+
+export const remainingDrawings = imageFilenames.filter(
+  (image) => !featuredDrawings.includes(image),
+);

@@ -1,24 +1,27 @@
-<div class="commissions-section">
-  {{> imagesBar images=imagesBar lang=lang}}
-  {{!-- {{> mainSectionBar barTitle='commissions.orderYourPortrait' barSubTitle='commissions.text'}} --}}
-
-  <div class="section-wrapper">
-    <div class="brand-section__sub-header brand-section__sub-header--light">
-      <h1>
-        {{i18n 'commissions.orderYourPortrait'}}
-      </h1>
-    </div>
-    <div class="commission-section-container">
-      {{#each priceBoxes}}
-        {{> commissionPriceSection lang=../lang}}
-      {{/each}}
-    </div>
-    <div class="section-wrapper">
-      <section class="brand-section__content-container brand-section__content-container--light">
-        <a href="/contact">
-          {{i18n 'commissions.threeOrMore'}}
-        </a>
-      </section>
-    </div>
+<main id="main-content" class="commissions-section container page">
+  <header class="page-heading">
+    <p class="eyebrow">{{i18n 'home.pricingEyebrow'}}</p>
+    <h1>{{i18n 'commissions.pageTitle'}}</h1>
+    <p>{{i18n 'commissions.intro'}}</p>
+    <div class="currency-note">{{i18n 'commissions.currenciesInfo'}}</div>
+  </header>
+  <div class="commission-section-container">
+    {{#each priceBoxes}}{{> commissionPriceSection lang=../lang}}{{/each}}
   </div>
-</div>
+  <aside class="pricing-notes">
+    <h2>{{i18n 'commissions.included'}}</h2>
+    <p>{{i18n 'commissions.footnote'}}</p>
+    <p>{{i18n 'commissions.footnote2'}}</p>
+    <p>{{i18n 'index.delivery'}}</p>
+  </aside>
+  <section class="custom-quote">
+    <div>
+      <p class="eyebrow">{{i18n 'home.customTitle'}}</p>
+      <h2>{{i18n 'commissions.customHeading'}}</h2>
+      <p>{{i18n 'commissions.customDescription'}}</p>
+    </div>
+    <a class="button" href="/contact"
+      >{{i18n 'ui.getQuote'}} <span aria-hidden="true">↗</span></a
+    >
+  </section>
+</main>

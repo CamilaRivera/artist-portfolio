@@ -1,13 +1,26 @@
-import { Body, Controller, Get, Post, Render, UseGuards } from '@nestjs/common';
-import { getRandomDrawings } from './db.images';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Query,
+  Render,
+  Res,
+  UseFilters,
+  UseGuards,
+} from '@nestjs/common';
+import type { Response } from 'express';
+import { featuredDrawings, remainingDrawings } from './db.images';
 import { AppService } from './app.service';
 import { getCommisionsPriceOptions } from './utils/utils.commisions';
 import { ContactForm } from './types/ContactForm';
 import {
   getContactFormContext,
+  getContactFormData,
   validateFormData,
 } from './utils/utils.contactForm';
 import { RecaptchaGuard } from './guard.recaptcha';
+import { ContactVerificationFilter } from './contact-verification.filter';
 
 @Controller()
 export class AppController {
@@ -21,8 +34,13 @@ export class AppController {
       description: 'index.head.description',
       keywords: 'index.head.keywords',
     };
-    const imagesBar = getRandomDrawings(16);
-    return { headSlug, imagesBar };
+    return {
+      headSlug,
+      heroImage: featuredDrawings[0],
+      featuredImages: featuredDrawings,
+      moreImages: remainingDrawings,
+      priceBoxes: getCommisionsPriceOptions(),
+    };
   }
 
   @Get('/about')
@@ -33,8 +51,7 @@ export class AppController {
       description: 'about.head.description',
       keywords: 'about.head.keywords',
     };
-    const imagesBar = getRandomDrawings();
-    return { headSlug, imagesBar };
+    return { headSlug, artwork: featuredDrawings[1] };
   }
 
   @Get('/faq')
@@ -45,8 +62,7 @@ export class AppController {
       description: 'faq.head.description',
       keywords: 'faq.head.keywords',
     };
-    const imagesBar = getRandomDrawings();
-    return { headSlug, imagesBar };
+    return { headSlug };
   }
 
   @Get('/commission-portrait')
@@ -58,26 +74,33 @@ export class AppController {
       keywords: 'commissions.head.keywords',
     };
     const priceBoxes = getCommisionsPriceOptions();
-    const imagesBar = getRandomDrawings();
-    return { headSlug, priceBoxes, imagesBar };
+    return { headSlug, priceBoxes };
   }
 
   @Get('/contact')
   @Render('contact')
-  contact() {
-    return getContactFormContext();
+  contact(@Query('option') option?: string) {
+    return getContactFormContext(option);
   }
 
   @Post('/contact')
   @Render('contact')
   @UseGuards(RecaptchaGuard)
-  contactProcess(@Body() formData: ContactForm) {
-    console.log('formData', formData);
-    const errors = validateFormData(formData);
-    if (Object.keys(errors).length === 0) {
-      this.appService.sendContactEmail(formData);
-      return { ...getContactFormContext(), success: true, data: formData };
+  @UseFilters(ContactVerificationFilter)
+  async contactProcess(
+    @Body() formData: ContactForm,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    const data = getContactFormData(formData);
+    const page = getContactFormContext(undefined, data);
+    const errors = validateFormData(data);
+    if (Object.keys(errors).length) return { ...page, errors };
+    try {
+      await this.appService.sendContactEmail(data);
+      return { ...page, success: true };
+    } catch {
+      response.status(503);
+      return { ...page, formError: 'contact.deliveryError' };
     }
-    return { ...getContactFormContext(), errors, data: formData };
   }
 }

@@ -1,7 +1,6 @@
-<div class="brand-section__list-item">
-  <div class="brand-section__list-item-custom-bullet">
-    <i class="fas fa-question-circle fa-2x"></i>
-  </div>
-  <h2>{{i18n 'faq.questions' questionIndex 'question'}}</h2>
+<details class='faq-item'>
+  <summary><h2>{{i18n 'faq.questions' questionIndex 'question'}}</h2><span
+      aria-hidden='true'
+    >+</span></summary>
   <p>{{i18n 'faq.questions' questionIndex 'answer'}}</p>
-</div>
+</details>

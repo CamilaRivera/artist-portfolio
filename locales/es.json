@@ -10,10 +10,14 @@
 		"bookYourPortraitTitle": "commissions.bookYourPortraitTitle",
 		"bookYourPortraitDetails": "commissions.bookYourPortraitDetails",
 		"singleSubjectBox": {
-			"title": "Retratos y Comisiones 1 sujeto"
+			"title": "Retratos y Comisiones 1 sujeto",
+			"shortTitle": "Un compañero",
+			"description": "Un pequeño homenaje a un gran amigo."
 		},
 		"doubleSubjectBox": {
-			"title": "Retrato o Comisión doble (2 sujetos)"
+			"title": "Retrato o Comisión doble (2 sujetos)",
+			"shortTitle": "Dos compañeros",
+			"description": "Ese vínculo especial, juntos en un retrato."
 		},
 		"aboutMyArtTitle": "Sobre mi Arte",
 		"aboutMyArtContent": "Hago todos mis retratos con materiales profesionales que aseguran su durabilidad en el tiempo, ya sea con lapices de colores o con pasteles, sobre papel acuarela o pastelmat, eso se puede elegir al momento de solicitar un retrato, al igual que el fondo, con colores o ausente",
@@ -23,7 +27,14 @@
 			"keywords": "commissions.head.keywords"
 		},
 		"footnote2": "18x24 y 20x34 pueden ser enmarcados de manera sencilla por $10.000 adicional, recomiendo siempre utilizar enmarcadores profesionales que harán que el retrato quede protegido",
-		"threeOrMore": "3 o más escribir en contacto"
+		"threeOrMore": "3 o más escribir en contacto",
+		"pageTitle": "Tamaños, precios y posibilidades.",
+		"intro": "Elige un retrato para uno o dos compañeros, o consulta por una obra especial. Todo comienza con tus fotografías.",
+		"sizeLabel": "Tamaño",
+		"priceLabel": "Precio",
+		"included": "Los detalles que importan",
+		"customHeading": "¿Más caritas o una idea diferente?",
+		"customDescription": "Para tres o más sujetos o un encargo especial, cuéntame un poco sobre lo que tienes en mente."
 	},
 	"navbar": {
 		"home": "Home",
@@ -56,10 +67,12 @@
 			"title": "Retratos de mascotas: preguntas frecuentes | Flavia Canepa",
 			"description": "Resuelve tus dudas sobre retratos de mascotas a pedido con Flavia Canepa: pagos, plazos, fotos de referencia y cómo comenzar tu encargo.",
 			"keywords": "faq.head.keywords"
-		}
+		},
+		"eyebrow": "Antes de empezar",
+		"intro": "Algunas respuestas sobre fotografías, pagos y los tiempos para crear tu retrato."
 	},
 	"index": {
-		"title": "Retratos de mascotas a pedido",
+		"title": "Retratos de mascotas",
 		"subtitle": "Retratos personalizados de perros, gatos y caballos, dibujados a mano con lápices de colores o pasteles.",
 		"introduction": "Soy Flavia Canepa y creo retratos de tu mascota a partir de fotografías, con materiales profesionales sobre papel acuarela o Pastelmat. Elige el tamaño, la técnica y el fondo para crear un recuerdo de tu compañero.",
 		"delivery": "Trabajo desde Chile y recibo encargos de clientes en Chile y otros países. Consulta las opciones y los costos de envío a tu destino antes de confirmar tu pedido.",
@@ -94,7 +107,12 @@
 			"title": "Sobre la artista de retratos de mascotas | Flavia Canepa",
 			"description": "Conoce a Flavia Canepa, artista autodidacta y médica veterinaria que dibuja retratos de mascotas con lápices de colores o pasteles y materiales profesionales.",
 			"keywords": "about.head.keywords"
-		}
+		},
+		"intro": "Artista, médica veterinaria y una vida compartida con animales.",
+		"caption": "Briso · Retrato de gato a pedido",
+		"storyTitle": "Un amor por los animales, en papel.",
+		"story": "Soy dibujante autodidacta y médica veterinaria. Dibujo animales desde pequeña; retratar las mascotas de mis amigos me animó a seguir mejorando mi técnica e invertir en materiales profesionales.",
+		"materials": "Trabajo con lápices de colores o pasteles sobre papel acuarela o Pastelmat. Puedes elegir la técnica y un fondo plano o con gradiente de color. Uso materiales profesionales seleccionados por su calidad y durabilidad."
 	},
 	"close": "Cerrar",
 	"contact": {
@@ -103,22 +121,94 @@
 			"description": "Contacta a Flavia Canepa para encargar tu retrato de mascota. Cuéntame sobre tus fotos, el tamaño y los animales que quieres retratar y solicita una cotización."
 		},
 		"header": "Contacto - Ordenar retrato",
-		"successMessage": "Mensaje de contacto enviado!"
+		"successMessage": "Mensaje de contacto enviado!",
+		"title": "Creemos algo personal.",
+		"intro": "Cuéntame sobre tu compañero y el retrato que imaginas. ¿Dudas sobre el tamaño o las fotos? Lo vemos juntos.",
+		"formLabel": "Consulta por un retrato",
+		"successDetails": "Gracias por contarme sobre tu retrato. Te responderé al correo que indicaste para conversar sobre los detalles.",
+		"backToGallery": "Volver a la galería",
+		"asideTitle": "¿Necesitas ayuda para elegir?",
+		"asideDescription": "Revisa los tamaños y precios, o selecciona «Ayúdame a elegir» en el formulario. No necesitas tener todos los detalles resueltos.",
+		"instagramTitle": "¿Prefieres conversar por Instagram?",
+		"instagramDescription": "También puedes ver obras recientes y escribirme por ahí.",
+		"optional": "(opcional)",
+		"messageHint": "Cuéntame a quién te gustaría retratar, si hay una ocasión o fecha especial y dónde se entregaría. Conversaremos sobre las fotos por correo.",
+		"noCommitment": "Una consulta inicia una conversación. Aquí no se realiza ningún pago.",
+		"javascriptRequired": "Este formulario necesita JavaScript para la protección contra spam. También puedes escribirme por",
+		"submitting": "Enviando tu consulta…",
+		"verificationError": "No pudimos completar la verificación contra spam. Inténtalo de nuevo o escríbeme por Instagram.",
+		"deliveryError": "No se pudo enviar tu mensaje. Tus datos siguen aquí; inténtalo de nuevo o escríbeme por Instagram."
 	},
 	"contactForm": {
 		"inputs": {
 			"name": "Nombre",
 			"type": "Tipo de retrato",
 			"body": "Información adicional",
-			"otherOption": "3 Sujetos / Otro"
+			"otherOption": "3 Sujetos / Otro",
+			"email": "Correo electrónico",
+			"helpOption": "Ayúdame a elegir"
 		},
 		"errors": {
 			"name": "Ingrese su nombre",
 			"type": "Seleccione un tipo de retrato",
-			"email": "Ingrese un correo"
+			"email": "Ingresa un correo electrónico válido"
 		},
 		"singleSubjectBox": "1 Sujeto",
 		"doubleSubjectBox": "2 Sujetos",
-		"submit": "Cotizar retrato"
+		"submit": "Enviar mi consulta"
+	},
+	"ui": {
+		"skipContent": "Ir al contenido",
+		"commissionNavigation": "Accesos para encargar un retrato",
+		"mainNavigation": "Navegación principal",
+		"artist": "Retratos de mascotas",
+		"language": "Idioma",
+		"menu": "Abrir menú",
+		"prices": "Precios",
+		"commission": "Encargar",
+		"viewPrices": "Ver precios",
+		"from": "Desde",
+		"currency": "CLP",
+		"getQuote": "Pedir cotización",
+		"select": "Elegir",
+		"handmade": "Dibujado a mano",
+		"madeForYou": "Algo solo para ti",
+		"ctaTitle": "Su carita. Un recuerdo para siempre.",
+		"ctaDescription": "Cuéntame sobre tu compañero. Juntos crearemos un retrato que capture lo que lo hace especial.",
+		"instagram": "Encuentra a Flavia en Instagram",
+		"footerNote": "Retratos de mascotas dibujados con cariño desde Chile."
+	},
+	"home": {
+		"eyebrow": "Arte original, a partir de tus fotos",
+		"personal": "Con mucho cariño.",
+		"intro": "Retratos a mano de tu compañero, en lápices de colores o pasteles. Un recuerdo para siempre.",
+		"fromPhoto": "A partir de tu foto",
+		"artCaption": "Bowie · Retrato de mascota a mano",
+		"handDrawn": "Hecho a mano",
+		"materials": "Materiales profesionales",
+		"delivery": "Desde Chile, con cariño",
+		"pricingEyebrow": "Un retrato para ti",
+		"pricingTitle": "Encuentra tu retrato ideal.",
+		"pricingIntro": "Un compañero, una pareja o toda la familia. Elige el tamaño que mejor se adapte a tu idea.",
+		"customTitle": "¿Algo diferente?",
+		"customDescription": "¿Tres o más sujetos, o una idea especial? Conversemos.",
+		"pricingNote": "El precio depende del tamaño y del número de sujetos. Consulta por enmarcado y envío antes de confirmar tu pedido.",
+		"processEyebrow": "De fotografía a recuerdo",
+		"step1": "Elige tu tamaño",
+		"step2": "Cuéntame su historia",
+		"step3": "Hagámoslo tuyo",
+		"artistEyebrow": "Las manos detrás del retrato",
+		"artistTitle": "Hola, soy Flavia.",
+		"meetArtist": "Un poco más sobre mí"
+	},
+	"gallery": {
+		"eyebrow": "Algunas caritas conocidas",
+		"title": "Cada carita cuenta una historia.",
+		"description": "Una selección de retratos a pedido. Toca una obra para ver todos sus detalles.",
+		"showAll": "Explorar todos los retratos",
+		"showLess": "Ver menos retratos",
+		"enlarge": "Ampliar retrato",
+		"enlargement": "Obra ampliada",
+		"previewAlt": "Retrato a mano de Bowie, un perro con un pañuelo azul estampado"
 	}
 }

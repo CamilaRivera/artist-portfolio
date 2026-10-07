@@ -1,45 +1,39 @@
-<div class="section-wrapper mt-2">
-  <div class="brand-section__sub-header brand-section__sub-header--light">
-    <h1>
-      {{i18n 'contact.header'}}
-    </h1>
-  </div>
-  <section class="brand-section__content-container brand-section__content-container--light">
-    {{#if success}}
-      {{> contactForm priceBoxes=priceBoxes data=data disabled=true lang=lang}}
-      <div class="alert--success">
-        {{i18n 'contact.successMessage'}}
+<main id="main-content" class="page container">
+  <header class="page-heading">
+    <p class="eyebrow">{{i18n 'ui.madeForYou'}}</p>
+    <h1>{{i18n 'contact.title'}}</h1>
+    <p>{{i18n 'contact.intro'}}</p>
+  </header>
+  <div class="contact-layout">
+    <section class="contact-card" aria-label="{{i18n 'contact.formLabel'}}">
+      {{#if success}}
+      <div class="form-feedback form-feedback--success" role="status">
+        <span class="feedback-icon" aria-hidden="true">✓</span>
+        <h2>{{i18n 'contact.successMessage'}}</h2>
+        <p>{{i18n 'contact.successDetails'}}</p>
       </div>
-    {{else}}
-      {{> contactForm priceBoxes=priceBoxes data=data disabled=false lang=lang}}
-    {{/if}}
-  </section>
-</div>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render={{env 'RECAPTCH_V3_KEY'}}"></script>
-<script>
-  const form = document.querySelector('.contact-form');
-  const submitButton = document.querySelector('input[type=submit]');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    submitButton.setAttribute('disabled', 'disabled');
-    grecaptcha.ready(function() {
-      grecaptcha.execute('{{env 'RECAPTCH_V3_KEY'}}', {action: 'contact'}).then(function(token) {
-        const tokenInput = document.createElement('input');
-        tokenInput.setAttribute('value', token);
-        tokenInput.setAttribute('type', 'hidden');
-        tokenInput.setAttribute('name', 'token');
-
-        const selectedType = form.querySelector('select').value;
-
-        // Remove listener
-        const formClone = form.cloneNode(true);
-        formClone.appendChild(tokenInput);
-        formClone.querySelector('select').value = selectedType;
-        form.parentNode.replaceChild(formClone, form);
-
-        formClone.submit();
-      });
-    });
-  });
-  </script>
+      <a class="button button--secondary" href="/"
+        >{{i18n 'contact.backToGallery'}}</a
+      >
+      {{else}} {{#if formError}}
+      <div class="form-feedback form-feedback--error" role="alert">
+        {{i18n formError}}
+      </div>
+      {{/if}} {{> contactForm}} {{/if}}
+    </section>
+    <aside class="contact-aside">
+      <h2>{{i18n 'contact.asideTitle'}}</h2>
+      <p>{{i18n 'contact.asideDescription'}}</p>
+      <a class="text-link" href="/commission-portrait"
+        >{{i18n 'index.pricesLink'}} <span aria-hidden="true">↗</span></a
+      >
+      <hr />
+      <h3>{{i18n 'contact.instagramTitle'}}</h3>
+      <p>{{i18n 'contact.instagramDescription'}}</p>
+      <a class="text-link" href="https://www.instagram.com/flavia_canepa/"
+        >{{i18n 'ui.instagram'}} <span aria-hidden="true">↗</span></a
+      >
+      <p class="contact-aside__note">{{i18n 'index.delivery'}}</p>
+    </aside>
+  </div>
+</main>

@@ -1,26 +1,58 @@
-<div class="commission-section">
-  {{> responsiveImage image=image class='commission-section__left' lang=lang role='commission'}}
-  <div class="commission-section__right">
-    <h2 class="commission-section__title">{{i18n 'commissions' prefix 'title'}}</h2>
-    <p>{{i18n 'commissions.currenciesInfo'}}</p>
-    <p class="uppercase">{{i18n 'commissions.sizesInfo'}}</p>
-    <div class="commission-section-price-box-container">
-      {{#each sizes}}
-        <div class="commission-section-price-box">
-          <div class="commission-section-price-box__size">
-            {{size.height}} x {{size.width}}cm / {{cmToInches size.height}}” x {{cmToInches size.width}}”
-          </div>
-          <div class="commission-section-price-box__price">
-            $ {{formatCurrency (lookup price ../lang.language)}}
-          </div>
-        </div>
-      {{/each}}
+<section
+  class="commission-section"
+  id="{{prefix}}"
+  aria-labelledby="{{prefix}}-title"
+>
+  <div class="commission-section__intro">
+    {{> responsiveImage image=image class='commission-section__left' lang=lang
+    role='commission'}}
+    <div>
+      <p class="eyebrow">{{i18n 'ui.handmade'}}</p>
+      <h2 id="{{prefix}}-title">{{i18n 'commissions' prefix 'shortTitle'}}</h2>
+      <p>{{i18n 'commissions' prefix 'description'}}</p>
     </div>
-    <p>
-      {{i18n 'commissions.footnote'}}
-    </p>
-    <p>
-      {{i18n 'commissions.footnote2'}}
-    </p>
   </div>
-</div>
+  <div class="commission-section__prices">
+    <table class="price-table">
+      <caption class="visually-hidden">
+        {{i18n 'commissions' prefix 'title'}} — {{i18n
+        'commissions.currenciesInfo'}}
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">{{i18n 'commissions.sizeLabel'}}</th>
+          <th scope="col">{{i18n 'commissions.priceLabel'}}</th>
+          <th scope="col">
+            <span class="visually-hidden">{{i18n 'ui.select'}}</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each sizes}}
+        <tr>
+          <th scope="row">
+            {{size.width}} × {{size.height}} <span class="unit">cm</span
+            ><span class="size-inches"
+              >{{cmToInches size.width}}″ × {{cmToInches size.height}}″</span
+            >
+          </th>
+          <td>
+            $ {{formatCurrency (lookup price ../lang.language)}}<span
+              class="price-currency"
+              >{{i18n 'ui.currency'}}</span
+            >
+          </td>
+          <td>
+            <a
+              class="price-select"
+              href="/contact?option={{id}}"
+              aria-label="{{i18n 'ui.select'}}: {{label}}"
+              >{{i18n 'ui.select'}} <span aria-hidden="true">↗</span></a
+            >
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>

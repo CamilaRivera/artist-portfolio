@@ -1,0 +1,10 @@
+<a
+  class="artwork-link {{class}}"
+  href="{{#with (drawingSources image false role)}}{{fullSrc}}{{/with}}"
+  data-artwork
+  aria-label="{{i18n 'gallery.enlarge'}}: {{lookup image.alt lang.language}}"
+>
+  {{> responsiveImage image=image lang=lang role=role eager=eager
+  priority=priority interactive=true}}
+  <span class="artwork-link__expand" aria-hidden="true">↗</span>
+</a>

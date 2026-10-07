@@ -29,13 +29,14 @@ describe('contact email template and transport', () => {
       const log = jest
         .spyOn(console, 'log')
         .mockImplementation(() => undefined);
-      module.get(AppService).sendContactEmail({
+      const delivery = module.get(AppService).sendContactEmail({
         name: 'Test customer',
         email: 'customer@example.com',
         type: 'Single subject',
         body: 'A portrait of my cat <Luna>',
       });
       const result = await sendMail.mock.results[0].value;
+      await delivery;
       expect(result.envelope.to).toEqual(['artist@example.com']);
       const email = result.message.toString();
       expect(email).toContain('Reply-To: customer@example.com');

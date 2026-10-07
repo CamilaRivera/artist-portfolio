@@ -1,41 +1,153 @@
-<main class="homepage">
-  {{> mainSectionBar barTitle='index.title' barSubTitle='index.subtitle'}}
-  <div class="homepage__introduction">
-    <p>{{i18n 'index.introduction'}}</p>
-    <p>{{i18n 'index.delivery'}}</p>
-    <div class="homepage__actions">
-      <a class="homepage__action" href="/commission-portrait">{{i18n 'index.pricesLink'}}</a>
-      <a class="homepage__action homepage__action--secondary" href="/contact">{{i18n 'index.contactLink'}}</a>
+<main id="main-content" class="homepage">
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">
+        <span class="small-star" aria-hidden="true">✧</span> {{i18n
+        'home.eyebrow'}}
+      </p>
+      <h1 id="hero-title">
+        {{i18n 'index.title'}}<span class="hero__handwritten"
+          >{{i18n 'home.personal'}}</span
+        >
+      </h1>
+      <p class="hero__intro">{{i18n 'home.intro'}}</p>
+      <div class="button-row">
+        <a class="button homepage__action" href="/contact"
+          >{{i18n 'index.contactLink'}} <span aria-hidden="true">↗</span></a
+        >
+        <a
+          class="button button--secondary homepage__action"
+          href="/commission-portrait"
+          >{{i18n 'ui.viewPrices'}}</a
+        >
+      </div>
+      <p class="hero__price">
+        {{i18n 'ui.from'}}
+        <strong
+          >$ {{formatCurrency (lookup priceBoxes.[0].sizes.[0].price
+          lang.language)}} {{i18n 'ui.currency'}}</strong
+        ><span aria-hidden="true"> · </span>{{i18n 'home.fromPhoto'}}
+      </p>
     </div>
-  </div>
-  <div class="image-carousel" id="index-carousel">
-    {{> responsiveImage image=imagesBar.[0] class='image-carousel__main-image' lang=lang eager=true priority='high' onclick='maximizeImage(this)'}}
-    <div class="image-carousel__image-thumb-container">
-      {{#each imagesBar}}
-        {{> responsiveImage image=this class='thumb' lang=../lang thumbnail=true onclick='selectCarouselImage(this)'}}
-      {{/each}}
+    <figure class="hero__art">
+      <div class="hero__frame">
+        {{> artwork image=heroImage lang=lang role='hero' eager=true
+        priority='high'}}
+      </div>
+      <figcaption>
+        <span>{{i18n 'home.artCaption'}}</span
+        ><span class="signature" aria-hidden="true">Flavia</span>
+      </figcaption>
+    </figure>
+    <div class="hero__qualities">
+      <span>{{i18n 'home.handDrawn'}}</span
+      ><span>{{i18n 'home.materials'}}</span
+      ><span>{{i18n 'home.delivery'}}</span>
     </div>
-  </div>
-  <section class="homepage__ordering">
-    <h2>{{i18n 'index.ordering.title'}}</h2>
-    <ol>
-      <li>{{i18n 'index.ordering.choose'}}</li>
-      <li>{{i18n 'index.ordering.photos'}}</li>
-      <li>{{i18n 'index.ordering.confirm'}}</li>
-    </ol>
-    <a href="/faq">{{i18n 'index.ordering.faqLink'}}</a>
   </section>
+  <section
+    class="section container"
+    id="gallery"
+    aria-labelledby="gallery-title"
+  >
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">{{i18n 'gallery.eyebrow'}}</p>
+        <h2 id="gallery-title">{{i18n 'gallery.title'}}</h2>
+      </div>
+      <p>{{i18n 'gallery.description'}}</p>
+    </div>
+    <div class="gallery-grid">
+      {{#each featuredImages}}{{> artwork image=this lang=../lang
+      role='gallery'}}{{/each}}
+    </div>
+    <details class="gallery-more">
+      <summary>
+        <span class="gallery-more__closed">{{i18n 'gallery.showAll'}}</span
+        ><span class="gallery-more__open">{{i18n 'gallery.showLess'}}</span
+        ><span aria-hidden="true">+</span>
+      </summary>
+      <div class="gallery-grid">
+        {{#each moreImages}}{{> artwork image=this lang=../lang
+        role='gallery'}}{{/each}}
+      </div>
+    </details>
+  </section>
+  <section class="section section--tinted" aria-labelledby="price-title">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">{{i18n 'home.pricingEyebrow'}}</p>
+          <h2 id="price-title">{{i18n 'home.pricingTitle'}}</h2>
+        </div>
+        <p>{{i18n 'home.pricingIntro'}}</p>
+      </div>
+      <div class="price-overview">
+        {{#each priceBoxes}}
+        <article class="price-preview">
+          <span class="price-preview__number" aria-hidden="true"
+            >0{{subjects}}</span
+          >
+          <h3>{{i18n 'commissions' prefix 'shortTitle'}}</h3>
+          <p>
+            {{i18n 'ui.from'}}
+            <strong
+              >$ {{formatCurrency (lookup sizes.[0].price
+              ../lang.language)}}</strong
+            >
+            {{i18n 'ui.currency'}}
+          </p>
+          <a href="/commission-portrait#{{prefix}}"
+            >{{i18n 'index.pricesLink'}} <span aria-hidden="true">↗</span></a
+          >
+        </article>
+        {{/each}}
+        <article class="price-preview price-preview--custom">
+          <span class="price-preview__number" aria-hidden="true">✧</span>
+          <h3>{{i18n 'home.customTitle'}}</h3>
+          <p>{{i18n 'home.customDescription'}}</p>
+          <a href="/contact"
+            >{{i18n 'ui.getQuote'}} <span aria-hidden="true">↗</span></a
+          >
+        </article>
+      </div>
+      <p class="section-note">{{i18n 'home.pricingNote'}}</p>
+    </div>
+  </section>
+  <section class="section container" aria-labelledby="process-title">
+    <p class="eyebrow">{{i18n 'home.processEyebrow'}}</p>
+    <h2 id="process-title">{{i18n 'index.ordering.title'}}</h2>
+    <ol class="process">
+      <li>
+        <span aria-hidden="true">01</span>
+        <h3>{{i18n 'home.step1'}}</h3>
+        <p>{{i18n 'index.ordering.choose'}}</p>
+      </li>
+      <li>
+        <span aria-hidden="true">02</span>
+        <h3>{{i18n 'home.step2'}}</h3>
+        <p>{{i18n 'index.ordering.photos'}}</p>
+      </li>
+      <li>
+        <span aria-hidden="true">03</span>
+        <h3>{{i18n 'home.step3'}}</h3>
+        <p>{{i18n 'index.ordering.confirm'}}</p>
+      </li>
+    </ol>
+    <a class="text-link" href="/faq"
+      >{{i18n 'index.ordering.faqLink'}} <span aria-hidden="true">↗</span></a
+    >
+  </section>
+  <section class="artist-note container">
+    <span class="artist-note__mark" aria-hidden="true">fc.</span>
+    <div>
+      <p class="eyebrow">{{i18n 'home.artistEyebrow'}}</p>
+      <h2>{{i18n 'home.artistTitle'}}</h2>
+      <p>{{i18n 'index.introduction'}}</p>
+      <a class="text-link" href="/about"
+        >{{i18n 'home.meetArtist'}} <span aria-hidden="true">↗</span></a
+      >
+    </div>
+  </section>
+  {{> commissionCta}}
 </main>
-<div class="maximized-image-container">
-  <button
-    class="maximized-image-container__close-button"
-    onclick="closeMaximizedImage()"
-    aria-label="{{i18n 'close'}}">
-    <span aria-hidden="true">&times; {{i18n 'close'}}</span>
-  </button>
-  {{!-- No active URLs until the visitor opens an enlargement. --}}
-  <picture class="responsive-image">
-    <source type="image/webp">
-    <img alt="" onclick="toggleZoom(this)">
-  </picture>
-</div>

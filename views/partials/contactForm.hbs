@@ -1,58 +1,32 @@
-<form action="/contact" method="post" class="contact-form">
+<form action="/contact" method="post" class="contact-form"
+  data-sitekey="{{env 'RECAPTCH_V3_KEY'}}" data-submitting="{{i18n 'contact.submitting'}}" data-verification-error="{{i18n 'contact.verificationError'}}">
   <div class="form-row">
-    <label required="required" for="name">{{i18n 'contactForm.inputs.name'}}</label>
-    <div class="input-container">
-      <input type="text" id="name" name="name" value={{data.name}} {{#if disabled}}readonly="readonly"{{/if}}>
-      {{#if errors.name}}
-        <div class="error-message">{{i18n errors.name}}</div>
-      {{/if}}
-    </div>
+    <label for="name">{{i18n 'contactForm.inputs.name'}} <span aria-hidden="true">*</span></label>
+    <input type="text" id="name" name="name" value="{{data.name}}" autocomplete="name" required maxlength="200"
+      {{#if errors.name}}aria-invalid="true" aria-describedby="name-error"{{/if}}>
+    {{#if errors.name}}<p class="error-message" id="name-error">{{i18n errors.name}}</p>{{/if}}
   </div>
   <div class="form-row">
-    <label required="required" for="email">Email</label>
-    <div class="input-container">
-      <input type="email" id="email" name="email" value={{data.email}} {{#if disabled}}readonly="readonly"{{/if}}>
-      {{#if errors.email}}
-        <div class="error-message">{{i18n errors.email}}</div>
-      {{/if}}
-    </div>
+    <label for="email">{{i18n 'contactForm.inputs.email'}} <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" value="{{data.email}}" autocomplete="email" inputmode="email" required maxlength="254"
+      {{#if errors.email}}aria-invalid="true" aria-describedby="email-error"{{/if}}>
+    {{#if errors.email}}<p class="error-message" id="email-error">{{i18n errors.email}}</p>{{/if}}
   </div>
   <div class="form-row">
-    <label required="required" for="type">{{i18n 'contactForm.inputs.type'}}</label>
-    <div class="input-container">
-      <select id="type" name="type" {{#if disabled}}readonly="readonly"{{/if}}>
-        {{#if data.type}}
-          <option value="{{data.type}}">
-            {{data.type}}
-          </option>
-        {{/if}}
-        {{#each priceBoxes}}
-          {{#each sizes}}
-            <option>
-              {{i18n 'contactForm' ../prefix}} - {{size.height}} x {{size.width}}cm / {{cmToInches size.height}}” x {{cmToInches size.width}}” - $ {{formatCurrency (lookup price ../../lang.language)}}
-            </option>
-          {{/each}}
-        {{/each}}
-        <option>
-          {{i18n 'contactForm.inputs.otherOption'}}
-        </option>
-        {{#if errors.type}}
-          <div class="error-message">{{i18n errors.type}}</div>
-        {{/if}}
-      </select>
-    </div>
+    <label for="type">{{i18n 'contactForm.inputs.type'}}</label>
+    <select id="type" name="type" {{#if errors.type}}aria-invalid="true" aria-describedby="type-error"{{/if}}>
+      {{#each options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+    </select>
+    {{#if errors.type}}<p class="error-message" id="type-error">{{i18n errors.type}}</p>{{/if}}
   </div>
   <div class="form-row">
-    <label for="body">{{i18n 'contactForm.inputs.body'}}</label>
-    <div class="input-container">
-      <textarea id="body" name="body" {{#if disabled}}readonly="readonly"{{/if}}>{{data.body}}</textarea>
-      {{#if errors.body}}
-        <div class="error-message">{{i18n errors.body}}</div>
-      {{/if}}
-    </div>
+    <label for="body">{{i18n 'contactForm.inputs.body'}} <span class="optional">{{i18n 'contact.optional'}}</span></label>
+    <textarea id="body" name="body" rows="5" maxlength="10000" aria-describedby="body-hint">{{data.body}}</textarea>
+    <p class="field-hint" id="body-hint">{{i18n 'contact.messageHint'}}</p>
   </div>
-  <div class="form-row">
-    <label></label>
-    <input type="submit" value="{{i18n 'contactForm.submit'}}" {{#if disabled}}disabled="disabled"{{/if}}>
-  </div>
+  <input type="hidden" name="token" value="">
+  <p class="error-message" data-form-error role="alert" hidden></p>
+  <button class="button contact-form__submit" type="submit">{{i18n 'contactForm.submit'}} <span aria-hidden="true">↗</span></button>
+  <p class="field-hint">{{i18n 'contact.noCommitment'}}</p>
+  <noscript><p>{{i18n 'contact.javascriptRequired'}} <a href="https://www.instagram.com/flavia_canepa/">Instagram</a>.</p></noscript>
 </form>

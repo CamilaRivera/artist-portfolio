@@ -1,16 +1,13 @@
-<div class="FAQ-section">
-  {{> imagesBar images=imagesBar lang=lang}}
-  <div class="section-wrapper">
-    <div class="brand-section__sub-header brand-section__sub-header--light">
-      <h1>
-        {{i18n 'faq.title'}}
-      </h1>
-    </div>
-    <section class="brand-section__content-container brand-section__content-container--light">
-      {{> faqQuestionSection questionIndex='1'}}
-      {{> faqQuestionSection questionIndex='2'}}
-      {{> faqQuestionSection questionIndex='3'}}
-      {{> faqQuestionSection questionIndex='4'}}
-    </section>
-  </div>
-</div>
+<main id="main-content" class="page container faq-page">
+  <header class="page-heading">
+    <p class="eyebrow">{{i18n 'faq.eyebrow'}}</p>
+    <h1>{{i18n 'faq.title'}}</h1>
+    <p>{{i18n 'faq.intro'}}</p>
+  </header>
+  <section class="faq-list" aria-label="{{i18n 'faq.title'}}">
+    {{> faqQuestionSection questionIndex='1'}} {{> faqQuestionSection
+    questionIndex='2'}} {{> faqQuestionSection questionIndex='3'}} {{>
+    faqQuestionSection questionIndex='4'}}
+  </section>
+  {{> commissionCta}}
+</main>

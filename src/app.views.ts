@@ -4,6 +4,7 @@ import hbs from 'hbs';
 import { getLanguage, translate } from './app.internationalization';
 import { configureStylesheet } from './app.styles';
 import { drawingSources } from './image.assets';
+import { featuredDrawings } from './db.images';
 
 export async function configureApplication(app: NestExpressApplication) {
   // The default supports a local reverse proxy. Set exact proxy IPs/subnets for
@@ -53,4 +54,11 @@ export async function configureApplication(app: NestExpressApplication) {
       `${functionName}(${value.slice(0, -1).join(', ')})`,
   );
   hbs.registerHelper('env', (key) => process.env[key]);
+  hbs.registerHelper('year', () => new Date().getFullYear());
+  hbs.registerHelper('previewImageUrl', (canonicalUrl: string) => {
+    const image = featuredDrawings[0].assets.display.jpg;
+    const preview =
+      image.find((variant) => variant.width >= 1152) || image.at(-1)!;
+    return new URL(preview.url, canonicalUrl).href;
+  });
 }

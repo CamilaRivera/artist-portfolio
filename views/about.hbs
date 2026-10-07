@@ -1,36 +1,26 @@
-<div class="about-section">
-  {{> imagesBar images=imagesBar lang=lang}}
-  <div class="section-wrapper">
-    <div class="brand-section__sub-header brand-section__sub-header--light">
-      <h1>
-        {{i18n 'about.title'}}
-      </h1>
-    </div>
-
-    <section class="brand-section__content-container brand-section__content-container--light">
-      <div>
-        <p>
-          {{i18n 'about.section1'}}
-        </p>
-        <p>
-          {{i18n 'about.section2'}}
-        </p>
-      </div>
-    </section>
-  </div>
-
-  <div class="section-wrapper">
-    <div class="brand-section__sub-header brand-section__sub-header--light">
+<main id="main-content" class="page container">
+  <header class="page-heading">
+    <p class="eyebrow">{{i18n 'home.artistEyebrow'}}</p>
+    <h1>{{i18n 'about.title'}}</h1>
+    <p>{{i18n 'about.intro'}}</p>
+  </header>
+  <div class="about-layout">
+    <figure class="about-art">
+      {{> artwork image=artwork lang=lang role='hero' eager=true
+      priority='high'}}
+      <figcaption>{{i18n 'about.caption'}}</figcaption>
+    </figure>
+    <div class="about-copy">
+      <p class="eyebrow">Flavia Canepa</p>
+      <h2>{{i18n 'about.storyTitle'}}</h2>
+      <p>{{i18n 'about.story'}}</p>
       <h2>{{i18n 'commissions.aboutMyArtTitle'}}</h2>
+      <p>{{i18n 'about.materials'}}</p>
+      <p>{{i18n 'index.delivery'}}</p>
+      <a class="button button--secondary" href="/commission-portrait"
+        >{{i18n 'index.pricesLink'}} <span aria-hidden="true">↗</span></a
+      >
     </div>
-
-    <section class="brand-section__content-container brand-section__content-container--light">
-      <div>
-        <p>
-          {{i18n 'commissions.aboutMyArtContent'}}
-        </p>
-        <a href="/commission-portrait">{{i18n 'commissions.backToPriceList'}}</a>
-      </div>
-    </section>
   </div>
-</div>
+  {{> commissionCta}}
+</main>

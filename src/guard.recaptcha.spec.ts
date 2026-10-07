@@ -63,7 +63,7 @@ describe('reCAPTCHA verification with native fetch', () => {
   it('does not authorize an enquiry after a network failure', async () => {
     jest.mocked(fetch).mockRejectedValue(new Error('Network unavailable'));
     await expect(guard.canActivate(context('test-token'))).rejects.toThrow(
-      'Network unavailable',
+      ForbiddenException,
     );
   });
 });

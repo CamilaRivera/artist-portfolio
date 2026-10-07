@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, ForbiddenException } from '@nestjs/common';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import { MailerService } from '@nestjs-modules/mailer';
 import request from 'supertest';
@@ -27,6 +27,7 @@ describe('language URLs and canonical pages (e2e)', () => {
   let app: NestExpressApplication;
   const originalEnv = { ...process.env };
   const sendContactEmail = jest.fn();
+  let verificationAllowed = true;
   const hosts = { es: 'flaviacanepa.cl', en: 'flaviacanepa.com' };
   const titles = {
     es: [
@@ -63,7 +64,12 @@ describe('language URLs and canonical pages (e2e)', () => {
       .overrideProvider(AppService)
       .useValue({ sendContactEmail })
       .overrideGuard(RecaptchaGuard)
-      .useValue({ canActivate: () => true })
+      .useValue({
+        canActivate: () => {
+          if (!verificationAllowed) throw new ForbiddenException();
+          return true;
+        },
+      })
       .compile();
 
     app = moduleFixture.createNestApplication<NestExpressApplication>();
@@ -76,7 +82,10 @@ describe('language URLs and canonical pages (e2e)', () => {
     process.env = originalEnv;
   });
 
-  beforeEach(() => sendContactEmail.mockClear());
+  beforeEach(() => {
+    sendContactEmail.mockReset();
+    verificationAllowed = true;
+  });
 
   it.each(['es', 'en'] as Language[])(
     '%s robots.txt allows crawling and advertises its own sitemap',
@@ -162,6 +171,20 @@ describe('language URLs and canonical pages (e2e)', () => {
         `<link rel="canonical" href="https://${hosts[language]}${path}" />`,
       );
       expect(html.match(/rel="canonical"/g)).toHaveLength(1);
+      expect(html.match(/<h1\b/g)).toHaveLength(1);
+      expect(html.match(/<main\b/g)).toHaveLength(1);
+      expect(html).toContain('name="color-scheme" content="light dark"');
+      expect(html).toContain(
+        'name="twitter:card" content="summary_large_image"',
+      );
+      expect(html).toContain(
+        `property="og:url" content="https://${hosts[language]}${path}"`,
+      );
+      expect(html).toMatch(
+        new RegExp(
+          `property="og:image" content="https://${hosts[language]}/images/optimized/Bowie-display-`,
+        ),
+      );
       for (const alternate of ['es', 'en'] as Language[]) {
         const url = `https://${hosts[alternate]}${path}`;
         expect(html).toContain(
@@ -330,7 +353,7 @@ describe('language URLs and canonical pages (e2e)', () => {
         .set('X-Forwarded-Proto', 'https')
         .expect(200);
       const pictures = html.match(/<picture\b[^>]*>[\s\S]*?<\/picture>/g)!;
-      expect(pictures).toHaveLength(18);
+      expect(pictures).toHaveLength(imageFilenames.length + 2);
       for (const picture of pictures.slice(0, -1)) {
         expect(picture).toMatch(
           /<source type="image\/webp" srcset="[^"]+\.webp \d+w/,
@@ -342,11 +365,13 @@ describe('language URLs and canonical pages (e2e)', () => {
       }
       expect(pictures[0]).toContain('loading="eager"');
       expect(pictures[0]).toContain('fetchpriority="high"');
-      for (const thumbnail of pictures.slice(1, -1)) {
-        expect(thumbnail).toContain('loading="lazy"');
-        expect(thumbnail).toMatch(/src="[^"]+-thumbnail-/);
+      for (const artwork of pictures.slice(1, -1)) {
+        expect(artwork).toContain('loading="lazy"');
+        expect(artwork).toMatch(/src="[^"]+-display-/);
       }
       expect(pictures.at(-1)).not.toMatch(/\b(?:src|srcset)=/);
+      expect(html).toContain('<details class="gallery-more">');
+      expect(html).toContain('<dialog class="artwork-dialog"');
     },
   );
 
@@ -386,7 +411,7 @@ describe('language URLs and canonical pages (e2e)', () => {
       )!;
       expect(pictures).toHaveLength(2);
       for (const picture of pictures) {
-        expect(picture).toContain('sizes="(min-width: 960px) max(30rem,');
+        expect(picture).toContain('sizes="(min-width: 768px) 15rem, 6rem"');
         expect(picture).not.toContain('[object Object]');
       }
     },
@@ -406,6 +431,101 @@ describe('language URLs and canonical pages (e2e)', () => {
     } finally {
       process.env.NODE_ENV = 'production';
     }
+  });
+
+  it.each(['es', 'en'] as Language[])(
+    '%s carries a chosen portrait into the form without changing the canonical URL',
+    async (language) => {
+      const { text: html } = await request(app.getHttpServer())
+        .get('/contact?option=1-18x24')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200);
+      expect(html).toMatch(/<option value="[^"]*18 × 24 cm[^"]*"\s+selected/);
+      expect(html).toContain(language === 'es' ? '$70.000 CLP' : '$110 USD');
+      expect(html).toContain(
+        `rel="canonical" href="https://${hosts[language]}/contact"`,
+      );
+      expect(html).not.toContain('class="mobile-actions"');
+      const { text: general } = await request(app.getHttpServer())
+        .get('/contact?option=unknown')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .expect(200);
+      expect(general).toMatch(
+        new RegExp(
+          `<option value="${language === 'es' ? 'Ayúdame a elegir' : 'Help me choose'}"\\s+selected`,
+        ),
+      );
+    },
+  );
+
+  it.each(['es', 'en'] as Language[])(
+    '%s preserves form values and renders a retry message after mail failure',
+    async (language) => {
+      sendContactEmail.mockRejectedValueOnce(new Error('SMTP unavailable'));
+      const { text: html } = await request(app.getHttpServer())
+        .post('/contact')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .type('form')
+        .send({
+          name: 'A name with spaces',
+          email: 'customer@example.com',
+          type: 'Custom portrait',
+          body: 'Two cats <together>',
+        })
+        .expect(503);
+      expect(html).toContain('value="A name with spaces"');
+      expect(html).toContain('Two cats &lt;together&gt;');
+      expect(html).toContain('role="alert"');
+      expect(html).toContain(
+        language === 'es'
+          ? 'No se pudo enviar tu mensaje'
+          : 'Your message couldn&#x27;t be sent',
+      );
+      expect(html).not.toContain('form-feedback--success');
+    },
+  );
+
+  it('returns a usable form after verification fails and never sends email', async () => {
+    verificationAllowed = false;
+    const { text: html } = await request(app.getHttpServer())
+      .post('/contact')
+      .set('Host', hosts.en)
+      .set('X-Forwarded-Proto', 'https')
+      .type('form')
+      .send({
+        name: 'Customer',
+        email: 'customer@example.com',
+        type: 'Help me choose',
+        body: 'A cat portrait',
+      })
+      .expect(403);
+    expect(html).toContain('class="contact-form"');
+    expect(html).toContain('value="Customer"');
+    expect(html).toContain('A cat portrait');
+    expect(html).toContain('We couldn&#x27;t complete the spam check');
+    expect(sendContactEmail).not.toHaveBeenCalled();
+  });
+
+  it('validates email addresses and preserves safely escaped form input', async () => {
+    const { text: html } = await request(app.getHttpServer())
+      .post('/contact')
+      .set('Host', hosts.en)
+      .set('X-Forwarded-Proto', 'https')
+      .type('form')
+      .send({
+        name: 'Someone "quoted"',
+        email: 'invalid',
+        type: 'Help me choose',
+        body: '<script>alert(1)</script>',
+      })
+      .expect(201);
+    expect(html).toContain('aria-describedby="email-error"');
+    expect(html).toContain('value="Someone &quot;quoted&quot;"');
+    expect(html).toContain('&lt;script&gt;alert(1)&lt;/script&gt;');
+    expect(sendContactEmail).not.toHaveBeenCalled();
   });
 
   it('keeps concurrent HTTP requests in their own languages', async () => {

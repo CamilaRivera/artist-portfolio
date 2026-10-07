@@ -11,10 +11,14 @@
 		"backToPriceList": "< Go to price list",
 		"orderYourPortrait": "Order Your Portrait",
 		"singleSubjectBox": {
-			"title": "Portraits and commissions 1 subject"
+			"title": "Portraits and commissions 1 subject",
+			"shortTitle": "One companion",
+			"description": "A little tribute to a very special friend."
 		},
 		"doubleSubjectBox": {
-			"title": "Double portrait or two subjects commision"
+			"title": "Double portrait or two subjects commision",
+			"shortTitle": "Two companions",
+			"description": "Their unique bond, together in one portrait."
 		},
 		"aboutMyArtTitle": "About my art",
 		"aboutMyArtContent": "I’m a self-taught artist, went to college and got my veterinarian degree, I started drawing at early age but always as a hobby, I like to draw all kind of animals, and a few years ago I started drawing friend's pets, which made me improve my skills and invest in quality materials.",
@@ -24,7 +28,14 @@
 			"keywords": "commissions.head.keywords"
 		},
 		"footnote2": "18x24 and 20x34 can be easily framed for an additional $15, I always recommend using professional framers who will protect the portrait",
-		"threeOrMore": "3 or more, contact me to get an estimate"
+		"threeOrMore": "3 or more, contact me to get an estimate",
+		"pageTitle": "Sizes, prices & possibilities.",
+		"intro": "Choose a portrait for one or two companions, or ask me about a custom piece. Every portrait begins with your photographs.",
+		"sizeLabel": "Size",
+		"priceLabel": "Price",
+		"included": "The details that matter",
+		"customHeading": "More faces, or a different idea?",
+		"customDescription": "For three or more subjects or a special request, send me a little about what you have in mind."
 	},
 	"navbar": {
 		"home": "Home",
@@ -58,7 +69,9 @@
 			"title": "Pet Portrait Commissions: FAQ | Flavia Canepa",
 			"description": "Find answers about commissioning a pet portrait from Flavia Canepa, including payments, timing, reference photos and how to start your order.",
 			"keywords": "faq.head.keywords"
-		}
+		},
+		"eyebrow": "Before we begin",
+		"intro": "A few answers about photographs, payments and the time it takes to create your portrait."
 	},
 	"index": {
 		"title": "Custom pet portraits",
@@ -96,7 +109,12 @@
 			"title": "About the Pet Portrait Artist | Flavia Canepa",
 			"description": "Meet Flavia Canepa, a self-taught artist and veterinarian creating pet portraits with colored pencils or pastels and professional art materials.",
 			"keywords": "portrait, art, pastel, colored pencils, drawing, pets"
-		}
+		},
+		"intro": "An artist, a veterinarian, and a lifelong love of animals.",
+		"caption": "Briso · A commissioned cat portrait",
+		"storyTitle": "A love of animals, on paper.",
+		"story": "I'm a self-taught artist and a veterinarian. I've drawn animals since childhood, and drawing friends' pets inspired me to keep developing my skills and invest in professional art materials.",
+		"materials": "I work with colored pencils or pastels on watercolor paper or Pastelmat. You can choose the medium and a flat or gradient background. Each piece is made with professional supplies selected for their quality and durability."
 	},
 	"close": "Close",
 	"contactForm": {
@@ -104,16 +122,18 @@
 			"name": "Name",
 			"type": "Commission type",
 			"body": "Additional information",
-			"otherOption": "3 Subjects / Other"
+			"otherOption": "3 Subjects / Other",
+			"email": "Email",
+			"helpOption": "Help me choose"
 		},
 		"singleSubjectBox": "1 Subject",
 		"doubleSubjectBox": "2 Subjects",
 		"errors": {
 			"name": "Enter your name",
-			"email": "Enter an email address",
+			"email": "Enter a valid email address",
 			"type": "Select a portrait type"
 		},
-		"submit": "Contact"
+		"submit": "Send my enquiry"
 	},
 	"contact": {
 		"head": {
@@ -121,6 +141,76 @@
 			"description": "Contact Flavia Canepa to commission your pet portrait. Tell me about your photos, preferred size and the animals you would like drawn, and request a quote."
 		},
 		"header": "Contact - Commission portrait",
-		"successMessage": "Contact message sent!"
+		"successMessage": "Contact message sent!",
+		"title": "Let's create something personal.",
+		"intro": "Tell me about your companion and the portrait you have in mind. Unsure about a size or photo? We can work it out together.",
+		"formLabel": "Portrait enquiry",
+		"successDetails": "Thank you for telling me about your portrait. I'll reply to the email address you provided so we can discuss the details.",
+		"backToGallery": "Back to the gallery",
+		"asideTitle": "A little help choosing?",
+		"asideDescription": "Browse sizes and prices, or select “Help me choose” in the form. There's no need to have every detail figured out.",
+		"instagramTitle": "Prefer a conversation on Instagram?",
+		"instagramDescription": "See recent work and send me a message there, too.",
+		"optional": "(optional)",
+		"messageHint": "Tell me who you'd like drawn, any occasion or deadline, and where the portrait would be delivered. We'll discuss reference photos by email.",
+		"noCommitment": "An enquiry starts a conversation. No payment is taken here.",
+		"javascriptRequired": "This form needs JavaScript for spam protection. You can also contact me on",
+		"submitting": "Sending your enquiry…",
+		"verificationError": "We couldn't complete the spam check. Please try again, or contact me on Instagram.",
+		"deliveryError": "Your message couldn't be sent. Your details are still here; please try again or contact me on Instagram."
+	},
+	"ui": {
+		"skipContent": "Skip to content",
+		"commissionNavigation": "Commission shortcuts",
+		"mainNavigation": "Main navigation",
+		"artist": "Pet portrait artist",
+		"language": "Language",
+		"menu": "Open menu",
+		"prices": "Prices",
+		"commission": "Commission",
+		"viewPrices": "View prices",
+		"from": "From",
+		"currency": "USD",
+		"getQuote": "Request a quote",
+		"select": "Choose",
+		"handmade": "Drawn by hand",
+		"madeForYou": "Something just for you",
+		"ctaTitle": "Their little face. Your forever keepsake.",
+		"ctaDescription": "Tell me about your companion. Together, we'll create a portrait that feels like them.",
+		"instagram": "Find Flavia on Instagram",
+		"footerNote": "Hand-drawn pet portraits. Made with care in Chile."
+	},
+	"home": {
+		"eyebrow": "Original art, from your photographs",
+		"personal": "Made personal.",
+		"intro": "Your companion, drawn by hand in colored pencils or pastels. A little piece of them, to keep forever.",
+		"fromPhoto": "Made from your photo",
+		"artCaption": "Bowie · Hand-drawn pet portrait",
+		"handDrawn": "Made by hand",
+		"materials": "Professional art materials",
+		"delivery": "From Chile, with care",
+		"pricingEyebrow": "A portrait to call your own",
+		"pricingTitle": "Find your perfect portrait.",
+		"pricingIntro": "One beloved companion, a pair, or the whole family. Choose a size that feels right for you.",
+		"customTitle": "Something different?",
+		"customDescription": "Three or more subjects, or a special idea? Let's talk.",
+		"pricingNote": "Prices depend on size and number of subjects. Ask about framing and delivery before confirming your order.",
+		"processEyebrow": "From photograph to keepsake",
+		"step1": "Find your size",
+		"step2": "Tell me their story",
+		"step3": "Make it yours",
+		"artistEyebrow": "Meet the hands behind the art",
+		"artistTitle": "Hi, I'm Flavia.",
+		"meetArtist": "A little more about me"
+	},
+	"gallery": {
+		"eyebrow": "A few familiar faces",
+		"title": "Every face tells a story.",
+		"description": "A selection of commissioned portraits. Tap a piece to see every detail.",
+		"showAll": "Explore all portraits",
+		"showLess": "Show fewer portraits",
+		"enlarge": "Enlarge portrait",
+		"enlargement": "Enlarged artwork",
+		"previewAlt": "Hand-drawn portrait of Bowie, a dog with a blue patterned bandana"
 	}
 }
