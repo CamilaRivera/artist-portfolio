@@ -1,7 +1,10 @@
 import { I18n } from 'i18n';
 import { join } from 'path';
+import { AsyncLocalStorage } from 'async_hooks';
+import { Language } from './site.config';
 
 const i18n = new I18n();
+const languageContext = new AsyncLocalStorage<Language>();
 
 i18n.configure({
   locales: ['en', 'es'],
@@ -13,16 +16,13 @@ const isString = (value) =>
   typeof value === 'string' || value instanceof String;
 
 export const translate = (...text) => {
-  return i18n.__(text.filter(isString).join('.'));
+  return i18n.__({
+    phrase: text.filter(isString).join('.'),
+    locale: getLanguage(),
+  });
 };
 
-export const setLanguage = (lang) => {
-  i18n.setLocale(lang);
-};
+export const getLanguage = () => languageContext.getStore() || 'es';
 
-export const getLanguage = () => i18n.getLocale();
-
-export const getChangeLanguageLink = (protocol, relativeURL, lang) => {
-  const host = lang === 'es' ? process.env.ES_HOST : process.env.EN_HOST;
-  return `${protocol}://${host}${relativeURL}`;
-};
+export const withLanguage = <T>(language: Language, callback: () => T): T =>
+  languageContext.run(language, callback);

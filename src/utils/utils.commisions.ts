@@ -1,4 +1,4 @@
-import { getRandomDrawings } from 'src/db.images';
+import { getRandomDrawings } from '../db.images';
 
 export const getCommisionsPriceOptions = () => {
   return [

@@ -1,4 +1,4 @@
-import { ContactForm } from 'src/types/ContactForm';
+import { ContactForm } from '../types/ContactForm';
 import { getCommisionsPriceOptions } from './utils.commisions';
 
 export const validateFormData = (formData: ContactForm) => {

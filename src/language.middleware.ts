@@ -1,33 +1,54 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { getChangeLanguageLink, setLanguage } from './app.internationalization';
-
-function findLanguage(req: Request) {
-  // return req.query.lang || 'en';
-  const host = req.headers.host;
-  if (host === process.env.EN_HOST || host.startsWith('en.')) {
-    return 'en';
-  }
-  return 'es'; // default language
-}
+import { withLanguage } from './app.internationalization';
+import {
+  getHostLanguage,
+  getPageUrl,
+  getSiteConfig,
+  normalizePagePath,
+  pagePaths,
+} from './site.config';
 
 @Injectable()
 export class LanguageMiddleware implements NestMiddleware {
+  private readonly config = getSiteConfig();
+
   use(req: Request, res: Response, next: NextFunction) {
-    const language = findLanguage(req);
-    const url = `${req.headers.host}${req.originalUrl}`;
-    console.log(`Request... language middleware "${language}", url: ${url}`);
-    setLanguage(language);
-    res.locals = {
-      lang: {
-        language,
-        esUrl: getChangeLanguageLink(req.protocol, req.originalUrl, 'es'),
-        enUrl: getChangeLanguageLink(req.protocol, req.originalUrl, 'en'),
-        originalUrl: url,
-        analyticsApiKey: language === 'es' ? 'G-KXMWQ1GY5T' : 'G-DTD3L7R127',
-      },
-      queryPath: req.originalUrl,
+    const host = req.headers.host || '';
+    const detectedLanguage = getHostLanguage(this.config, host);
+    if (this.config.production && !detectedLanguage) {
+      res.status(400).send('Unknown site host');
+      return;
+    }
+    const language = detectedLanguage || 'es';
+    // Nest mounts wildcard middleware on a router, where req.path can be '/'.
+    // originalUrl retains the complete public page path.
+    const requestedPath = req.originalUrl.split('?', 1)[0];
+    const path = normalizePagePath(requestedPath);
+    const canonicalUrl = getPageUrl(this.config, language, path);
+    const isPageRequest =
+      ['GET', 'HEAD'].includes(req.method) && pagePaths.includes(path);
+    if (
+      isPageRequest &&
+      (requestedPath !== path ||
+        (this.config.production &&
+          (host.toLowerCase() !== this.config.hosts[language] || !req.secure)))
+    ) {
+      const queryIndex = req.originalUrl.indexOf('?');
+      const query = queryIndex === -1 ? '' : req.originalUrl.slice(queryIndex);
+      const destination = this.config.production ? canonicalUrl : path;
+      res.redirect(301, `${destination}${query}`);
+      return;
+    }
+
+    res.locals.lang = {
+      language,
+      esUrl: getPageUrl(this.config, 'es', path),
+      enUrl: getPageUrl(this.config, 'en', path),
+      canonicalUrl,
+      analyticsApiKey: language === 'es' ? 'G-KXMWQ1GY5T' : 'G-DTD3L7R127',
     };
-    next();
+    res.locals.queryPath = path;
+    withLanguage(language, next);
   }
 }

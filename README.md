@@ -34,7 +34,7 @@ $ npm install
 
 ## Running the app
 
-Prepare `config.env` copying `config/development.env`
+Development loads `config/development.env`. Set local values there or supply environment variables, which take precedence over the file.
 
 ```bash
 # development
@@ -62,7 +62,29 @@ $ npm run test:cov
 
 ## Production
 
-Prepare `config.env` copying `config/production.env` and add keys
+`npm run start:prod` sets `NODE_ENV=production` and loads `config/production.env`.
+Set production keys there or supply environment variables. The application does
+not read `config.env`. Run commands from the repository root.
+
+Spanish pages use `ES_HOST=flaviacanepa.cl`; English pages use
+`EN_HOST=flaviacanepa.com`. Production URLs always use HTTPS. Startup rejects
+missing, invalid, identical, or localhost language hosts. Both domains need DNS,
+TLS certificates, and proxy routing to the same application.
+
+The reverse proxy must preserve the original `Host` header and set
+`X-Forwarded-Proto` to the incoming scheme. A local proxy is trusted by default.
+For a remote proxy, set `TRUST_PROXY` to its exact IP address or subnet. Restrict
+direct access to the application port. Example nginx forwarding headers:
+
+```nginx
+proxy_set_header Host $host;
+proxy_set_header X-Forwarded-Proto $scheme;
+```
+
+HTTPS bare domains are preferred. GET/HEAD requests to the five main pages redirect
+HTTP, `www` aliases, uppercase paths, and trailing slashes to the preferred URL,
+preserving query strings. SEO metadata and language links omit query strings.
+POST requests are not redirected. Route `www` aliases through DNS/TLS/proxy if used.
 
 ```bash
 # install dependencies
@@ -72,10 +94,10 @@ $ npm install
 $ npm run build
 
 # open screen
-$ screen -R
+$ screen -R flaviacanepa.cl
 
 # run production server
-$ NODE_ENV=production npm run start:prod
+$ npm run start:prod
 ```
 
 ## Support

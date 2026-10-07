@@ -14,7 +14,8 @@ import { AppModule } from './app.module';
 import * as sassMiddleware from 'node-sass-middleware';
 import hbs = require('hbs');
 import hbsutilsLib = require('hbs-utils');
-import { getLanguage, translate } from './app.internationalization';
+import { configureApplication } from './app.views';
+import { getSiteConfig } from './site.config';
 
 const hbsutils = hbsutilsLib(hbs);
 
@@ -29,34 +30,9 @@ hbsutils.registerWatchedPartials(partialsDirectory);
 declare const module: any;
 
 async function bootstrap() {
+  getSiteConfig();
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
-  app.setBaseViewsDir(join(__dirname, '..', 'views'));
-  app.set('view options', {
-    layout: 'layouts/layout',
-  });
-  app.setViewEngine('hbs');
-
-  hbs.registerPartials(partialsDirectory);
-  hbs.registerHelper('i18n', translate);
-  hbs.registerHelper('cmToInches', (value) => (0.393701 * value).toFixed(1));
-  hbs.registerHelper('equals', (value1, value2) => value1 === value2);
-  hbs.registerHelper('pluralize', (word, quantity) =>
-    quantity <= 1 ? word : `${word}s`,
-  );
-  hbs.registerHelper('formatCurrency', (value) =>
-    value
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, getLanguage() === 'es' ? '.' : ','),
-  );
-  hbs.registerHelper('multiply', (value1, value2) => value1 * value2);
-  hbs.registerHelper(
-    'createFunctionCall',
-    (functionName, ...value) =>
-      `${functionName}(${value.slice(0, -1).join(', ')})`,
-  );
-
-  hbs.registerHelper('env', (key) => process.env[key]);
+  await configureApplication(app);
 
   app.use(
     sassMiddleware({
