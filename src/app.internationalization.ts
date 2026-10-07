@@ -1,7 +1,7 @@
 import { I18n } from 'i18n';
 import { join } from 'path';
 import { AsyncLocalStorage } from 'async_hooks';
-import { Language } from './site.config';
+import type { Language } from './site.config';
 
 const i18n = new I18n();
 const languageContext = new AsyncLocalStorage<Language>();
@@ -12,10 +12,10 @@ i18n.configure({
   objectNotation: true,
 });
 
-const isString = (value) =>
+const isString = (value: unknown) =>
   typeof value === 'string' || value instanceof String;
 
-export const translate = (...text) => {
+export const translate = (...text: unknown[]) => {
   return i18n.__({
     phrase: text.filter(isString).join('.'),
     locale: getLanguage(),

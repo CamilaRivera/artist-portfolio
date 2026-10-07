@@ -1,36 +1,33 @@
-import {
-  Injectable,
-  CanActivate,
-  ExecutionContext,
-  HttpService,
-  ForbiddenException,
-} from '@nestjs/common';
+import { Injectable, ForbiddenException } from '@nestjs/common';
+import type { CanActivate, ExecutionContext } from '@nestjs/common';
 
 @Injectable()
 export class RecaptchaGuard implements CanActivate {
-  constructor(private readonly httpService: HttpService) {}
-
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const { body } = context.switchToHttp().getRequest();
-    console.log('RecaptchaGuard body', body.token);
-    const { data } = await this.httpService
-      .post(
-        `https://www.google.com/recaptcha/api/siteverify?response=${body.token}&secret=${process.env.RECAPTCH_V3_SECRET}`,
-      )
-      .toPromise();
+    if (!body?.token || !process.env.RECAPTCH_V3_SECRET) {
+      throw new ForbiddenException();
+    }
+    const response = await fetch(
+      'https://www.google.com/recaptcha/api/siteverify',
+      {
+        method: 'POST',
+        body: new URLSearchParams({
+          response: body.token,
+          secret: process.env.RECAPTCH_V3_SECRET,
+        }),
+        signal: AbortSignal.timeout(10000),
+      },
+    );
+    if (!response.ok) {
+      throw new ForbiddenException();
+    }
+    const data = (await response.json()) as { success: boolean };
 
     if (!data.success) {
-      console.log(
-        'Recaptcha v3 rejected! token length: ',
-        (body.token || '').length,
-      );
       throw new ForbiddenException();
     }
 
-    console.log(
-      'Recaptcha v3 approved! token length: ',
-      (body.token || '').length,
-    );
     return true;
   }
 }

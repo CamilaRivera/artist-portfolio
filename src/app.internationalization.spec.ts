@@ -3,7 +3,7 @@ import {
   translate,
   withLanguage,
 } from './app.internationalization';
-import { Language } from './site.config';
+import type { Language } from './site.config';
 
 describe('request language context', () => {
   it('isolates translations across overlapping asynchronous requests', async () => {

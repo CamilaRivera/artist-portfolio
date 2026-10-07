@@ -1,14 +1,15 @@
 import { Test } from '@nestjs/testing';
 import { Controller, Get } from '@nestjs/common';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { MailerService } from '@nestjs-modules/mailer';
-import * as request from 'supertest';
+import request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { AppService } from '../src/app.service';
 import { configureApplication } from '../src/app.views';
 import { RecaptchaGuard } from '../src/guard.recaptcha';
 import { getLanguage, translate } from '../src/app.internationalization';
-import { Language, pagePaths } from '../src/site.config';
+import { pagePaths } from '../src/site.config';
+import type { Language } from '../src/site.config';
 
 @Controller()
 class LocaleProbeController {
@@ -73,6 +74,8 @@ describe('language URLs and canonical pages (e2e)', () => {
     if (app) await app.close();
     process.env = originalEnv;
   });
+
+  beforeEach(() => sendContactEmail.mockClear());
 
   it.each(cases)(
     '%s %s serves translated HTML with reciprocal SEO URLs',
@@ -199,6 +202,55 @@ describe('language URLs and canonical pages (e2e)', () => {
     expect(response.headers.location).toBeUndefined();
     expect(response.text).toContain('<html lang="en">');
     expect(sendContactEmail).not.toHaveBeenCalled();
+  });
+
+  it.each(['es', 'en'] as Language[])(
+    '%s accepts a browser-encoded contact form',
+    async (language) => {
+      const data = {
+        name: 'Cliente de prueba',
+        email: 'customer@example.com',
+        type: 'single',
+        body: 'Retrato de mi mascota',
+      };
+      const response = await request(app.getHttpServer())
+        .post('/contact')
+        .set('Host', hosts[language])
+        .set('X-Forwarded-Proto', 'https')
+        .type('form')
+        .send(data)
+        .expect(201);
+      expect(response.text).toContain(
+        language === 'es'
+          ? 'Mensaje de contacto enviado!'
+          : 'Contact message sent!',
+      );
+      expect(sendContactEmail).toHaveBeenCalledWith(data);
+    },
+  );
+
+  it('serves compiled styles and supports HEAD and query strings', async () => {
+    const css = await request(app.getHttpServer())
+      .get('/stylesheets/index.css?v=test')
+      .set('Host', hosts.es)
+      .set('X-Forwarded-Proto', 'https')
+      .expect(200)
+      .expect('Content-Type', /text\/css/);
+    expect(css.text).toContain('.homepage__action');
+    const head = await request(app.getHttpServer())
+      .head('/stylesheets/index.css')
+      .set('Host', hosts.en)
+      .set('X-Forwarded-Proto', 'https')
+      .expect(200);
+    expect(head.text).toBeUndefined();
+  });
+
+  it('leaves unknown stylesheet paths as 404', async () => {
+    await request(app.getHttpServer())
+      .get('/stylesheets/index.css/extra')
+      .set('Host', hosts.es)
+      .set('X-Forwarded-Proto', 'https')
+      .expect(404);
   });
 
   it('keeps concurrent HTTP requests in their own languages', async () => {

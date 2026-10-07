@@ -5,51 +5,38 @@ dotenv.config({
     process.env.NODE_ENV === 'production'
       ? 'config/production.env'
       : 'config/development.env',
+  quiet: true,
 });
 
 import { NestFactory } from '@nestjs/core';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
+import { watch } from 'node:fs';
 import { AppModule } from './app.module';
-import * as sassMiddleware from 'node-sass-middleware';
-import hbs = require('hbs');
-import hbsutilsLib = require('hbs-utils');
+import hbs from 'hbs';
 import { configureApplication } from './app.views';
 import { getSiteConfig } from './site.config';
 
-const hbsutils = hbsutilsLib(hbs);
-
 const partialsDirectory = join(__dirname, '..', 'views', 'partials');
 const publicDirectory = join(__dirname, '..', 'public');
-const cssDirectory = join(__dirname, '..', 'public', 'stylesheets');
-const scssDirectory = join(__dirname, '..', 'scss');
-
-hbsutils.registerPartials(partialsDirectory);
-hbsutils.registerWatchedPartials(partialsDirectory);
-
-declare const module: any;
 
 async function bootstrap() {
   getSiteConfig();
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   await configureApplication(app);
 
-  app.use(
-    sassMiddleware({
-      src: scssDirectory,
-      dest: cssDirectory,
-      debug: true,
-      prefix: '/stylesheets',
-      force: true,
-    }),
-  );
   app.useStaticAssets(publicDirectory);
-
-  await app.listen(3000);
-
-  if (module.hot) {
-    module.hot.accept();
-    module.hot.dispose(() => app.close());
+  if (process.env.NODE_ENV !== 'production') {
+    watch(partialsDirectory, { persistent: false }, (_event, filename) => {
+      if (filename?.endsWith('.hbs')) {
+        hbs.registerPartials(partialsDirectory, (error?: Error) => {
+          if (error) console.error('Unable to reload template partials', error);
+        });
+      }
+    });
   }
+
+  app.enableShutdownHooks();
+  await app.listen(3000);
 }
 bootstrap();

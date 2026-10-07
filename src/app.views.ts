@@ -1,7 +1,8 @@
-import { NestExpressApplication } from '@nestjs/platform-express';
+import type { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
-import hbs = require('hbs');
+import hbs from 'hbs';
 import { getLanguage, translate } from './app.internationalization';
+import { configureStylesheet } from './app.styles';
 
 export async function configureApplication(app: NestExpressApplication) {
   // The default supports a local reverse proxy. Set exact proxy IPs/subnets for
@@ -10,9 +11,11 @@ export async function configureApplication(app: NestExpressApplication) {
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.set('view options', { layout: 'layouts/layout' });
   app.setViewEngine('hbs');
+  configureStylesheet(app);
   await new Promise<void>((resolve, reject) =>
-    hbs.registerPartials(join(__dirname, '..', 'views', 'partials'), (error) =>
-      error ? reject(error) : resolve(),
+    hbs.registerPartials(
+      join(__dirname, '..', 'views', 'partials'),
+      (error?: Error) => (error ? reject(error) : resolve()),
     ),
   );
   hbs.registerHelper('i18n', translate);

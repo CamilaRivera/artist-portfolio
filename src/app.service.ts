@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { MailerService } from '@nestjs-modules/mailer';
-import { ContactForm } from './types/ContactForm';
+import type { ContactForm } from './types/ContactForm';
 
 @Injectable()
 export class AppService {
@@ -16,7 +16,7 @@ export class AppService {
         to: process.env.TARGET_EMAIL, // List of receivers email address
         // from: 'user@outlook.com', // Senders email address
         subject: `[Contacto retrato] - ${formData.name} - ${formData.type}`,
-        template: __dirname + '/contactEmail', // The `.pug` or `.hbs` extension is appended automatically.
+        template: 'contactEmail',
         context: formData,
         replyTo: formData.email,
       })

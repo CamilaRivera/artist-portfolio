@@ -29,12 +29,27 @@
 ## Installation
 
 ```bash
-$ npm install
+nvm install
+nvm use
+npm install --global npm@11.21.0
+npm ci
 ```
+
+Node.js 24.21.0 is pinned in `.nvmrc`; npm 11.21.0 is recorded in
+`package.json`. Use this toolchain for development, tests, and production.
+NestJS 12's ESM packages require modern Node, and the Jest suite needs Node 24.9
+or newer. The project targets the Node 24 line.
 
 ## Running the app
 
 Development loads `config/development.env`. Set local values there or supply environment variables, which take precedence over the file.
+
+`start:dev` uses the Nest CLI's standard TypeScript watch mode and restarts the
+server when source files change. Handlebars partials reload through a native
+filesystem watcher. Dart Sass recompiles styles on each development request;
+production caches the compiled stylesheet for the lifetime of the process.
+Existing Sass `@import` and global function calls emit deprecation notices and
+can be migrated separately to the Sass module system.
 
 ```bash
 # development
@@ -58,7 +73,20 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+
+# lint and formatting
+$ npm run lint
+$ npm run format:check
 ```
+
+Test scripts enable Node's experimental VM modules for Jest to load NestJS 12's
+ESM packages. An experimental-feature warning is expected. Tests mock reCAPTCHA
+requests and use a stream transport for email rendering, so no enquiries are
+sent to Google or SMTP during the test suite.
+
+GitHub Actions runs a clean install, build, lint, formatting checks, both test
+suites, and a production dependency audit. Dependabot checks npm packages and
+GitHub Actions monthly, grouping related Nest, test, and lint packages.
 
 ## Production
 
@@ -88,7 +116,10 @@ POST requests are not redirected. Route `www` aliases through DNS/TLS/proxy if u
 
 ```bash
 # install dependencies
-$ npm install
+$ nvm install
+$ nvm use
+$ npm install --global npm@11.21.0
+$ npm ci
 
 # build
 $ npm run build

@@ -1,4 +1,5 @@
-import { MiddlewareConsumer, Module, HttpModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { MiddlewareConsumer } from '@nestjs/common';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -7,7 +8,6 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 
 @Module({
   imports: [
-    HttpModule,
     MailerModule.forRootAsync({
       useFactory: () => ({
         transport: {
@@ -24,7 +24,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
         },
         template: {
           dir: process.cwd() + '/views/',
-          adapter: new HandlebarsAdapter(), // or new PugAdapter() or new EjsAdapter()
+          adapter: new HandlebarsAdapter(),
           options: {
             strict: true,
           },
@@ -37,6 +37,6 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LanguageMiddleware).forRoutes('*');
+    consumer.apply(LanguageMiddleware).forRoutes('{*path}');
   }
 }

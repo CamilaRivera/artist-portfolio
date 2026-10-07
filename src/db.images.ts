@@ -168,7 +168,7 @@ export const imageFilenames = [
   },
 ];
 
-export const getRandomDrawings = (count = 7, subjects = undefined) => {
+export const getRandomDrawings = (count = 7, subjects?: number) => {
   const imagesToUse = subjects
     ? imageFilenames.filter((image) => image.subjects === subjects)
     : imageFilenames;

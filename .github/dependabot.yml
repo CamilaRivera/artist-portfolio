@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      nest:
+        patterns:
+          - '@nestjs/*'
+      testing:
+        patterns:
+          - jest
+          - ts-jest
+          - '@types/jest'
+          - supertest
+          - '@types/supertest'
+      linting:
+        patterns:
+          - '*eslint*'
+          - prettier
+          - globals
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

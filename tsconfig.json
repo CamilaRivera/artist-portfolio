@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "strict": true,
+    "target": "es2023",
     "sourceMap": true,
+    "rootDir": ".",
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true
   }
 }
