@@ -1,8 +1,12 @@
+@use 'sass:color';
+@use 'mixins' as theme;
+@use 'bootstrap4/breakpoints';
+
 .brand-section__sub-header {
-  background-color: $brand-color-dark;
+  background-color: theme.$brand-color-dark;
   text-align: center;
   padding: 0.5rem;
-  color: $brand-font-color;
+  color: theme.$brand-font-color;
 
   h1, h2, h3 {
     font-size: 2.5rem;
@@ -13,38 +17,43 @@
 }
 
 .brand-section__sub-header--light {
-  background-color: $brand-color-secondary-light;
-  color: $brand-font-color-secondary-light;
+  background-color: theme.$brand-color-secondary-light;
+  color: theme.$brand-font-color-secondary-light;
 }
 
 
 .brand-section__content-container {
   padding: 2rem;
-  background-color: $brand-color;
-  color: $brand-font-color;
+  background-color: theme.$brand-color;
+  color: theme.$brand-font-color;
 
   > div {
-    max-width: $narrow-content-max-width;
+    max-width: theme.$narrow-content-max-width;
     margin: auto;
   }
 }
 
 .brand-section__content-container--light {
-  background-color: lighten($base-color, 20%);
-  color: $base-font-color;
+  // Clip to RGB to preserve the legacy lighten() clamp at white.
+  background-color: color.to-gamut(
+    color.adjust(theme.$base-color, $lightness: 20%, $space: hsl),
+    $space: rgb,
+    $method: clip
+  );
+  color: theme.$base-font-color;
 
   .brand-section__list-item-custom-bullet {
-    color: $brand-color-secondary;
+    color: theme.$brand-color-secondary;
   }
 }
 
 .brand-section__list {
-  color: $brand-font-color;
+  color: theme.$brand-font-color;
   margin: 0px 0px 20px 0px;
   padding: 0% 0% 3% 0%;
 
   .fa-question-circle::before {
-    color: $brand-color-secondary;
+    color: theme.$brand-color-secondary;
   }
 
   h2 {
@@ -56,7 +65,7 @@
 
 .brand-section__list--dark {
   h2 {
-    color: $brand-font-color;
+    color: theme.$brand-font-color;
   }
 }
 
@@ -77,8 +86,8 @@ ol > .brand-section__list-item {
     top: -0.4rem;
     width: 2.4rem;
     height: 2.4rem;
-    background-color: $brand-color-secondary;
-    color: $brand-font-color-secondary;
+    background-color: theme.$brand-color-secondary;
+    color: theme.$brand-font-color-secondary;
     border-radius: 100%;
   }
 
@@ -107,7 +116,7 @@ ol > .brand-section__list-item {
   position: absolute;
   left: -3rem;
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoints.media-breakpoint-down(sm) {
     display: none;
   }
 }

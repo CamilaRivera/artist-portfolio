@@ -1,13 +1,15 @@
+@use 'mixins' as theme;
+
 .FAQ-section__sub-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: $brand-color-secondary-light;
+  background-color: theme.$brand-color-secondary-light;
   min-height: 4rem;
 
   h3 {
-    color: $brand-font-color-secondary-light;
+    color: theme.$brand-font-color-secondary-light;
     font-size: 42px;
     font-weight: 500;
     line-height: 1.2em;

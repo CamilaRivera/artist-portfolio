@@ -1,6 +1,8 @@
+@use 'mixins' as theme;
+
 .main-section-bar {
-  background-color: $brand-color;
-  color: $brand-font-color;
+  background-color: theme.$brand-color;
+  color: theme.$brand-font-color;
   display: flex;
   flex-direction: column;
   align-items: center;

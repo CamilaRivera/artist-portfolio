@@ -1,12 +1,16 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:string';
+
 @function map-get-or-key($map, $key) {
-	@if map-has-key($map, $key) or map-has-key($map, -$key) {
-		@if $key != 'auto' and type-of($key) == 'number' and $key < 0 {
-			@return 0 - map-get($map, -$key);
+	@if map.has-key($map, $key) or map.has-key($map, -$key) {
+		@if $key != 'auto' and meta.type-of($key) == 'number' and $key < 0 {
+			@return 0 - map.get($map, -$key);
 		} @else {
-			@return map-get($map, $key);
+			@return map.get($map, $key);
 		}
-	} @else if type-of($key) == 'string' {
-		@return unquote($key);
+	} @else if meta.type-of($key) == 'string' {
+		@return string.unquote($key);
 	} @else {
 		@return $key;
 	}

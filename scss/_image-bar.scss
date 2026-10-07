@@ -1,3 +1,5 @@
+@use 'bootstrap4/breakpoints';
+
 .image-bar-container {
   display: flex;
   height: 20rem;
@@ -6,7 +8,7 @@
   overflow: hidden;
   justify-content: center;
 
-  @include media-breakpoint-down(sm) {
+  @include breakpoints.media-breakpoint-down(sm) {
     display: none;
   }
 }
@@ -16,17 +18,17 @@
   object-fit: cover;
 
   &:nth-child(n + 2) {
-    @include media-breakpoint-down(sm) {
+    @include breakpoints.media-breakpoint-down(sm) {
       display: none;
     }
   }
   &:nth-child(n + 3) {
-    @include media-breakpoint-down(md) {
+    @include breakpoints.media-breakpoint-down(md) {
       display: none;
     }
   }
   &:nth-child(n + 4) {
-    @include media-breakpoint-down(lg) {
+    @include breakpoints.media-breakpoint-down(lg) {
       display: none;
     }
   }

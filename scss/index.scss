@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
-@import 'mixins';
-@import 'bootstrap4/bootstrap-mixins';
-@import 'bootstrap4/variables';
-@import 'bootstrap4/breakpoints';
-@import 'bootstrap4/display';
-@import 'footer';
-@import 'navbar';
-@import 'thumb';
-@import 'commissions';
-@import 'FAQ';
-@import 'image-bar';
-@import 'carousel';
-@import 'brand-section';
-@import 'main-section-bar';
-@import 'homepage';
-@import 'contactForm';
-@import 'alert';
+@use 'fonts';
+@use 'mixins' as theme;
+@use 'bootstrap4/bootstrap-mixins';
+@use 'bootstrap4/variables';
+@use 'bootstrap4/breakpoints';
+@use 'bootstrap4/display';
+@use 'footer';
+@use 'navbar';
+@use 'thumb';
+@use 'commissions';
+@use 'FAQ';
+@use 'image-bar';
+@use 'carousel';
+@use 'brand-section';
+@use 'main-section-bar';
+@use 'homepage';
+@use 'contactForm';
+@use 'alert';
 
 $index-link-card-width: 25rem;
 
@@ -83,9 +82,9 @@ body {
   font-family: 'Alegreya Sans', sans-serif;
   // font-family: 'Font Awesome 5 Free';
   font-weight: 300;
-  color: $base-font-color;
+  color: theme.$base-font-color;
   line-height: 1.6rem;
-  background-color: $base-color;
+  background-color: theme.$base-color;
 }
 
 .main-container {
@@ -138,18 +137,18 @@ body {
 .index-links-container__card-link {
   font-size: 1.125rem;
   font-weight: 500;
-  color: $brand-color-light;
+  color: theme.$brand-color-light;
   border-style: solid;
   border-width: 1px 1px 1px 1px;
-  border-color: $brand-color-light;
+  border-color: theme.$brand-color-light;
   padding: 1rem 1.5rem;
   margin: 2rem 0;
   text-decoration: none;
 
   &:focus, &:hover {
-    color: $brand-font-color-secondary;
-    background-color: $brand-color-secondary;
-    border-color: $brand-color-secondary;
+    color: theme.$brand-font-color-secondary;
+    background-color: theme.$brand-color-secondary;
+    border-color: theme.$brand-color-secondary;
   }
 }
 
@@ -182,9 +181,9 @@ body {
   cursor: pointer;
   top: 0;
   right: 0;
-  background-color: $brand-color;
+  background-color: theme.$brand-color;
 
-  @include media-breakpoint-up(md) {
+  @include breakpoints.media-breakpoint-up(md) {
     background-color: transparent;
     top: 1rem;
     right: 1rem;
@@ -197,12 +196,12 @@ body {
   height: 0;
   border-style: solid;
   border-width: 0 10rem 5rem 0;
-  border-color: transparent $brand-color transparent transparent;
+  border-color: transparent theme.$brand-color transparent transparent;
   right: 0;
   top: 0;
   position: fixed;
 
-  @include media-breakpoint-up(md) {
+  @include breakpoints.media-breakpoint-up(md) {
     border-width: 0 18rem 10rem 0;
   }
 }

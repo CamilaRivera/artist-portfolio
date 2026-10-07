@@ -1,19 +1,21 @@
+@use 'mixins' as theme;
+
 .homepage {
   .main-section-bar h1 {
-    max-width: $narrow-content-max-width;
+    max-width: theme.$narrow-content-max-width;
     font-size: 2rem;
     line-height: 1.2;
   }
 
   .main-section-bar p {
-    max-width: $narrow-content-max-width;
+    max-width: theme.$narrow-content-max-width;
     text-transform: none;
   }
 }
 
 .homepage__introduction,
 .homepage__ordering {
-  max-width: $narrow-content-max-width;
+  max-width: theme.$narrow-content-max-width;
   margin: auto;
   padding: 1.5rem;
 }
@@ -37,28 +39,28 @@
 .homepage__action {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 2px solid $brand-color;
+  border: 2px solid theme.$brand-color;
   border-radius: 0.25rem;
-  background-color: $brand-color;
-  color: $brand-font-color;
+  background-color: theme.$brand-color;
+  color: theme.$brand-font-color;
   font-weight: 400;
   text-decoration: none;
 
   &:hover {
-    background-color: $brand-color-secondary;
-    border-color: $brand-color-secondary;
-    color: $brand-font-color-secondary;
+    background-color: theme.$brand-color-secondary;
+    border-color: theme.$brand-color-secondary;
+    color: theme.$brand-font-color-secondary;
   }
 
   &:focus-visible {
-    outline: 3px solid $brand-color-secondary;
+    outline: 3px solid theme.$brand-color-secondary;
     outline-offset: 3px;
   }
 }
 
 .homepage__action--secondary {
   background-color: transparent;
-  color: $brand-color;
+  color: theme.$brand-color;
 }
 
 .homepage__ordering {
@@ -75,10 +77,10 @@
   }
 
   a {
-    color: $brand-color;
+    color: theme.$brand-color;
 
     &:focus-visible {
-      outline: 3px solid $brand-color-secondary;
+      outline: 3px solid theme.$brand-color-secondary;
       outline-offset: 3px;
     }
   }

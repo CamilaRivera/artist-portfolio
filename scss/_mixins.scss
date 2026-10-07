@@ -1,13 +1,20 @@
+@use 'sass:color';
+
 $base-font-color: #1E1E1E; // Against white background
 $base-color: #d7d9db;
 
 $brand-color: #03045e;
-$brand-color-light: lighten($brand-color, 10%);
-$brand-color-dark: darken($brand-color, 7%);
+$brand-color-light: color.adjust($brand-color, $lightness: 10%);
+$brand-color-dark: color.adjust($brand-color, $lightness: -7%);
 $brand-color-secondary: #46549e;
 $brand-font-color-secondary: #fff;
-$brand-color-secondary-light: lighten($brand-color-secondary, 10%);
-$brand-font-color-secondary-light: lighten($brand-font-color-secondary, 10%);;
+$brand-color-secondary-light: color.adjust($brand-color-secondary, $lightness: 10%);
+// Clip to RGB to preserve the legacy lighten() clamp at white.
+$brand-font-color-secondary-light: color.to-gamut(
+  color.adjust($brand-font-color-secondary, $lightness: 10%, $space: hsl),
+  $space: rgb,
+  $method: clip
+);
 $brand-font-color: #fff;
 
 $narrow-content-max-width: 50rem;

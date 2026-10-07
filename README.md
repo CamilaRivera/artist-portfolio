@@ -48,8 +48,8 @@ Development loads `config/development.env`. Set local values there or supply env
 server when source files change. Handlebars partials reload through a native
 filesystem watcher. Dart Sass recompiles styles on each development request;
 production caches the compiled stylesheet for the lifetime of the process.
-Existing Sass `@import` and global function calls emit deprecation notices and
-can be migrated separately to the Sass module system.
+Styles use Sass modules (`@use`) and namespaced built-in functions. The Google
+Fonts URL remains a standard CSS import.
 
 ```bash
 # development
