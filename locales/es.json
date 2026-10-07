@@ -59,8 +59,19 @@
 		}
 	},
 	"index": {
-		"title": "Trabajos",
-		"subtitle": "Retratos con lapices de colores o con pasteles, sobre papel acuarela o pastelmat",
+		"title": "Retratos de mascotas a pedido en Chile",
+		"subtitle": "Retratos personalizados de perros, gatos y caballos, dibujados a mano con lápices de colores o pasteles.",
+		"introduction": "Soy Flavia Canepa y creo retratos de tu mascota a partir de fotografías, con materiales profesionales sobre papel acuarela o Pastelmat. Elige el tamaño, la técnica y el fondo para crear un recuerdo de tu compañero.",
+		"delivery": "¿Quieres encargar un retrato en Chile? Consulta las opciones y los costos de entrega para tu ciudad antes de confirmar tu pedido.",
+		"pricesLink": "Ver tamaños y precios",
+		"contactLink": "Encargar mi retrato",
+		"ordering": {
+			"title": "Cómo encargar tu retrato de mascota",
+			"choose": "Revisa los tamaños y precios para uno o más animales y elige la opción que prefieras.",
+			"photos": "Escríbeme a través del formulario de contacto para conversar sobre tus fotos y lo que tienes en mente.",
+			"confirm": "Acordamos el tamaño, la técnica, el fondo, el plazo y la entrega antes de comenzar tu retrato.",
+			"faqLink": "Preguntas frecuentes sobre fotos, pagos y plazos"
+		},
 		"portrait": {
 			"link": "index.portrait.link",
 			"text": "index.portrait.text"

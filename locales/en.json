@@ -61,8 +61,19 @@
 		}
 	},
 	"index": {
-		"title": "FLAVIA CANEPA",
-		"subtitle": "PASTEL & COLOR PENCILS PORTRAITS",
+		"title": "Custom pet portraits in Chile",
+		"subtitle": "Personalized portraits of dogs, cats and horses, drawn by hand in colored pencils or pastels.",
+		"introduction": "I'm Flavia Canepa, and I create portraits of your pet from photographs using professional materials on watercolor paper or Pastelmat. Choose the size, medium and background to create a keepsake of your companion.",
+		"delivery": "Looking to commission a portrait in Chile? Ask about delivery options and costs for your city before confirming your order.",
+		"pricesLink": "View sizes and prices",
+		"contactLink": "Commission my portrait",
+		"ordering": {
+			"title": "How to commission your pet portrait",
+			"choose": "Browse sizes and prices for one or more animals and choose the option you prefer.",
+			"photos": "Write to me through the contact form to discuss your photos and what you have in mind.",
+			"confirm": "We agree on the size, medium, background, timing and delivery before I begin your portrait.",
+			"faqLink": "Frequently asked questions about photos, payments and timing"
+		},
 		"portrait": {
 			"link": "Order a Portrait",
 			"text": "Would you like to order a portrait? I have many years of experience in creating individual pieces of all kinds of subjects, animals, pets, people, horses, etc. Find out more information about my work, waiting time, prices, sizes, shipping etc."
