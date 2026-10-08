@@ -143,22 +143,129 @@ in the English domain's property. Use the Sitemaps report to check fetch and
 processing status. The robots references also let crawlers discover the sitemaps
 without a manual submission.
 
+### Ubuntu systemd service
+
+Use the included systemd service on Ubuntu 24.04 LTS to start the production
+server automatically after a reboot. It also restarts the process after an
+unexpected exit, runs it as a non-root user, and sends logs to the journal.
+Stopping it with `systemctl stop` keeps it stopped until you start it again or
+reboot; disabling it also prevents startup on future boots.
+
+Run the following commands **on the Ubuntu server**, from the repository root,
+as the non-root user that will run the application. That user must own the
+checkout and have permission to use `sudo`. Keep the checkout and
+Node installation in permanent locations. Their paths must contain only letters,
+digits, underscores, dots, slashes, and hyphens.
+
+1. Install the pinned toolchain, dependencies, and production build:
+
+   ```bash
+   nvm install
+   nvm use
+   npm install --global npm@11.21.0
+   npm ci
+   npm run build
+   ```
+
+2. Set the production values in `config/production.env`, including the language
+   hosts, SMTP credentials, and reCAPTCHA keys. The service sets
+   `NODE_ENV=production`, and the application reads this file from the checkout.
+   Variables exported in your SSH session are not passed to the service. Ensure
+   the application user can read the file and restrict access to its credentials:
+
+   ```bash
+   chmod 600 config/production.env
+   ```
+
+3. If the application is currently running in `screen`, attach to that session
+   and stop the existing process with Ctrl+C before installing the service.
+   Port 3000 must be free. Keep the existing reverse proxy routing to port 3000.
+
+4. Install and start the service:
+
+   ```bash
+   bash scripts/install-service.sh
+   ```
+
+   Run the script without `sudo`; it requests elevated access only for system
+   changes. It fills [deploy/artist-portfolio.service](deploy/artist-portfolio.service)
+   with the current user, group, absolute checkout path, and selected Node binary
+   path, verifies it, installs it into
+   `/etc/systemd/system/artist-portfolio.service`, reloads systemd, enables boot
+   startup, and starts or restarts the service. It invokes Node directly, so nvm
+   and an interactive shell are not needed at boot. To preview the generated
+   service without installing it:
+
+   ```bash
+   bash scripts/install-service.sh --print
+   ```
+
+5. Check boot startup, process status, and an HTTP response:
+
+   ```bash
+   sudo systemctl is-enabled artist-portfolio.service
+   sudo systemctl status artist-portfolio.service --no-pager
+   curl --fail --show-error http://127.0.0.1:3000/robots.txt -H 'Host: flaviacanepa.cl'
+   ```
+
+   Expect `enabled`, `active (running)`, and the robots response. Replace the
+   Host value if you configured a different Spanish domain. No reboot is needed
+   to activate the service; after the next planned reboot, repeat these checks.
+   Installation status confirms the process started, so also check HTTP and logs
+   for application startup errors.
+
+Control the service and read its logs:
+
 ```bash
-# install dependencies
-$ nvm install
-$ nvm use
-$ npm install --global npm@11.21.0
-$ npm ci
-
-# build
-$ npm run build
-
-# open screen
-$ screen -R flaviacanepa.cl
-
-# run production server
-$ npm run start:prod
+sudo systemctl start artist-portfolio.service
+sudo systemctl stop artist-portfolio.service
+sudo systemctl restart artist-portfolio.service
+sudo systemctl status artist-portfolio.service --no-pager
+sudo journalctl -u artist-portfolio.service -n 100 --no-pager
+sudo journalctl -u artist-portfolio.service -f
 ```
+
+To deploy an updated checkout, stop the service before replacing its dependencies
+and build, then start it after a successful build. Run these from the repository
+root as the application user:
+
+```bash
+sudo systemctl stop artist-portfolio.service
+nvm use
+npm ci
+npm run build
+sudo systemctl start artist-portfolio.service
+```
+
+After changing `config/production.env`, restart the service to load the new
+values. If you move the checkout or change the selected Node version, rerun the
+installer to update the absolute paths. Retain the selected Node installation
+while the service uses it. To customize other settings, use
+`sudo systemctl edit artist-portfolio.service`, then restart the service.
+
+To stop the service and disable startup on reboot:
+
+```bash
+sudo systemctl disable --now artist-portfolio.service
+```
+
+To enable boot startup and start it again:
+
+```bash
+sudo systemctl enable --now artist-portfolio.service
+```
+
+To remove the service entirely:
+
+```bash
+sudo systemctl disable --now artist-portfolio.service
+sudo rm /etc/systemd/system/artist-portfolio.service
+sudo systemctl daemon-reload
+```
+
+See Ubuntu's [systemd service configuration](https://manpages.ubuntu.com/manpages/noble/man5/systemd.service.5.html)
+and [systemctl reference](https://manpages.ubuntu.com/manpages/noble/man1/systemctl.1.html)
+for service and boot behavior.
 
 ## Support
 

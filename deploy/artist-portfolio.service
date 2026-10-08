@@ -1,0 +1,27 @@
+# scripts/install-service.sh replaces these placeholders with local values.
+[Unit]
+Description=Artist portfolio production server
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+User=@APP_USER@
+Group=@APP_GROUP@
+WorkingDirectory=@APP_DIR@
+Environment=NODE_ENV=production
+Environment=PATH=@NODE_BIN_DIR@:/usr/local/bin:/usr/bin:/bin
+ExecStart=@NODE_BIN@ @APP_DIR@/dist/main.js
+Restart=always
+RestartSec=5s
+TimeoutStopSec=30s
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0027
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=artist-portfolio
+
+[Install]
+WantedBy=multi-user.target
