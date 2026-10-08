@@ -5,32 +5,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LanguageMiddleware } from './language.middleware';
 import { SiteDiscoveryController } from './site.discovery.controller';
-import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
+import { getMailerOptions } from './mail.config';
 
 @Module({
   imports: [
     MailerModule.forRootAsync({
-      useFactory: () => ({
-        transport: {
-          host: 'smtp.gmail.com',
-          port: 587,
-          secure: false, // upgrade later with STARTTLS
-          auth: {
-            user: process.env.SMTP_EMAIL,
-            pass: process.env.SMTP_PASS,
-          },
-        },
-        defaults: {
-          from: process.env.SMTP_EMAIL,
-        },
-        template: {
-          dir: process.cwd() + '/views/',
-          adapter: new HandlebarsAdapter(),
-          options: {
-            strict: true,
-          },
-        },
-      }),
+      useFactory: () => getMailerOptions(),
     }),
   ],
   controllers: [AppController, SiteDiscoveryController],

@@ -13,7 +13,6 @@ export class AppService {
   public async sendContactEmail(formData: ContactForm): Promise<void> {
     await this.mailerService.sendMail({
       to: process.env.TARGET_EMAIL, // List of receivers email address
-      // from: 'user@outlook.com', // Senders email address
       subject: `[Contacto retrato] - ${formData.name} - ${formData.type}`,
       template: 'contactEmail',
       context: formData,

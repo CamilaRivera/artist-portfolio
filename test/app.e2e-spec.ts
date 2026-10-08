@@ -55,6 +55,9 @@ describe('language URLs and canonical pages (e2e)', () => {
     process.env.ES_HOST = hosts.es;
     process.env.EN_HOST = hosts.en;
     process.env.TRUST_PROXY = 'loopback';
+    process.env.AWS_REGION = 'us-east-1';
+    process.env.MAIL_FROM = 'website@flaviacanepa.cl';
+    process.env.TARGET_EMAIL = 'artist@example.com';
     const moduleFixture = await Test.createTestingModule({
       imports: [AppModule],
       controllers: [LocaleProbeController],

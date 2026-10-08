@@ -81,8 +81,8 @@ $ npm run format:check
 
 Test scripts enable Node's experimental VM modules for Jest to load NestJS 12's
 ESM packages. An experimental-feature warning is expected. Tests mock reCAPTCHA
-requests and use a stream transport for email rendering, so no enquiries are
-sent to Google or SMTP during the test suite.
+requests and mock the AWS SES client while rendering real contact emails, so no
+enquiries are sent to Google or AWS during the test suite.
 
 GitHub Actions runs a clean install, build, lint, formatting checks, both test
 suites, and a production dependency audit. Dependabot checks npm packages and
@@ -143,6 +143,42 @@ in the English domain's property. Use the Sitemaps report to check fetch and
 processing status. The robots references also let crawlers discover the sitemaps
 without a manual submission.
 
+### Amazon SES contact emails
+
+Contact enquiries use Nodemailer's SES API transport with
+`@aws-sdk/client-sesv2`. Set these values in `config/production.env` (or
+`config/development.env` for local development):
+
+```dotenv
+AWS_REGION=your-ses-region
+AWS_ACCESS_KEY_ID=your-iam-access-key-id
+AWS_SECRET_ACCESS_KEY=your-iam-secret-access-key
+MAIL_FROM=contacto@flaviacanepa.cl
+TARGET_EMAIL=your-recipient@example.com
+```
+
+Use the AWS Region where your domain identity is verified and choose a sender
+address allowed by your IAM policy. `MAIL_FROM` is the website's sender address;
+`TARGET_EMAIL` is the inbox receiving enquiries. The visitor's address remains
+the `Reply-To`, so replying to an enquiry reaches the visitor.
+
+The AWS SDK reads IAM credentials from the environment through its default
+credential provider chain. An IAM role or another SDK credential provider can
+replace the access key variables. Temporary credentials also require
+`AWS_SESSION_TOKEN`. These are AWS API credentials, not SES SMTP credentials;
+`SMTP_EMAIL` and `SMTP_PASS` are no longer used. Startup requires nonempty
+`AWS_REGION`, `MAIL_FROM`, and `TARGET_EMAIL`.
+
+The IAM user or role needs `ses:SendEmail` permission for the verified sender
+identity. Verify `flaviacanepa.cl` in SES and publish the DNS records supplied by
+SES. While the account is in the SES sandbox, the recipient address or its
+domain must also be verified; request production access to send to unverified
+recipients. See the [Nodemailer SES transport documentation](https://nodemailer.com/transports/ses)
+and [AWS SES sandbox documentation](https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html).
+
+After deploying this migration, run `npm ci` and `npm run build`, then restart
+the application. Later environment-only changes require a service restart.
+
 ### Ubuntu systemd service
 
 Use the included systemd service on Ubuntu 24.04 LTS to start the production
@@ -168,8 +204,8 @@ digits, underscores, dots, slashes, and hyphens.
    ```
 
 2. Set the production values in `config/production.env`, including the language
-   hosts, SMTP credentials, and reCAPTCHA keys. The service sets
-   `NODE_ENV=production`, and the application reads this file from the checkout.
+   hosts, AWS SES configuration and credentials, and reCAPTCHA keys. The service
+   sets `NODE_ENV=production`, and the application reads this file from the checkout.
    Variables exported in your SSH session are not passed to the service. Ensure
    the application user can read the file and restrict access to its credentials:
 

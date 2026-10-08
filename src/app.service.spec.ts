@@ -1,58 +1,72 @@
+import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
 import { Test } from '@nestjs/testing';
-import { MailerModule, MailerService } from '@nestjs-modules/mailer';
-import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
-import { join } from 'node:path';
+import type { TestingModule } from '@nestjs/testing';
+import { MailerModule } from '@nestjs-modules/mailer';
 import { AppService } from './app.service';
+import { getMailerOptions } from './mail.config';
 
-describe('contact email template and transport', () => {
-  it('renders the real template through the upgraded mailer without SMTP delivery', async () => {
-    const originalTarget = process.env.TARGET_EMAIL;
+describe('contact email through Amazon SES', () => {
+  const originalEnv = { ...process.env };
+  const form = {
+    name: 'Test customer',
+    email: 'customer@example.com',
+    type: 'Single subject',
+    body: 'A portrait of my cat <Luna>',
+  };
+  let module: TestingModule;
+  let sesClient: SESv2Client;
+  let send: jest.SpyInstance;
+
+  beforeEach(async () => {
+    process.env.AWS_REGION = 'us-east-1';
+    process.env.MAIL_FROM = 'website@flaviacanepa.cl';
     process.env.TARGET_EMAIL = 'artist@example.com';
-    const module = await Test.createTestingModule({
-      imports: [
-        MailerModule.forRoot({
-          transport: { streamTransport: true, buffer: true, newline: 'unix' },
-          defaults: { from: 'website@example.com' },
-          template: {
-            dir: join(__dirname, '..', 'views'),
-            adapter: new HandlebarsAdapter(),
-            options: { strict: true },
-          },
-        }),
-      ],
+    const options = getMailerOptions();
+    sesClient = options.transport.SES.sesClient;
+    send = jest.spyOn(sesClient, 'send').mockResolvedValue({
+      MessageId: 'test-ses-message',
+      $metadata: {},
+    });
+    jest.spyOn(console, 'log').mockImplementation(() => undefined);
+    module = await Test.createTestingModule({
+      imports: [MailerModule.forRoot(options)],
       providers: [AppService],
     }).compile();
+  });
 
-    try {
-      const mailer = module.get(MailerService);
-      const sendMail = jest.spyOn(mailer, 'sendMail');
-      const log = jest
-        .spyOn(console, 'log')
-        .mockImplementation(() => undefined);
-      const delivery = module.get(AppService).sendContactEmail({
-        name: 'Test customer',
-        email: 'customer@example.com',
-        type: 'Single subject',
-        body: 'A portrait of my cat <Luna>',
-      });
-      const result = await sendMail.mock.results[0].value;
-      await delivery;
-      expect(result.envelope.to).toEqual(['artist@example.com']);
-      const email = result.message.toString();
-      expect(email).toContain('Reply-To: customer@example.com');
-      expect(email).toContain(
-        'Subject: [Contacto retrato] - Test customer - Single subject',
-      );
-      expect(email).toContain('Test customer');
-      // Nodemailer encodes the HTML as quoted-printable for transport.
-      expect(email.replace(/=\r?\n/g, '')).toContain('&lt;Luna&gt;');
-      sendMail.mockRestore();
-      log.mockRestore();
-    } finally {
-      await module.close();
-      jest.restoreAllMocks();
-      if (originalTarget === undefined) delete process.env.TARGET_EMAIL;
-      else process.env.TARGET_EMAIL = originalTarget;
-    }
+  afterEach(async () => {
+    if (module) await module.close();
+    sesClient?.destroy();
+    jest.restoreAllMocks();
+    process.env = { ...originalEnv };
+  });
+
+  it('sends the real template with the domain sender and visitor Reply-To', async () => {
+    await module.get(AppService).sendContactEmail(form);
+
+    expect(send).toHaveBeenCalledTimes(1);
+    const command = send.mock.calls[0][0] as SendEmailCommand;
+    expect(command).toBeInstanceOf(SendEmailCommand);
+    expect(command.input.FromEmailAddress).toBe('website@flaviacanepa.cl');
+    expect(command.input.Destination?.ToAddresses).toEqual([
+      'artist@example.com',
+    ]);
+    const email = Buffer.from(command.input.Content!.Raw!.Data!).toString();
+    expect(email).toContain('From: website@flaviacanepa.cl');
+    expect(email).toContain('Reply-To: customer@example.com');
+    expect(email).toContain(
+      'Subject: [Contacto retrato] - Test customer - Single subject',
+    );
+    expect(email).toContain('Test customer');
+    // Nodemailer encodes the HTML as quoted-printable for transport.
+    expect(email.replace(/=\r?\n/g, '')).toContain('&lt;Luna&gt;');
+  });
+
+  it('reports SES delivery failures to the caller', async () => {
+    send.mockRejectedValueOnce(new Error('SES rejected message'));
+
+    await expect(module.get(AppService).sendContactEmail(form)).rejects.toThrow(
+      'SES rejected message',
+    );
   });
 });
