@@ -6,7 +6,7 @@ server {
         include /etc/nginx/proxy_params;
     }
 
-    listen [::]:443 ssl http2 ipv6only=on; # managed by Certbot
+    listen [::]:443 ssl http2; # managed by Certbot
     listen 443 ssl http2; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/flaviacanepa.cl/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/flaviacanepa.cl/privkey.pem; # managed by Certbot
